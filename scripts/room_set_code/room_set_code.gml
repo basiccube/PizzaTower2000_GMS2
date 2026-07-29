@@ -45,8 +45,6 @@ function room_run_code(rm)
 				show_debug_message("Setting room background to " + string(val) + ", str: " + str)
 				bg = val
 			}
-			
-			continue;
 		}
 	}
 }

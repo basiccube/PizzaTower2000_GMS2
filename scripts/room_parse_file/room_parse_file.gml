@@ -1,25 +1,3 @@
-///@param file
-function file_text_read_all(_file)
-{
-    if is_string(_file)
-    {
-		if !file_exists(_file)
-			return "";
-		
-        var buff = buffer_load(_file)
-        var text = buffer_read(buff, buffer_text)		
-        buffer_delete(buff)
-		
-        return text;
-    }
-	
-    var filestring = ""
-    while !file_text_eof(_file)
-        filestring += file_text_readln(_file)
-		
-    return filestring;
-}
-
 function room_parse_file(file)
 {
 	var fstr = string_replace_all(file_text_read_all(file), "\r\n", "\n")

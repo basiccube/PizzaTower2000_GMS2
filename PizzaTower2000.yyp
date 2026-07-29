@@ -748,6 +748,8 @@
     {"id":{"name":"scr_room_hooks","path":"scripts/scr_room_hooks/scr_room_hooks.yy",},},
     {"id":{"name":"scr_sound","path":"scripts/scr_sound/scr_sound.yy",},},
     {"id":{"name":"scr_sprite_loader","path":"scripts/scr_sprite_loader/scr_sprite_loader.yy",},},
+    {"id":{"name":"scr_state_machine","path":"scripts/scr_state_machine/scr_state_machine.yy",},},
+    {"id":{"name":"scr_utilities","path":"scripts/scr_utilities/scr_utilities.yy",},},
     {"id":{"name":"string_split_arr","path":"scripts/string_split_arr/string_split_arr.yy",},},
     {"id":{"name":"tempini_close","path":"scripts/tempini_close/tempini_close.yy",},},
     {"id":{"name":"tempini_open","path":"scripts/tempini_open/tempini_open.yy",},},

@@ -1,8 +1,9 @@
 function string_split_arr(str, delim_arr, remove_empty = false)
 {
-	//if !bscotch_check("string_split_ext")
-		//return string_split_ext(str, delim_arr, remove_empty);
+	if !bscotch_check("string_split_ext")
+		return string_split_ext(str, delim_arr, remove_empty);
 	
+	// This function is slow
 	var arr = []
 	
 	var splitstr = ""

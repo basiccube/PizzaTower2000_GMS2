@@ -1,0 +1,1 @@
+visible = !(room == rank_room || room == timesuproom || room == Titlescreen)

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"tv_do_expression",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"tv_do_expression",
+  "parent":{
+    "name":"Utilities",
+    "path":"folders/Scripts/Utilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

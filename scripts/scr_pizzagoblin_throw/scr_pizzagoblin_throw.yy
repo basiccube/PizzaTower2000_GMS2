@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_pizzagoblin_throw",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_pizzagoblin_throw",
+  "parent":{
+    "name":"Enemy",
+    "path":"folders/Scripts/Enemy.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

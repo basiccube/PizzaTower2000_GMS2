@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"__global_object_depths_editor",
+  "isCompatibility":true,
+  "isDnD":false,
+  "name":"__global_object_depths_editor",
+  "parent":{
+    "name":"Compatibility",
+    "path":"folders/Compatibility.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

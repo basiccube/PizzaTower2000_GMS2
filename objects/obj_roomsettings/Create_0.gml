@@ -1,0 +1,5 @@
+instance_create(__view_get( e__VW.XView, 0 ) + 56, __view_get( e__VW.YView, 0 ) + 172, obj_roomsettings_name)
+instance_create(__view_get( e__VW.XView, 0 ) + 160, __view_get( e__VW.YView, 0 ) + 172, obj_roomsettings_size)
+instance_create(__view_get( e__VW.XView, 0 ) + 56, __view_get( e__VW.YView, 0 ) + 132, obj_roomsettings_musicprev)
+instance_create(__view_get( e__VW.XView, 0 ) + 160, __view_get( e__VW.YView, 0 ) + 132, obj_roomsettings_musicnext)
+instance_create(__view_get( e__VW.XView, 0 ) + 308, __view_get( e__VW.YView, 0 ) + 172, obj_roomsettings_close)

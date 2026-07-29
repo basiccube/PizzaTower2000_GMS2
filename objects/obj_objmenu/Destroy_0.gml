@@ -1,0 +1,8 @@
+with (obj_objmenu_delete)
+    instance_destroy()
+with (obj_objmenu_pos)
+    instance_destroy()
+with (obj_objmenu_scale)
+    instance_destroy()
+with (obj_objmenu_var)
+    instance_destroy()

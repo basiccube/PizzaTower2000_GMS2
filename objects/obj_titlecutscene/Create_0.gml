@@ -1,0 +1,10 @@
+image_speed = 0.35
+sprite_index = spr_pepcooter
+hsp = 0
+vsp = 0
+grav = 0.5
+drop = false
+move = false
+global.panic = 0
+colorchange = 0
+gotoroom = Titlescreen

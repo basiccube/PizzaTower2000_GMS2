@@ -1,0 +1,8 @@
+with (obj_tileui_close)
+    instance_destroy()
+with (obj_tileui_prev)
+    instance_destroy()
+with (obj_tileui_next)
+    instance_destroy()
+with (obj_tileui_tilearea)
+    instance_destroy()

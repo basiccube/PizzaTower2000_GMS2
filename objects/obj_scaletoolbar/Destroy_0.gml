@@ -1,0 +1,8 @@
+with (obj_scaletool_left)
+    instance_destroy()
+with (obj_scaletool_right)
+    instance_destroy()
+with (obj_scaletool_up)
+    instance_destroy()
+with (obj_scaletool_down)
+    instance_destroy()

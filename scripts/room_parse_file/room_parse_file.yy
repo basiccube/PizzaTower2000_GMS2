@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"room_parse_file",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"room_parse_file",
+  "parent":{
+    "name":"Utilities",
+    "path":"folders/Scripts/Utilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

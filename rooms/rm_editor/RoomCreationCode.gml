@@ -1,0 +1,1 @@
+window_set_caption("Pizza Builder v" + EDITOR_VERSION)

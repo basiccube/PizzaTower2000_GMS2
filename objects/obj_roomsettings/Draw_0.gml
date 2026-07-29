@@ -1,0 +1,7 @@
+draw_set_alpha(0.75)
+draw_rectangle_color(__view_get( e__VW.XView, 0 ), __view_get( e__VW.YView, 0 ) +  24, __view_get( e__VW.XView, 0 ) + 366, __view_get( e__VW.YView, 0 ) + 196, c_dkgray, c_dkgray, c_dkgray, c_dkgray, false)
+draw_text_color(__view_get( e__VW.XView, 0 ) + 8, __view_get( e__VW.YView, 0 ) + 28, string_hash_to_newline("Room name: " + obj_editor.roomname), c_white, c_white, c_white, c_white, 1)
+draw_text_color(__view_get( e__VW.XView, 0 ) + 8, __view_get( e__VW.YView, 0 ) + 48, string_hash_to_newline("Room width: " + string(obj_editor.roomw)), c_white, c_white, c_white, c_white, 1)
+draw_text_color(__view_get( e__VW.XView, 0 ) + 8, __view_get( e__VW.YView, 0 ) + 68, string_hash_to_newline("Room height: " + string(obj_editor.roomh)), c_white, c_white, c_white, c_white, 1)
+draw_text_color(__view_get( e__VW.XView, 0 ) + 8, __view_get( e__VW.YView, 0 ) + 88, string_hash_to_newline("Selected music: " + obj_editor.setmusic), c_white, c_white, c_white, c_white, 1)
+draw_set_alpha(1)

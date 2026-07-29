@@ -1,0 +1,6 @@
+draw_rectangle_color(0, 0, roomw, roomh, c_white, c_white, c_white, c_white, true)
+if (mode == 1)
+    draw_sprite_ext(selectedspr, image_index, x, y, image_xscale, image_yscale, 0, c_white, image_alpha)
+if (!instance_exists(obj_objmenu) && mode != 1)
+    draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, c_white, image_alpha)
+draw_text_color(__view_get( e__VW.XView, 0 ) + 4, __view_get( e__VW.YView, 0 ) + window_get_height() - 24, string_hash_to_newline(msg), c_white, c_white, c_white, c_white, msgalpha)

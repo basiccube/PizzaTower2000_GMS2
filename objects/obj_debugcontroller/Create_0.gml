@@ -1,0 +1,1 @@
+showcollisions = 1

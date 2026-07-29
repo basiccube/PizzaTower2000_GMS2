@@ -1,0 +1,122 @@
+// obj_init - Initializes a bunch of stuff and loads all assets.
+
+// Load settings
+ini_open("saveData.ini")
+
+global.debug = ini_read_real("Option", "DebugMode", 0)
+global.highperformance = ini_read_real("Option", "HighPerformance", 0)
+with (obj_debugcontroller)
+    showcollisions = ini_read_real("Option", "ShowCollisions", 1)
+playerdir = ini_read_string("Option", "PlayerDir", "peppino")
+sounddir = ini_read_string("Option", "SoundDir", "default")
+global.hud = ini_read_real("Option", "HUD", 0)
+
+ini_close()
+
+// Check if the game has been restarted
+restart = false
+if (sprite_get_width(spr_pepcooter) > 32)
+    restart = true
+
+// Create important objects
+instance_create(x, y, obj_debugcontroller)
+instance_create(x, y, obj_music)
+instance_create(x, y, obj_panicdebris)
+    
+global.startRoom = ""
+global.startDoor = ""
+
+for (var i = 0, n = parameter_count(); i < n; i++)
+{
+	var str = parameter_string(i)
+	if (str == "-room" && i < n - 2)
+	{
+		var rm = parameter_string(i + 1)
+		var door = parameter_string(i + 2)
+		
+		if (!string_starts_with(rm, "-") && !string_starts_with(door, "-"))
+		{
+			global.startRoom = rm
+			global.startDoor = door
+		}
+	}
+}
+
+// Load backgrounds from bg directory
+global.bg = ds_map_create()
+if (directory_exists("bg"))
+{
+    bgfile = file_find_first("bg\\*.png", 0)
+    while (bgfile != "")
+    {
+        ds_map_add(global.bg, filename_change_ext(bgfile, ""), sprite_add("bg\\" + bgfile, 0, false, false, 0, 0))
+        bgfile = file_find_next()
+    }
+    file_find_close()
+}
+
+// Load tilesets from tilesets directory
+global.tilesets = ds_map_create()
+if (directory_exists("tilesets"))
+{
+    tsfile = file_find_first("tilesets\\*.png", 0)
+    while (tsfile != "")
+    {
+        ds_map_add(global.tilesets, filename_change_ext(tsfile, ""), sprite_add("tilesets\\" + tsfile, 0, true, false, 0, 0))
+        tsfile = file_find_next()
+    }
+    file_find_close()
+}
+
+if SPRITE_LOADER_ENABLED
+{
+	// Load sprites
+	for (var i = 0; sprite_exists(i); i++)
+		sprloader_load(i)
+}
+
+// Set non-external room views
+for (var i = 0; room_exists(i); i++)
+{	
+	var cam = camera_create_view(0, 0, global.screenw, global.screenh)
+	
+	var oldcam = room_get_camera(i, 0)
+	if (oldcam != -1)
+		camera_destroy(oldcam)
+	
+	room_set_camera(i, 0, cam)
+	room_set_viewport(i, 0, true, 0, 0, global.screenw, global.screenh)
+	room_set_view_enabled(i, true)
+}
+
+var arr = [
+	Realtitlescreen,
+	levelselect,
+	rank_room,
+	timesuproom
+]
+
+for (var i = 0, n = array_length(arr); i < n; i++)
+{
+	var rm = arr[i]
+	room_set_width(rm, global.screenw)
+	room_set_height(rm, global.screenh)
+}
+
+// Add fonts
+global.font = font_add_sprite_ext(spr_font, "!.0123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZ", true, 0)
+global.smallfont = font_add_sprite_ext(spr_smallfont, "!.0123456789:?ABCDEFGHIJKLMNOPQRSTUVWXYZ", true, 0)
+global.pizzafont = font_add_sprite_ext(spr_pizzafont, "0123456789", true, 0)
+global.combofont = font_add_sprite_ext(spr_combofont, "0123456789", true, 0)
+
+// Create saveroom list
+global.saveroom = ds_list_create()
+
+// Create room handler. Has to be created at this point due to screen variables
+instance_create(x, y, obj_room)
+
+// Go to title screen or load room
+if (global.startRoom != "")
+    room_goto(levelselect)
+else
+    room_goto(Realtitlescreen)

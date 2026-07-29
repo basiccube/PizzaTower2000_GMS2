@@ -1,0 +1,6 @@
+with (obj_addobj_custom)
+    instance_destroy()
+with (obj_addobj_close)
+    instance_destroy()
+with (obj_addobj_objbutton)
+    instance_destroy()

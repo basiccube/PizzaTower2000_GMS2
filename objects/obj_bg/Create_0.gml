@@ -1,0 +1,1 @@
+bgcolor = c_ltgray

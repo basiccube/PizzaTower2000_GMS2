@@ -1,0 +1,8 @@
+draw_set_font(global.font)
+draw_set_halign(fa_center)
+draw_set_color(c_white)
+draw_set_alpha(statsalpha)
+draw_text(global.screenw / 2 + choose(random(1), random(-1)), 40, string_hash_to_newline("YOU GOT: " + string_upper(global.rank) + " RANK"))
+draw_text(global.screenw / 2, global.screenh - 60, string_hash_to_newline(string(global.collect)))
+draw_set_alpha(1)
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, c_white, image_alpha)

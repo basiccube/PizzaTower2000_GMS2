@@ -1,0 +1,3 @@
+ds_list_destroy(level_list)
+ds_list_destroy(levelname_list)
+ds_list_destroy(levelroom_list)

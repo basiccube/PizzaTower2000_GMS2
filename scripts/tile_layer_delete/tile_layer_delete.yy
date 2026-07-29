@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"tile_layer_delete",
+  "isCompatibility":true,
+  "isDnD":false,
+  "name":"tile_layer_delete",
+  "parent":{
+    "name":"tile",
+    "path":"folders/Compatibility/tile.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

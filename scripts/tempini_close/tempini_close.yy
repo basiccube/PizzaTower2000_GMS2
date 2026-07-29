@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"tempini_close",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"tempini_close",
+  "parent":{
+    "name":"Utilities",
+    "path":"folders/Scripts/Utilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

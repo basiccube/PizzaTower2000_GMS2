@@ -1,0 +1,6 @@
+with (obj_bgsetup_close)
+    instance_destroy()
+with (obj_bgsetup_next)
+    instance_destroy()
+with (obj_bgsetup_prev)
+    instance_destroy()

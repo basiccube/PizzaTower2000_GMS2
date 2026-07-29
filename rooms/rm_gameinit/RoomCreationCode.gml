@@ -1,0 +1,1 @@
+window_set_caption("Pizza Tower 2000")

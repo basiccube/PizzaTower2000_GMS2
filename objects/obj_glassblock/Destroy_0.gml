@@ -1,0 +1,8 @@
+instance_create((x + choose(random(-10), random(10))), (y + choose(random(-10), random(10))), obj_glassdebris)
+instance_create((x + choose(random(-10), random(10))), (y + choose(random(-10), random(10))), obj_glassdebris)
+instance_create((x + choose(random(-10), random(10))), (y + choose(random(-10), random(10))), obj_glassdebris)
+instance_create((x + choose(random(-10), random(10))), (y + choose(random(-10), random(10))), obj_glassdebris)
+instance_create((x + choose(random(-10), random(10))), (y + choose(random(-10), random(10))), obj_glassdebris)
+instance_create((x + choose(random(-10), random(10))), (y + choose(random(-10), random(10))), obj_glassdebris)
+tile_layer_delete_at(1, x, y)
+snd_play(sfx_breakblock)

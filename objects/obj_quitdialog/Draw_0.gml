@@ -1,0 +1,6 @@
+draw_set_alpha(0.5)
+draw_rectangle_color(__view_get( e__VW.XView, 0 ), __view_get( e__VW.YView, 0 ), __view_get( e__VW.XView, 0 ) + window_get_width(), __view_get( e__VW.YView, 0 ) + window_get_height(), c_black, c_black, c_black, c_black, false)
+draw_set_alpha(1)
+draw_set_halign(fa_center)
+draw_text_color(floor(__view_get( e__VW.XView, 0 ) + (window_get_width() / 2)), __view_get( e__VW.YView, 0 ) + 120, string_hash_to_newline("Quit Pizza Builder?"), c_white, c_white, c_white, c_white, 1)
+draw_set_halign(fa_left)

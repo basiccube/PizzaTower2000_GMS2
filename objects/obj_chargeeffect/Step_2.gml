@@ -1,6 +1,6 @@
-image_xscale = obj_player.xscale
-if (obj_player.state != 81)
-    instance_destroy()
-
 x = obj_player.x
 y = obj_player.y
+image_xscale = obj_player.xscale
+
+if !obj_player.state.is(PLAYER_MACH3)
+	instance_destroy()

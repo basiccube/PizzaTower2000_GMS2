@@ -1,4 +1,4 @@
-if (sprite_index == sprgot && obj_player.state != 14)
+if (sprite_index == sprgot && obj_playerOLD.state != 14)
     instance_destroy()
 
 if (sprite_index != sprgot)

@@ -9,8 +9,8 @@
   "name":"obj_slaphitbox",
   "overriddenProperties":[],
   "parent":{
-    "name":"Collision",
-    "path":"folders/Objects/Collision.yy",
+    "name":"Hitboxes",
+    "path":"folders/Player/Hitboxes.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_knightpep_hitbox",
-    "path":"sprites/spr_knightpep_hitbox/spr_knightpep_hitbox.yy",
+    "name":"spr_slaphitbox",
+    "path":"sprites/spr_slaphitbox/spr_slaphitbox.yy",
   },
   "spriteMaskId":null,
   "visible":false,

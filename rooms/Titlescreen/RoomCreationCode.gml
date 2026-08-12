@@ -1,6 +1,13 @@
-with (obj_parallax)
+with (obj_player)
 {
-    bg = bg_null
-    bg2 = bg_null
-    bg3 = bg_null
+	if state.is(PLAYER_MENU)
+	{
+		sprite_index = spr_player_machFreefall
+		image_index = 0
+		state.change(PLAYER_SCOOTERSLIDE)
+		
+		movespeed = 19
+		vsp = -4
+		facehurt = true
+	}
 }

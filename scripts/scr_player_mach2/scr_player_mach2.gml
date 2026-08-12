@@ -126,7 +126,7 @@ function scr_player_mach2() {
 	        movespeed = 6
 	    instance_create(x, y, obj_jumpdust)
 	    image_index = 0
-	    sprite_index = spr_player_suplexdash
+	    sprite_index = spr_player_suplexDash
 	    state = 13
 	}
 	image_speed = 0.65

@@ -29,6 +29,7 @@ savedcombo = 0
 shownranka = 0
 shownrankb = 0
 shownrankc = 0
+
 global.srank = 0
 global.arank = 0
 global.brank = 0

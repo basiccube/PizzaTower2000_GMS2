@@ -1,6 +1,6 @@
 {
   "$GMSprite":"v2",
-  "%Name":"spr_player_machfreefall",
+  "%Name":"spr_player_machFreefall",
   "bboxMode":0,
   "bbox_bottom":99,
   "bbox_left":8,
@@ -26,19 +26,19 @@
   "layers":[
     {"$GMImageLayer":"","%Name":"d2182af8-8bdc-4d2d-9d27-953fb8a9b19d","blendMode":0,"displayName":"default","isLocked":false,"name":"d2182af8-8bdc-4d2d-9d27-953fb8a9b19d","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_player_machfreefall",
+  "name":"spr_player_machFreefall",
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Player",
-    "path":"folders/Sprites/Player.yy",
+    "name":"Scooter Slide",
+    "path":"folders/Player/States/Scooter Slide.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"",
+    "%Name":"spr_player_machFreefall",
     "autoRecord":true,
     "backdropHeight":1080,
     "backdropImageOpacity":0.5,
@@ -62,7 +62,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"",
+    "name":"spr_player_machFreefall",
     "playback":1,
     "playbackSpeed":1.0,
     "playbackSpeedType":1,
@@ -74,22 +74,22 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"525eb283-e9b6-4497-8c3b-71ccc0a1d0da","path":"sprites/spr_player_machfreefall/spr_player_machfreefall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"525eb283-e9b6-4497-8c3b-71ccc0a1d0da","path":"sprites/spr_player_machFreefall/spr_player_machFreefall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"951ab2be-2e1c-4576-a845-53b7344157b5","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6414cef7-6a54-44ca-bd9b-d94515147449","path":"sprites/spr_player_machfreefall/spr_player_machfreefall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6414cef7-6a54-44ca-bd9b-d94515147449","path":"sprites/spr_player_machFreefall/spr_player_machFreefall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"09f50b3c-5f4c-4d56-9aef-4d89e57f3d0a","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7fa5a19d-e23e-4733-91aa-0df45f2f1d09","path":"sprites/spr_player_machfreefall/spr_player_machfreefall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7fa5a19d-e23e-4733-91aa-0df45f2f1d09","path":"sprites/spr_player_machFreefall/spr_player_machFreefall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"856ed02f-75ca-4394-a65d-d95537d2ad45","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ba176413-4d4b-47a8-ab01-be9d3e4eef39","path":"sprites/spr_player_machfreefall/spr_player_machfreefall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ba176413-4d4b-47a8-ab01-be9d3e4eef39","path":"sprites/spr_player_machFreefall/spr_player_machFreefall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"e3eec608-6b39-4020-8de6-f42a8ecc93dc","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"86ed0abe-ecb3-4dc9-a001-b661ebb8c58e","path":"sprites/spr_player_machfreefall/spr_player_machfreefall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"86ed0abe-ecb3-4dc9-a001-b661ebb8c58e","path":"sprites/spr_player_machFreefall/spr_player_machFreefall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"e886d88e-83e6-49fc-a09d-d6db2e8eac6d","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"98d61f40-6510-4197-89af-9052f116d28a","path":"sprites/spr_player_machfreefall/spr_player_machfreefall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"98d61f40-6510-4197-89af-9052f116d28a","path":"sprites/spr_player_machFreefall/spr_player_machFreefall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"6fe53e5d-dd69-4a80-9ba6-f41f6ae47bae","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],

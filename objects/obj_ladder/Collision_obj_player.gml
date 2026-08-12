@@ -1,12 +1,14 @@
-with (obj_player)
+with (other)
 {
-    if (keyUp_held && ladderbuffer == 0 && (state == 0 || state == 61 || state == 81 || state == 60 || state == 21 || state == 49 || state == 23) && state != 64 && state != 62 && state != 65 && state != 68)
-    {
-        mach2 = 0
-        state = 50
-        x = (other.x + 16)
-        y = floor(y)
-        if ((y mod 2) == 1)
-            y -= 1
-    }
+	var states = [PLAYER_NORMAL, PLAYER_JUMP, PLAYER_MACH1, PLAYER_MACH2, PLAYER_MACH3]
+	if (ladderBuffer <= 0 && keyUp_held && state.is(states))
+	{
+		x = other.x + (other.sprite_width / 2)
+		y = floor(y)
+		
+		if ((y % 2) == 1)
+			y--
+		
+		state.change(PLAYER_LADDER)
+	}
 }

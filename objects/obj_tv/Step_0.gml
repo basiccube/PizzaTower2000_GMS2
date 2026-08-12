@@ -8,6 +8,11 @@ else
     
 if (global.hud)
     image_speed = 0.35
+
+if (global.combotime > 0 && !(instance_exists(obj_playerOLD) && obj_playerOLD.cutscene))
+    global.combotime -= 0.25
+if (global.combotime <= 0 && global.combo != 0)
+    global.combo = 0
     
 if (global.combo > 0)
 {
@@ -37,7 +42,7 @@ if (global.hud)
             
             var transfo;
             transfo = true
-            switch obj_player.state
+            switch obj_playerOLD.state
             {
                 case 18:
                     idlespr = spr_newtv_bombpep
@@ -57,7 +62,7 @@ if (global.hud)
             
             if (!transfo)
             {
-                with (obj_player)
+                with (obj_playerOLD)
                 {
                     if (state == 81 || sprite_index == spr_player_machslideboost3)
                         tv_do_expression(spr_newtv_exprmach3)
@@ -129,7 +134,7 @@ if (global.hud)
             switch expressionsprite
             {
                 case spr_newtv_exprhurt:
-                    if (obj_player.state != 64)
+                    if (obj_playerOLD.state != 64)
                     {
                         if (expressionbuffer > 0)
                             expressionbuffer -= 1
@@ -141,7 +146,7 @@ if (global.hud)
                     }
                     break
                 case spr_newtv_exprmach3:
-                    with (obj_player)
+                    with (obj_playerOLD)
                     {
                         if (state != 81 && sprite_index != spr_player_machslideboost3)
                         {
@@ -157,7 +162,7 @@ if (global.hud)
 else
 {
     sprite_index = spr_tvcomboresult
-    if (obj_player.state == 27)
+    if (instance_exists(obj_playerOLD) && obj_playerOLD.state == 27)
     {
         alarm[0] = 50
         image_speed = 0.1
@@ -180,12 +185,15 @@ else
     }
 }
 
-if (obj_player.y < 200 && obj_player.x > (room_width - 200))
+if !instance_exists(obj_playerOLD)
+	exit;
+
+if (obj_playerOLD.y < 200 && obj_playerOLD.x > (room_width - 200))
     player_yoffset = approach(player_yoffset, -300, 15)
 else
     player_yoffset = approach(player_yoffset, 0, 15)
     
-if (obj_player.state == 64)
+if (obj_playerOLD.state == 64)
 {
     showtext = 1
     if (chose == 0)
@@ -201,7 +209,7 @@ if (obj_player.state == 64)
 else if (global.hurtcounter >= global.hurtmilestone)
 {
     alarm[0] = 150
-    message = "YOU HAVE HURT " + obj_player.name + " " + string(global.hurtmilestone) + " TIMES..."
+    message = "YOU HAVE HURT " + obj_playerOLD.name + " " + string(global.hurtmilestone) + " TIMES..."
     global.hurtmilestone += 3
     if (!global.hud)
     {
@@ -211,7 +219,7 @@ else if (global.hurtcounter >= global.hurtmilestone)
     }
 }
 
-if (obj_player.state == 35)
+if (obj_playerOLD.state == 35)
 {
     showtext = 1
     message = "SWEET DUDE!!"
@@ -219,7 +227,7 @@ if (obj_player.state == 35)
     if (!global.hud)
         tvsprite = spr_tvrad
 }
-if (obj_player.state == 51)
+if (obj_playerOLD.state == 51)
 {
     showtext = 1
     message = "OOPS!!"
@@ -230,7 +238,7 @@ if (obj_player.state == 51)
         tvsprite = spr_tvbanana
     }
 }
-if (obj_player.state == 47)
+if (obj_playerOLD.state == 47)
 {
     showtext = 1
     message = "GOT THE KEY!"

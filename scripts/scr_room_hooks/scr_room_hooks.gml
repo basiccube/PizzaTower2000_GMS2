@@ -101,3 +101,11 @@ function room_goto_hook(rm)
 	
 	room_goto_original(rm)
 }
+
+function room_name()
+{
+	if (room != rm_roomadd || global.current_room == undefined)
+		return room_get_name(room);
+	
+	return global.current_room.name;
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_playerState_menu",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_playerState_menu",
+  "parent":{
+    "name":"Menu",
+    "path":"folders/Player/States/Menu.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

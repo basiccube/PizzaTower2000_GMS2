@@ -1,6 +1,6 @@
-obj_player.state = 0
-obj_player.image_index = 0
-obj_player.sprite_index = spr_player_idle
+obj_playerOLD.state = 0
+obj_playerOLD.image_index = 0
+obj_playerOLD.sprite_index = spr_player_idle
 
 with (instance_create(x, y, obj_smallnumber))
     number = 1000

@@ -1,0 +1,1 @@
+draw_rectangle_ext(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, c_black, alpha)

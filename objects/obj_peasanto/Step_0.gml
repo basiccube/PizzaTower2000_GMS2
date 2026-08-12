@@ -45,9 +45,9 @@ if (hitboxcreate == 0 && state == 85)
     with (instance_create(x, y, obj_forkhitbox))
         ID = other.id
 }
-if (x != obj_player.x)
+if (x != obj_playerOLD.x)
 {
-    if (obj_player.x > (x - 400) && obj_player.x < (x + 400) && obj_player.y == y && image_xscale == sign((obj_player.x - x)))
+    if (obj_playerOLD.x > (x - 400) && obj_playerOLD.x < (x + 400) && obj_playerOLD.y == y && image_xscale == sign((obj_playerOLD.x - x)))
     {
         if (state == 91 || state == 84)
         {
@@ -55,7 +55,7 @@ if (x != obj_player.x)
             vsp = -5
             snd_play(sfx_enemyprojectile)
             image_index = 0
-            image_xscale = (-(sign((x - obj_player.x))))
+            image_xscale = (-(sign((x - obj_playerOLD.x))))
             state = 85
         }
     }

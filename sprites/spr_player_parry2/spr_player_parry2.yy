@@ -37,8 +37,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Player",
-    "path":"folders/Sprites/Player.yy",
+    "name":"Parry",
+    "path":"folders/Player/States/Parry.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

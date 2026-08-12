@@ -16,7 +16,6 @@ function scr_player_keyget() {
 	sprite_index = spr_player_keyget
 	if (floor(image_index) == (image_number - 1))
 	{
-	    global.keyget = 0
 	    state = 0
 	    image_index = 0
 	}

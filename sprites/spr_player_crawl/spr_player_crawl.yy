@@ -41,7 +41,7 @@
   "origin":4,
   "parent":{
     "name":"Crouch",
-    "path":"folders/Sprites/Player/Crouch.yy",
+    "path":"folders/Player/States/Crouch.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

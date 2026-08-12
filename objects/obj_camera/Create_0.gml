@@ -7,9 +7,9 @@
 image_speed = 0.35
 alarm[1] = 60
 
-global.seconds = 59
 global.minutes = 1
-global.timedgate = 0
+global.seconds = 59
+global.timedgate = false
 
 shake_mag = 0
 shake_mag_acc = 0
@@ -17,11 +17,12 @@ shake_mag_acc = 0
 timestop = true
 chargecamera = 0
 
-cam_x = __view_get( e__VW.XView, 0 )
-cam_y = __view_get( e__VW.YView, 0 )
+cam_x = 0
+cam_y = 0
+cam_target = obj_player
 
-hud_x = __view_get( e__VW.XView, 0 ) + 110
-hud_y = __view_get( e__VW.YView, 0 ) + 84
+hud_x = cam_x + 110
+hud_y = cam_y + 84
 
 player_yoffset = 0
 peppino_sprite = spr_hud_normal

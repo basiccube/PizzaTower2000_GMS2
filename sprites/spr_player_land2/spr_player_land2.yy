@@ -29,8 +29,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Movement",
-    "path":"folders/Sprites/Player/Movement.yy",
+    "name":"Normal",
+    "path":"folders/Player/States/Normal.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

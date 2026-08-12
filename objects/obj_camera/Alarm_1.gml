@@ -1,10 +1,11 @@
-if (timestop == 0)
+if !timestop
 {
-    global.seconds -= 1
-    if (global.seconds < 0)
-    {
-        global.seconds = 59
-        global.minutes -= 1
-    }
+	global.seconds--
+	if (global.seconds < 0)
+	{
+		global.seconds = 59
+		global.minutes--
+	}
 }
+
 alarm[1] = 60

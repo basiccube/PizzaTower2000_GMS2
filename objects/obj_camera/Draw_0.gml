@@ -1,4 +1,7 @@
-if (obj_player.state != 46)
+if !instance_exists(obj_playerOLD)
+	exit;
+
+if (obj_playerOLD.state != 46)
 {
     if (global.hud)
     {
@@ -23,7 +26,7 @@ if (obj_player.state != 46)
             xx += (w / num)
         }
         
-        if (global.key_inv)
+        if (global.key)
             draw_sprite_ext(spr_key, -1, hud_x - 68, hud_y + player_yoffset + 44, 1, 1, 0, c_white, image_alpha)
         draw_sprite_ext(spr_inv, -1, hud_x - 68, hud_y + player_yoffset + 44, 1, 1, 0, c_white, image_alpha)
     }
@@ -32,7 +35,7 @@ if (obj_player.state != 46)
         draw_sprite_ext(peppino_sprite, -1, hud_x, hud_y + player_yoffset, 1, 1, 0, c_white, image_alpha)
         draw_sprite_ext(speedbar_sprite, speedbar_index, hud_x, hud_y + player_yoffset + 52, 1, 1, 0, c_white, image_alpha)
         
-        if (global.key_inv)
+        if (global.key)
             draw_sprite_ext(spr_key, -1, hud_x - 80, hud_y + player_yoffset - 54, 1, 1, 0, c_white, image_alpha)
         draw_sprite_ext(spr_inv, -1, hud_x - 80, hud_y + player_yoffset - 54, 1, 1, 0, c_white, image_alpha)
     }

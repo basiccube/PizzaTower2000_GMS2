@@ -1,60 +1,53 @@
 scr_getinput()
-if (keyEscape && room != rank_room && room != timesuproom && room != levelselect && !instance_exists(obj_transition))
+if (keyEscape && !instance_exists(obj_transition) && !array_contains_bscotch(disabled_rooms, room))
 {
-    if (global.startRoom != "")
-        game_end()
-    
-    if (!pause)
-    {
-        pause = true
-        instance_deactivate_all(true)
-    }
-    else
-    {
-        pause = false
-        instance_activate_all()
-    }
+	if (global.startRoom != "")
+		game_end()
+	
+	if pause
+		unpauseGame()
+	else
+	{
+		menu = ["resume", "main_menu"]
+		selection = 0
+		
+		if (!pause && room_name() != "hub_1" && room != Titlescreen)
+			array_insert(menu, 1, "exit_level")
+		
+		scr_delete_pause_image()
+		scr_create_pause_image()
+		
+		pauseGame()
+	}
 }
 
-if (!pause && image_alpha > 0)
-    image_alpha -= 0.1
-
-if (pause)
+if pause
 {
-    if (image_alpha < 1)
-        image_alpha += 0.1
-    
-    if (keyUp_pressed && selection > 0)
-    {
-        selection -= 1
-        snd_play(sfx_step)
-    }
-    if (keyDown_pressed && selection < 2)
-    {
-        selection += 1
-        snd_play(sfx_step)
-    }
-    
-    if keyJump_pressed
-    {
-        switch selection
-        {
-            case 0:
-            case 1:
-                pause = false
-                instance_activate_all()
-                if (selection == 1)
-                    scr_playerreset()
-                selection = 0
-                break
-            case 2:
-                ds_map_destroy(global.bg)
-                ds_map_destroy(global.tilesets)
-                ds_map_destroy(global.music)
-				with (obj_instanceManager)
-					clearInstances()
-                game_restart()
-                break
-        }
-    }
+	menuY = lerp(menuY, menuEndY, 0.25)
+	pausedY = lerp(pausedY, pausedEndY, 0.25)
+	if (alpha < 1)
+		alpha += 0.1
+	
+	var prevselection = selection
+	var move = (-keyUp_pressed + keyDown_pressed)
+	if (move != 0)
+		selection += move
+	
+	selection = clamp(selection, 0, array_length(menu) - 1)
+	if (prevselection != selection)
+		snd_play(sfx_step)
+	
+	if keyJump_pressed
+	{
+		var func = ds_map_find_value(menu_map, menu[selection])
+		if (func != undefined)
+			func()
+	}
+}
+else
+{
+	menuY = lerp(menuY, menuStartY, 0.25)
+	pausedY = lerp(pausedY, pausedStartY, 0.25)
+	if (alpha > 0)
+		alpha -= 0.1
 }

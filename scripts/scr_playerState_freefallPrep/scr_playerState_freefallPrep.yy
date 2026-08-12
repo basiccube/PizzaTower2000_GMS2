@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_playerState_freefallPrep",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_playerState_freefallPrep",
+  "parent":{
+    "name":"Freefall",
+    "path":"folders/Player/States/Freefall.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

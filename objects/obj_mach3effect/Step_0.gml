@@ -1,2 +1,5 @@
-if (obj_player.state != 81 && obj_player.state != 85 && obj_player.state != 61 && obj_player.state != 13 && obj_player.state != 62 && obj_player.state != 33 && obj_player.state != 26 && obj_player.state != 31 && obj_player.state != 34 && obj_player.state != 28 && obj_player.state != 24 && obj_player.state != 54)
-    instance_destroy()
+var states = [PLAYER_MACH3, PLAYER_MACHROLL, PLAYER_SUPLEXDASH, PLAYER_CHARGE]
+var machslide = (obj_player.state.is(PLAYER_MACHSLIDE) && obj_player.state.prev_is(PLAYER_MACH3))
+
+if (!obj_player.state.is(states) && !machslide)
+	instance_destroy()

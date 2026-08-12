@@ -3,9 +3,9 @@ function scr_enemy_charge() {
 	    hsp = (image_xscale * (movespeed * 4))
 	else
 	    hsp = 0
-	if (x != obj_player.x)
+	if (x != obj_playerOLD.x)
 	{
-	    if (obj_player.x > (x - 400) && obj_player.x < (x + 400) && obj_player.y == y && image_xscale == sign((obj_player.x - x)))
+	    if (obj_playerOLD.x > (x - 400) && obj_playerOLD.x < (x + 400) && obj_playerOLD.y == y && image_xscale == sign((obj_playerOLD.x - x)))
 	        chargereset = 200
 	}
 	image_speed = 0.35

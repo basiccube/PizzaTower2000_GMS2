@@ -17,7 +17,7 @@ if (keyJump_pressed && global.startRoom == "")
         with (obj_room)
             other.targetRoom = variable_instance_get(id, ds_list_find_value(other.levelroom_list, other.selection))
             
-        with (obj_player)
+        with (obj_playerOLD)
         {
             targetDoor = "A"
             targetRoom = other.targetRoom
@@ -29,10 +29,7 @@ if (keyJump_pressed && global.startRoom == "")
         if (file_exists("levels\\" + global.leveltosave + ".pli"))
         {
             tempini_open("levels\\" + global.leveltosave + ".pli")
-            global.srank = ini_read_real("Level", "SRank", 0)
-            global.arank = global.srank - (global.srank / 4)
-            global.brank = global.srank - ((global.srank / 4) * 2)
-            global.crank = global.srank - ((global.srank / 4) * 3)
+			level_set_srank(ini_read_real("Level", "SRank", 0))
             tempini_close()
         }
         

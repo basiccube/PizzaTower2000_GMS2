@@ -54,8 +54,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Player",
-    "path":"folders/Sprites/Player.yy",
+    "name":"Victory",
+    "path":"folders/Player/States/Victory.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

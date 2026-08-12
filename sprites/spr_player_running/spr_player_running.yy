@@ -33,7 +33,7 @@
   "origin":4,
   "parent":{
     "name":"Mach 1",
-    "path":"folders/Sprites/Player/Mach 1.yy",
+    "path":"folders/Player/States/Mach 1.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

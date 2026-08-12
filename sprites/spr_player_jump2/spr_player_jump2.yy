@@ -33,8 +33,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Movement",
-    "path":"folders/Sprites/Player/Movement.yy",
+    "name":"Jump",
+    "path":"folders/Player/States/Jump.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

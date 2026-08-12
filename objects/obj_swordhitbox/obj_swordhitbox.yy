@@ -9,8 +9,8 @@
   "name":"obj_swordhitbox",
   "overriddenProperties":[],
   "parent":{
-    "name":"Collision",
-    "path":"folders/Objects/Collision.yy",
+    "name":"Hitboxes",
+    "path":"folders/Player/Hitboxes.yy",
   },
   "parentObjectId":null,
   "persistent":false,

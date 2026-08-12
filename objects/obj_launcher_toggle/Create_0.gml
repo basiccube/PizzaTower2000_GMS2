@@ -6,4 +6,7 @@ ini_file = "saveData.ini"
 ini_section = ""
 ini_key = ""
 
+use_global = false
+global_var = ""
+
 alarm[0] = 1

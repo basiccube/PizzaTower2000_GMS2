@@ -24,7 +24,7 @@ function scr_player_superslam() {
 	    }
 	    hsp = 0
 	    with (instance_create(x, (y + 35), obj_bangeffect))
-	        xscale = obj_player.xscale
+	        xscale = obj_playerOLD.xscale
 	    instance_create(x, y, obj_landcloud)
 	    freefallstart = 0
 	    with (obj_baddie)
@@ -44,7 +44,7 @@ function scr_player_superslam() {
 	    vsp = -8
 	    state = 49
 	    if (machfreefallanim)
-	        sprite_index = spr_player_machfreefall
+	        sprite_index = spr_player_machFreefall
 	    else
 	        sprite_index = spr_player_fall
 	}

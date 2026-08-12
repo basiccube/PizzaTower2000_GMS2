@@ -7,17 +7,17 @@ if instance_exists(baddieID)
     image_xscale = baddieID.image_xscale
 }
 
-if (instance_exists(baddieID) && place_meeting(x, y, obj_player))
+if (instance_exists(baddieID) && place_meeting(x, y, obj_playerOLD))
 {
     if (baddieID.state != 85)
     {
         if (baddieID.state != 98)
         {
-            with (obj_player)
+            with (obj_playerOLD)
             {
                 if (instance_exists(other.baddieID))
                 {
-                    if (y < other.baddieID.y && attacking == 0 && state == 49 && vsp > 0 && sprite_index != spr_player_stompprep)
+                    if (y < other.baddieID.y && attacking == 0 && state == 49 && vsp > 0 && sprite_index != spr_player_stompPrep)
                     {
                         snd_play(sfx_bump)
                         if (vsp > 0)
@@ -37,7 +37,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player))
                                 stompAnim = 1
                                 other.baddieID.image_index = 0
                                 vsp = -14
-                                sprite_index = spr_player_stompprep
+                                sprite_index = spr_player_stompPrep
                             }
                             else
                             {
@@ -48,7 +48,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player))
                                 stompAnim = 1
                                 other.baddieID.image_index = 0
                                 vsp = -9
-                                sprite_index = spr_player_stompprep
+                                sprite_index = spr_player_stompPrep
                             }
                         }
                     }
@@ -75,15 +75,14 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player))
                 {
                     if (other.baddieID.object_index != obj_pizzaball)
                     {
-                        global.hit += 1
                         if (state == 81)
                             other.baddieID.shot = 1
                         image_index = 0
                         if (state == 25)
                         {
-                            obj_player.image_index = 0
-                            obj_player.vsp = -7
-                            obj_player.facestompAnim = 1
+                            obj_playerOLD.image_index = 0
+                            obj_playerOLD.vsp = -7
+                            obj_playerOLD.facestompAnim = 1
                             snd_play(sfx_punch)
                             instance_create(x, y, obj_bumpeffect)
                             instance_create(x, (y + 50), obj_stompeffect)

@@ -28,7 +28,7 @@
   "origin":4,
   "parent":{
     "name":"Freefall",
-    "path":"folders/Sprites/Player/Freefall.yy",
+    "path":"folders/Player/States/Freefall.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

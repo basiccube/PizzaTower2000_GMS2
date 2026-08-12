@@ -24,7 +24,7 @@ if (state != 98 && hp > 0 && object_index != obj_pizzaball)
     with (other.id)
         instance_destroy()
         
-    if (obj_player.keyUp_held)
+    if (obj_playerOLD.keyUp_held)
     {
         vsp = -16
         hsp = (-image_xscale * 1)
@@ -35,23 +35,23 @@ if (state != 98 && hp > 0 && object_index != obj_pizzaball)
         hsp = (-image_xscale * 3)
     }
     
-    obj_player.vsp = -3
-    obj_player.hsp = 0
-    obj_player.movespeed = 0
-    obj_player.image_index = 0
-    obj_player.sprite_index = choose(spr_player_suplexmash1, spr_player_suplexmash2, spr_player_suplexmash3, spr_player_suplexmash4)
-    obj_player.state = 48
+    obj_playerOLD.vsp = -3
+    obj_playerOLD.hsp = 0
+    obj_playerOLD.movespeed = 0
+    obj_playerOLD.image_index = 0
+    obj_playerOLD.sprite_index = choose(spr_player_suplexmash1, spr_player_suplexmash2, spr_player_suplexmash3, spr_player_suplexmash4)
+    obj_playerOLD.state = 48
 }
 else if ((hp <= 0 || object_index == obj_pizzaball) && state != 98)
 {
     snd_play(sfx_bump)
-    instance_create((x + (obj_player.xscale * 40)), y, obj_punchdust)
+    instance_create((x + (obj_playerOLD.xscale * 40)), y, obj_punchdust)
     state = 98
-    obj_player.state = 37
-    obj_player.baddiegrabbedID = id
+    obj_playerOLD.state = 37
+    obj_playerOLD.baddiegrabbedID = id
     with (other.id)
         instance_destroy()
-    obj_player.movespeed = 0
-    obj_player.hsp = 0
-    obj_player.sprite_index = spr_player_haulingidle
+    obj_playerOLD.movespeed = 0
+    obj_playerOLD.hsp = 0
+    obj_playerOLD.sprite_index = spr_player_haulingidle
 }

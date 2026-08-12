@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_playerState_taunt",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_playerState_taunt",
+  "parent":{
+    "name":"Taunt",
+    "path":"folders/Player/States/Taunt.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

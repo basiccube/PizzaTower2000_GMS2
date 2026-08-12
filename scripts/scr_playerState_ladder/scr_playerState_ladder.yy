@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_playerState_ladder",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_playerState_ladder",
+  "parent":{
+    "name":"Ladder",
+    "path":"folders/Player/States/Ladder.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

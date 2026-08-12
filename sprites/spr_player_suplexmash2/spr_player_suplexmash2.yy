@@ -30,7 +30,7 @@
   "origin":4,
   "parent":{
     "name":"Enemy Grab",
-    "path":"folders/Sprites/Player/Enemy Grab.yy",
+    "path":"folders/Player/Old Sprites/Enemy Grab.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_playerState_victory",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_playerState_victory",
+  "parent":{
+    "name":"Victory",
+    "path":"folders/Player/States/Victory.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,9 +1,10 @@
-obj_player.state = 42
-obj_player.image_index = 0
-obj_player.sprite_index = spr_player_timesup
+with (obj_player)
+	state.change(PLAYER_GATESHUT)
+
 obj_tv.showtext = 1
 obj_tv.message = "UH OH..."
 obj_tv.alarm[0] = 150
+
 // Read level time limit from level info file
 if (is_string(global.leveltosave))
 {

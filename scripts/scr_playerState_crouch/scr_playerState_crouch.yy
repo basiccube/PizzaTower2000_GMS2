@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_playerState_crouch",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_playerState_crouch",
+  "parent":{
+    "name":"Crouch",
+    "path":"folders/Player/States/Crouch.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

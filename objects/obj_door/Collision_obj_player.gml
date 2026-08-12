@@ -1,13 +1,15 @@
-with (obj_player)
+with (other)
 {
-    if (keyUp_held && (state == 0 || state == 60 || state == 61 || state == 81) && y == (other.y + 50) && (!instance_exists(obj_transition)) && state != 69 && state != 52)
-    {
-        mach2 = 0
-        obj_camera.chargecamera = 0
-        targetDoor = other.targetDoor
-        targetRoom = other.targetRoom
-        image_index = 0
-        state = 69
-        instance_create(x, y, obj_transition)
-    }
+	var states = [PLAYER_NORMAL, PLAYER_MACH1, PLAYER_MACH2, PLAYER_MACH3]
+	if (keyUp_held && grounded && vsp > 0 && state.is(states) && !instance_exists(obj_transition))
+	{
+		with (obj_camera)
+			chargecamera = 0
+			
+		targetDoor = other.targetDoor
+		targetRoom = other.targetRoom
+		
+		state.change(PLAYER_ENTERDOOR)
+		instance_create(x, y, obj_transition)
+	}
 }

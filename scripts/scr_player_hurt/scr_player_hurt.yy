@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_player_hurt",
   "parent":{
-    "name":"Player states",
-    "path":"folders/Scripts/Player/Player states.yy",
+    "name":"States",
+    "path":"folders/Player/Old Scripts/States.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

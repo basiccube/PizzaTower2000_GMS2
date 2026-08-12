@@ -34,16 +34,18 @@ function room_run_code(rm)
 			str = string_delete(str, string_length(str), 1)
 			str = string_replace_all(str, "\"", "")
 			
-			with (obj_parallax)
+			var val = ds_map_find_value(global.bg, str)
+			if (val == undefined)
 			{
-				var val = ds_map_find_value(global.bg, str)
-				if (val == undefined)
-					val = asset_get_index(val)
-				if (val == -1)
-					val = bg_sky2
-				
-				show_debug_message("Setting room background to " + string(val) + ", str: " + str)
-				bg = val
+				var ind = asset_get_index(val)
+				if (ind != -1)
+					val = ind
+			}
+			
+			if (val != undefined)
+			{
+				print("Setting room background to ", val, ", str: ", str)
+				parallaxBackground.add(val, 0.25)
 			}
 		}
 	}

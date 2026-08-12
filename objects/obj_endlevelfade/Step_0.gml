@@ -1,9 +1,9 @@
-with (obj_player)
+with (obj_playerOLD)
 {
     if (room == rank_room)
     {
-        obj_player.x = SCREEN_WIDTH / 2
-        obj_player.y = SCREEN_HEIGHT / 2
+        obj_playerOLD.x = SCREEN_WIDTH / 2
+        obj_playerOLD.y = SCREEN_HEIGHT / 2
     }
 }
 

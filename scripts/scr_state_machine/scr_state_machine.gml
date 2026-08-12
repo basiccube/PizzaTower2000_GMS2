@@ -1,18 +1,42 @@
+global.state_machine_use_map = false
+
+global.state_machine_id_override = noone
+function StateOverride(inst)
+{
+	// Not needed in Butterscotch
+	if !global.butterscotch
+		exit;
+	
+	global.state_machine_id_override = inst
+}
+
 ///@param {Function} update
 ///@param {Function} enter
 ///@param {Function} leave
 function State(updatefunc = func_empty, enterfunc = func_empty, leavefunc = func_empty) constructor
 {
-	update = method(other, updatefunc)
-	enter = method(other, enterfunc)
-	leave = method(other, leavefunc)
+	var inst = other
+	if (global.butterscotch && global.state_machine_id_override != noone)
+		inst = global.state_machine_id_override
+	
+	update = method(inst, updatefunc)
+	enter = method(inst, enterfunc)
+	leave = method(inst, leavefunc)
 }
 
 ///@param {String} initialState
 function StateMachine(initialState) constructor
 {
+	// Structs in Butterscotch are currently very finicky and don't really work well
+	if (global.butterscotch && !global.state_machine_use_map)
+	{
+		print("Forcing state machines to use maps instead of structs")
+		global.state_machine_use_map = true
+	}
+	
 	state = initialState
-	states = {}
+	states = global.state_machine_use_map ? ds_map_create() : {}
+	prevstate = ""
 	time = 0
 	
 	///@param {String} stateName
@@ -22,7 +46,11 @@ function StateMachine(initialState) constructor
 		if exists(stateName)
 			print("State ", stateName, " already exists, replacing")
 		
-		states[$ stateName] = stateStruct
+		if global.state_machine_use_map
+			ds_map_set(states, stateName, stateStruct)
+		else
+			variable_struct_set(states, stateName, stateStruct)
+		
 		return self;
 	}
 	
@@ -45,17 +73,19 @@ function StateMachine(initialState) constructor
 		
 		if doLeave
 		{
-			var prevState = states[$ prevName]
+			var prevState = global.state_machine_use_map ? ds_map_find_value(states, prevName) : states[$ prevName]
 			prevState.leave()
 		}
 		
 		if doEnter
 		{
-			var newState = states[$ stateName]
+			var newState = global.state_machine_use_map ? ds_map_find_value(states, stateName) : states[$ stateName]
 			newState.enter()
 		}
 		
+		prevstate = prevName
 		time = get_timer()
+		
 		return self;
 	}
 	
@@ -68,22 +98,40 @@ function StateMachine(initialState) constructor
 		return (state == stateName);
 	}
 	
+	///@param {String, Array} stateName
+	prev_is = function(stateName)
+	{
+		if is_array(stateName)
+			return array_contains_bscotch(stateName, prevstate);
+		
+		return (prevstate == stateName);
+	}
+	
 	///@param {String} stateName
 	exists = function(stateName)
-	{ return variable_struct_exists(states, stateName); }
+	{ return global.state_machine_use_map ? ds_map_exists(states, stateName) : variable_struct_exists(states, stateName); }
 	
 	get_current_state = function()
 	{ return state; }
 	
 	get_states = function()
-	{ return variable_struct_get_names(states); }
+	{
+		if global.state_machine_use_map
+		{
+			var arr = []
+			ds_map_keys_to_array(states, arr)
+			return arr;
+		}
+		
+		return variable_struct_get_names(states);
+	}
 	
 	get_time = function()
 	{ return get_timer() - time; }
 	
 	update = function()
 	{
-		var currentState = states[$ state]
+		var currentState = global.state_machine_use_map ? ds_map_find_value(states, state) : states[$ state]
 		currentState.update()
 	}
 }

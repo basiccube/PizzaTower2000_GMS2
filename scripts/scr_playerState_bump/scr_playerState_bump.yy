@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_playerState_bump",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_playerState_bump",
+  "parent":{
+    "name":"Bump",
+    "path":"folders/Player/States/Bump.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,13 +1,13 @@
-if ((place_meeting((x + 1), y, obj_player) || place_meeting((x - 1), y, obj_player)) && (obj_player.state == 81 || obj_player.state == 15 || obj_player.state == 9 || (obj_player.state == 15 && obj_player.momemtum == 1)))
+if ((place_meeting((x + 1), y, obj_playerOLD) || place_meeting((x - 1), y, obj_playerOLD)) && (obj_playerOLD.state == 81 || obj_playerOLD.state == 15 || obj_playerOLD.state == 9 || (obj_playerOLD.state == 15 && obj_playerOLD.momemtum == 1)))
     instance_destroy()
-if (place_meeting(x, (y - 1), obj_player) && obj_player.state == 15)
+if (place_meeting(x, (y - 1), obj_playerOLD) && obj_playerOLD.state == 15)
 {
     instance_destroy()
     tile_layer_delete_at(1, x, y)
 }
-if (place_meeting(x, (y - 1), obj_player) && obj_player.state == 65 && obj_player.superslam >= 10)
+if (place_meeting(x, (y - 1), obj_playerOLD) && obj_playerOLD.state == 65 && obj_playerOLD.superslam >= 10)
 {
-    with (obj_player)
+    with (obj_playerOLD)
     {
         snd_play(sfx_groundpound)
         image_index = 0
@@ -22,10 +22,10 @@ if (place_meeting(x, (y - 1), obj_player) && obj_player.state == 65 && obj_playe
         ombo = 0
         bounce = 0
         with (instance_create(x, (y + 35), obj_bangeffect))
-            image_xscale = obj_player.xscale
+            image_xscale = obj_playerOLD.xscale
         freefallstart = 0
     }
     instance_destroy()
 }
-if (place_meeting(x, (y + 40), obj_player) && obj_player.state == 54)
+if (place_meeting(x, (y + 40), obj_playerOLD) && obj_playerOLD.state == 54)
     instance_destroy()

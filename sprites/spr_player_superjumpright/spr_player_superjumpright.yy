@@ -32,7 +32,7 @@
   "origin":4,
   "parent":{
     "name":"Super Jump",
-    "path":"folders/Sprites/Player/Super Jump.yy",
+    "path":"folders/Player/Old Sprites/Super Jump.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

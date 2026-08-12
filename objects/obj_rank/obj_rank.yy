@@ -11,8 +11,8 @@
   "name":"obj_rank",
   "overriddenProperties":[],
   "parent":{
-    "name":"Level",
-    "path":"folders/Objects/Level.yy",
+    "name":"Ranks",
+    "path":"folders/Player/Ranks.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -1,15 +1,15 @@
-if (obj_player.state == 0 && obj_player.keyUp_held && global.key_inv == 1 && place_meeting(x, y, obj_player))
+if (obj_playerOLD.state == 0 && obj_playerOLD.keyUp_held && global.key == 1 && place_meeting(x, y, obj_playerOLD))
 {
     ds_list_add(global.saveroom, id)
     snd_play(sfx_bump)
-    obj_player.state = 55
-    obj_player.image_index = 0
+    obj_playerOLD.state = 55
+    obj_playerOLD.image_index = 0
     image_index = 0
     sprite_index = spr_doorkeyopen
     image_speed = 0.35
-    global.key_inv = 0
+    global.key = 0
 }
-with (obj_player)
+with (obj_playerOLD)
 {
     if (place_meeting(x, y, obj_keydoor) && other.sprite_index == spr_doorvisited && keyUp_held && (state == 0 || state == 60 || state == 61 || state == 81) && y == (other.y + 50) && (!instance_exists(obj_transition)) && state != 69 && state != 55 && state != 52)
     {
@@ -24,9 +24,9 @@ with (obj_player)
 }
 if (floor(image_index) == 2)
     image_speed = 0
-if (floor(obj_player.image_index) == (obj_player.image_number - 1) && obj_player.state == 55)
+if (floor(obj_playerOLD.image_index) == (obj_playerOLD.image_number - 1) && obj_playerOLD.state == 55)
 {
-    with (obj_player)
+    with (obj_playerOLD)
     {
         targetDoor = other.targetDoor
         targetRoom = other.targetRoom

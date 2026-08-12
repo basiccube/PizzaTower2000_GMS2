@@ -76,7 +76,7 @@
   "origin":4,
   "parent":{
     "name":"Ranks",
-    "path":"folders/Sprites/Player/Ranks.yy",
+    "path":"folders/Player/Ranks.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

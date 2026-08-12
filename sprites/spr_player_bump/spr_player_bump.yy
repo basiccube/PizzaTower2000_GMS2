@@ -31,8 +31,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Player",
-    "path":"folders/Sprites/Player.yy",
+    "name":"Bump",
+    "path":"folders/Player/States/Bump.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

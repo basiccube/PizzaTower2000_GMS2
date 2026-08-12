@@ -1,2 +1,2 @@
-if (obj_player.state != 42)
-    instance_destroy()
+if !obj_player.state.is(PLAYER_TAUNT)
+	instance_destroy()

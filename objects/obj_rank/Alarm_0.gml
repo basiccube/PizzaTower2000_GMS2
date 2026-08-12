@@ -1,1 +1,1 @@
-scr_playerreset()
+scr_game_reset()

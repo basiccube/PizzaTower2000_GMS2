@@ -1,6 +1,6 @@
 if (global.current_room == undefined)
 	exit;
-	
+
 with (obj_room)
 	event_user(0)
 

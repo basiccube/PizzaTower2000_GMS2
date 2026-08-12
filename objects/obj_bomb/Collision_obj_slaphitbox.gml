@@ -1,11 +1,11 @@
-if (!obj_player.hurted && obj_player.state == 13 && !obj_player.cutscene)
+if (!obj_playerOLD.hurted && obj_playerOLD.state == 13 && !obj_playerOLD.cutscene)
 {
     instance_create(x, y, obj_bumpeffect)
     with (other)
         instance_destroy()
     instance_destroy()
     
-    with (obj_player)
+    with (obj_playerOLD)
     {
         bombpeptimer = 100
         state = 18

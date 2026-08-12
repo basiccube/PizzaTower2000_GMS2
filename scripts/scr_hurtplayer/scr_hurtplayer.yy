@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_hurtplayer",
   "parent":{
-    "name":"Player",
-    "path":"folders/Scripts/Player.yy",
+    "name":"Old Scripts",
+    "path":"folders/Player/Old Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

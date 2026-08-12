@@ -1,3 +1,3 @@
-fadein = 0
-gotonoplayer = Titlescreen
+depth = -9000
+fadein = false
 alpha = 0

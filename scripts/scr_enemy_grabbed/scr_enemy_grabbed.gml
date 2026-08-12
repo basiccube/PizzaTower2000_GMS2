@@ -1,29 +1,29 @@
 function scr_enemy_grabbed() {
-	image_xscale = (-obj_player.xscale)
+	image_xscale = (-obj_playerOLD.xscale)
 	stunned = 200
-	obj_player.baddiegrabbedID = id
-	if (obj_player.state == 37 || obj_player.state == 48 || obj_player.state == 34 || obj_player.state == 85)
+	obj_playerOLD.baddiegrabbedID = id
+	if (obj_playerOLD.state == 37 || obj_playerOLD.state == 48 || obj_playerOLD.state == 34 || obj_playerOLD.state == 85)
 	{
-	    if (obj_player.state == 37)
+	    if (obj_playerOLD.state == 37)
 	    {
-	        x = obj_player.x
-	        y = obj_player.y - 50
+	        x = obj_playerOLD.x
+	        y = obj_playerOLD.y - 50
 	    }
-	    else if (obj_player.state == 85)
+	    else if (obj_playerOLD.state == 85)
 	    {
-	        x = obj_player.x + (obj_player.xscale * 15)
-	        y = obj_player.y - 30
+	        x = obj_playerOLD.x + (obj_playerOLD.xscale * 15)
+	        y = obj_playerOLD.y - 30
 	    }
 	    else
 	    {
-	        x = obj_player.x + (obj_player.xscale * 15)
-	        y = obj_player.y
+	        x = obj_playerOLD.x + (obj_playerOLD.xscale * 15)
+	        y = obj_playerOLD.y
 	    }
-	    image_xscale = (-obj_player.xscale)
+	    image_xscale = (-obj_playerOLD.xscale)
 	}
-	with (obj_player)
+	with (obj_playerOLD)
 	{
-	    if (!(state == 37 || state == 48 || obj_player.state == 34 || state == 85))
+	    if (!(state == 37 || state == 48 || obj_playerOLD.state == 34 || state == 85))
 	    {
 	        other.x = x
 	        other.y = y
@@ -40,13 +40,13 @@ function scr_enemy_grabbed() {
 	    }
 	}
 	hsp = 0
-	if ((obj_player.sprite_index == spr_player_punch && floor(obj_player.image_index) == 0) || obj_player.state == 43)
+	if ((obj_playerOLD.sprite_index == spr_player_punch && floor(obj_playerOLD.image_index) == 0) || obj_playerOLD.state == 43)
 	{
-	    instance_create((x + (obj_player.xscale * 30)), y, obj_bumpeffect)
+	    instance_create((x + (obj_playerOLD.xscale * 30)), y, obj_bumpeffect)
 	    alarm[1] = 5
 	    thrown = 1
-	    x = obj_player.x
-	    y = obj_player.y
+	    x = obj_playerOLD.x
+	    y = obj_playerOLD.y
 	    state = 95
 	    hsp = ((-image_xscale) * 25)
 	    grav = 0
@@ -55,6 +55,7 @@ function scr_enemy_grabbed() {
 	    global.style += 5
 	    if (object_index == obj_pizzaball)
 	        global.golfhit += 1
+		
 	    instance_create(x, y, obj_slapstar)
 	    instance_create(x, y, obj_baddiegibs)
 	    flash = 1
@@ -65,13 +66,13 @@ function scr_enemy_grabbed() {
 	    }
 	}
 
-	if (obj_player.sprite_index == spr_player_uppunch && floor(obj_player.image_index) == 0)
+	if (obj_playerOLD.sprite_index == spr_player_uppunch && floor(obj_playerOLD.image_index) == 0)
 	{
-	    instance_create((x + ((-obj_player.xscale) * 15)), (y - 50), obj_bumpeffect)
+	    instance_create((x + ((-obj_playerOLD.xscale) * 15)), (y - 50), obj_bumpeffect)
 	    alarm[1] = 5
 	    thrown = 1
-	    x = obj_player.x
-	    y = obj_player.y
+	    x = obj_playerOLD.x
+	    y = obj_playerOLD.y
 	    hsp = ((-image_xscale) * 2)
 	    state = 95
 	    vsp = -20
@@ -89,17 +90,17 @@ function scr_enemy_grabbed() {
 	    }
 	}
 
-	if (obj_player.state == 85)
+	if (obj_playerOLD.state == 85)
 	{
-	    x = (obj_player.x + (obj_player.xscale * 20))
-	    y = obj_player.y
-	    if (scr_solid(x + obj_player.xscale, y))
+	    x = (obj_playerOLD.x + (obj_playerOLD.xscale * 20))
+	    y = obj_playerOLD.y
+	    if (scr_solid(x + obj_playerOLD.xscale, y))
 	    {
-	        instance_create((x + ((-obj_player.xscale) * 15)), (y - 50), obj_bumpeffect)
+	        instance_create((x + ((-obj_playerOLD.xscale) * 15)), (y - 50), obj_bumpeffect)
 	        alarm[1] = 5
 	        thrown = 1
-	        x = obj_player.x
-	        y = obj_player.y
+	        x = obj_playerOLD.x
+	        y = obj_playerOLD.y
 	        hsp = ((-image_xscale) * 4)
 	        state = 95
 	        vsp = -4
@@ -118,67 +119,67 @@ function scr_enemy_grabbed() {
 	    }
 	}
 
-	if (obj_player.state == 34)
+	if (obj_playerOLD.state == 34)
 	{
-	    if (obj_player.piledriveranim)
+	    if (obj_playerOLD.piledriveranim)
 	    {
-	        if (floor(obj_player.image_index) == 0)
+	        if (floor(obj_playerOLD.image_index) == 0)
 	        {
 	            depth = 0
-	            x = (obj_player.x + (obj_player.xscale * 10))
-	            y = obj_player.y
+	            x = (obj_playerOLD.x + (obj_playerOLD.xscale * 10))
+	            y = obj_playerOLD.y
 	        }
-	        if (floor(obj_player.image_index) == 1)
+	        if (floor(obj_playerOLD.image_index) == 1)
 	        {
 	            depth = 0
-	            x = (obj_player.x + (obj_player.xscale * 5))
-	            y = obj_player.y
+	            x = (obj_playerOLD.x + (obj_playerOLD.xscale * 5))
+	            y = obj_playerOLD.y
 	        }
-	        if (floor(obj_player.image_index) == 2)
+	        if (floor(obj_playerOLD.image_index) == 2)
 	        {
 	            depth = 0
-	            x = obj_player.x
-	            y = obj_player.y
+	            x = obj_playerOLD.x
+	            y = obj_playerOLD.y
 	        }
-	        if (floor(obj_player.image_index) == 3)
+	        if (floor(obj_playerOLD.image_index) == 3)
 	        {
 	            depth = 0
-	            x = (obj_player.x + (obj_player.xscale * -5))
-	            y = obj_player.y
+	            x = (obj_playerOLD.x + (obj_playerOLD.xscale * -5))
+	            y = obj_playerOLD.y
 	        }
-	        if (floor(obj_player.image_index) == 4)
+	        if (floor(obj_playerOLD.image_index) == 4)
 	        {
 	            depth = 0
-	            x = (obj_player.x + (obj_player.xscale * -10))
-	            y = obj_player.y
+	            x = (obj_playerOLD.x + (obj_playerOLD.xscale * -10))
+	            y = obj_playerOLD.y
 	        }
-	        if (floor(obj_player.image_index) == 5)
+	        if (floor(obj_playerOLD.image_index) == 5)
 	        {
 	            depth = -7
-	            x = (obj_player.x + (obj_player.xscale * -5))
-	            y = obj_player.y
+	            x = (obj_playerOLD.x + (obj_playerOLD.xscale * -5))
+	            y = obj_playerOLD.y
 	        }
-	        if (floor(obj_player.image_index) == 6)
+	        if (floor(obj_playerOLD.image_index) == 6)
 	        {
 	            depth = -7
-	            x = obj_player.x
-	            y = obj_player.y
+	            x = obj_playerOLD.x
+	            y = obj_playerOLD.y
 	        }
-	        if (floor(obj_player.image_index) == 7)
+	        if (floor(obj_playerOLD.image_index) == 7)
 	        {
 	            depth = -7
-	            x = (obj_player.x + (obj_player.xscale * 5))
-	            y = obj_player.y
+	            x = (obj_playerOLD.x + (obj_playerOLD.xscale * 5))
+	            y = obj_playerOLD.y
 	        }
 	    }
 	    else
 	    {
 	        depth = 0
-	        x = obj_player.x - obj_player.piledriverx
-	        y = obj_player.y - obj_player.piledrivery
+	        x = obj_playerOLD.x - obj_playerOLD.piledriverx
+	        y = obj_playerOLD.y - obj_playerOLD.piledrivery
 	    }
     
-	    if (obj_player.sprite_index == spr_player_piledriverland)
+	    if (obj_playerOLD.sprite_index == spr_player_piledriverland)
 	    {
 	        snd_play(sfx_punch)
 	        instance_create(x, y, obj_slapstar)
@@ -188,8 +189,8 @@ function scr_enemy_grabbed() {
 	        global.style += 5
 	        alarm[1] = 5
 	        thrown = 1
-	        x = obj_player.x
-	        y = obj_player.y
+	        x = obj_playerOLD.x
+	        y = obj_playerOLD.y
 	        if (object_index == obj_pizzaball)
 	            global.golfhit += 1
 	        state = 95

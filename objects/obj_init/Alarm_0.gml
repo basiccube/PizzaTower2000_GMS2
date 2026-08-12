@@ -111,12 +111,10 @@ global.combofont = font_add_sprite_ext(spr_combofont, "0123456789", true, 0)
 
 // Create saveroom list
 global.saveroom = ds_list_create()
+global.leveltosave = -4
+stats_reset()
 
 // Create room handler. Has to be created at this point due to screen variables
 instance_create(x, y, obj_room)
 
-// Go to title screen or load room
-if (global.startRoom != "")
-    room_goto(levelselect)
-else
-    room_goto(Realtitlescreen)
+room_goto(rm_initializer)

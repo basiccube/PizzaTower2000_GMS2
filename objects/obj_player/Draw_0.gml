@@ -1,9 +1,10 @@
+// Draw some stuff behind the player in Butterscotch
 if global.butterscotch
 {
-	with (obj_mach2effect)
-		draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, c_white, image_alpha)
-	with (obj_mach3effect)
-		draw_self()
+	global.player_drawoverride = true
+	for (var i = 0; i < drawOverrideLength; i++)
+		player_drawoverride_draw(drawOverride[i])
+	global.player_drawoverride = false
 }
 
 if flash

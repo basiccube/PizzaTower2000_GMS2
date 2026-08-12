@@ -4,12 +4,12 @@ if (global.startRoom != "")
     with (obj_room)
         other.targetRoom = variable_instance_get(id, global.startRoom)
             
-    with (obj_player)
+    with (obj_playerOLD)
     {
         targetDoor = global.startDoor
         targetRoom = other.targetRoom
         state = 0
     }
       
-    room_goto(obj_player.targetRoom)
+    room_goto(obj_playerOLD.targetRoom)
 }

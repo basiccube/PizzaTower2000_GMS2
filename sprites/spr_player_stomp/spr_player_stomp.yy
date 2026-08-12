@@ -27,8 +27,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Player",
-    "path":"folders/Sprites/Player.yy",
+    "name":"Jump",
+    "path":"folders/Player/States/Jump.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

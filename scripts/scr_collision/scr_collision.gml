@@ -1,3 +1,11 @@
+function collision_init()
+{
+	hsp = 0
+	vsp = 0
+	grav = 0.5
+	grounded = false
+}
+
 function scr_collide()
 {
 	grounded = false

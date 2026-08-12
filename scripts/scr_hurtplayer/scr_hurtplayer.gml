@@ -1,6 +1,6 @@
 function scr_hurtplayer()
 {
-	with (obj_player)
+	with (obj_playerOLD)
 	{
 	    if ((state == 15 || state == 16 || state == 9) && cutscene == 0)
 	    {
@@ -18,13 +18,13 @@ function scr_hurtplayer()
 	        with (instance_create(x, y, obj_knightdebris))
 	            image_index = 5
 	        if (x != other.x)
-	            obj_player.hsp = (sign((x - other.x)) * 5)
+	            obj_playerOLD.hsp = (sign((x - other.x)) * 5)
 	        else
-	            obj_player.hsp = 5
+	            obj_playerOLD.hsp = 5
 	        vsp = -3
 	        image_index = 0
-	        obj_player.image_index = 0
-	        obj_player.flash = 1
+	        obj_playerOLD.image_index = 0
+	        obj_playerOLD.flash = 1
 	        state = 63
 	    }
 	    else if (state == 18 && hurted == 0 && sprite_index != spr_bombpep_end)
@@ -49,19 +49,19 @@ function scr_hurtplayer()
 	        with (instance_create(x, y, obj_boxxeddebris))
 	            image_index = 4
 	        if (x != other.x)
-	            obj_player.hsp = (sign((x - other.x)) * 5)
+	            obj_playerOLD.hsp = (sign((x - other.x)) * 5)
 	        else
-	            obj_player.hsp = 5
+	            obj_playerOLD.hsp = 5
 	        vsp = -3
 	        image_index = 0
-	        obj_player.image_index = 0
-	        obj_player.flash = 1
+	        obj_playerOLD.image_index = 0
+	        obj_playerOLD.flash = 1
 	        state = 63
 	    }
 	    else if (state == 4 || state == 5)
 	    {
 	        snd_play(sfx_losetransformation)
-	        obj_player.grav = 0.5
+	        obj_playerOLD.grav = 0.5
 	        instance_create(x, y, obj_slimedebris)
 	        instance_create(x, y, obj_slimedebris)
 	        instance_create(x, y, obj_slimedebris)
@@ -71,13 +71,13 @@ function scr_hurtplayer()
 	        instance_create(x, y, obj_slimedebris)
 	        instance_create(x, y, obj_slimedebris)
 	        if (x != other.x)
-	            obj_player.hsp = (sign((x - other.x)) * 5)
+	            obj_playerOLD.hsp = (sign((x - other.x)) * 5)
 	        else
-	            obj_player.hsp = 5
+	            obj_playerOLD.hsp = 5
 	        vsp = -3
 	        image_index = 0
-	        obj_player.image_index = 0
-	        obj_player.flash = 1
+	        obj_playerOLD.image_index = 0
+	        obj_playerOLD.flash = 1
 	        state = 63
 	    }
 	    else if (state != 64 && state != 43 && state != 42 && hurted == 0 && cutscene == 0 && state != 63)

@@ -1,14 +1,21 @@
 // Culling system
-alarm[2] = 2
-instance_activate_region(__view_get( e__VW.XView, 0 ) - 200, __view_get( e__VW.YView, 0 ) - 200, __view_get( e__VW.WView, 0 ) + 400, __view_get( e__VW.HView, 0 ) + 400, true)
+
+var rx1 = cam_x - 200
+var rx2 = SCREEN_WIDTH + 400
+var ry1 = cam_y - 200
+var ry2 = SCREEN_HEIGHT + 400
+instance_activate_region(rx1, ry1, rx2, ry2, true)
+
 with (obj_baddiecollisionbox)
 {
-    if (x < __view_get( e__VW.XView, 0 ) - 200 || x > __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) + 200 || y < __view_get( e__VW.YView, 0 ) - 200 || y > __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) + 200)
-    {
-        if (instance_exists(baddieID) && !baddieID.thrown)
-        {
-            instance_deactivate_object(baddieID)
-            instance_deactivate_object(id)
-        }
-    }
+	if (x < rx1 || x > rx1 + rx2 || y < ry1 || y > ry1 + ry2)
+	{
+		if (instance_exists(baddieID) && !baddieID.thrown)
+		{
+			instance_deactivate_object(baddieID)
+			instance_deactivate_object(id)
+		}
+	}
 }
+
+alarm[2] = 2

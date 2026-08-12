@@ -1,4 +1,4 @@
-with (obj_player)
+with (obj_playerOLD)
 {
     if (place_meeting(x, (y + 1), obj_tomatoblock) && state != 46)
     {

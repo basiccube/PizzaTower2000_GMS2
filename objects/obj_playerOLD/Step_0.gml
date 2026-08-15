@@ -24,46 +24,10 @@ else
 
 if (state != 60 && state != 49 && state != 13 && state != 0 && state != 61 && state != 81 && state != 82 && state != 15 && state != 29 && state != 9)
     momemtum = 0
-if (state != 54 && state != 56)
-    a = 0
-if (state != 65)
-    superslam = 0
 if (state != 61)
 {
     machpunchAnim = 0
     machfreefall = 0
-}
-
-if (!global.highperformance)
-{
-    if ((state == 81 || state == 28 || state == 85 || state == 13 || (state == 62 && mach2 >= 100)) && !instance_exists(obj_mach3effect))
-    {
-        toomuchalarm1 = 6
-        instance_create(x, y, obj_mach3effect)
-    }
-    if (toomuchalarm1 > 0)
-    {
-        toomuchalarm1 -= 1
-        if (toomuchalarm1 <= 0 && (state == 81 || state == 85 || (state == 62 && mach2 >= 100) || state == 28 || state == 13 || (state == 24 && mach2 >= 100)))
-        {
-            instance_create(x, y, obj_mach3effect)
-            toomuchalarm1 = 6
-        }
-    }
-    if (state == 61 && !instance_exists(obj_mach2effect))
-    {
-        toomuchalarm2 = 5
-        instance_create(x, y, obj_mach2effect)
-    }
-    if (toomuchalarm2 > 0)
-    {
-        toomuchalarm2 -= 1
-        if (toomuchalarm2 <= 0 && state == 61)
-        {
-            instance_create(x, y, obj_mach2effect)
-            toomuchalarm2 = 5
-        }
-    }
 }
 
 if (state != 63 && state != 57 && state != 6 && state != 30 && state != 56 && state != 24 && state != 28 && state != 29 && state != 64 && state != 59 && state != 58)

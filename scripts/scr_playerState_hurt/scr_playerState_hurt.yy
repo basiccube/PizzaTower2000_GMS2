@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_hurtplayer",
+  "%Name":"scr_playerState_hurt",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_hurtplayer",
+  "name":"scr_playerState_hurt",
   "parent":{
-    "name":"Old Scripts",
-    "path":"folders/Player/Old Scripts.yy",
+    "name":"Hurt",
+    "path":"folders/Player/States/Hurt.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

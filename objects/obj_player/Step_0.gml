@@ -8,7 +8,7 @@ scr_player_destroyDestructibles()
 if (hurtTimer > 0)
 {
 	hurtTimer--
-	if (alarm[1] == -1 || alarm[2] == -1)
+	if (alarm[1] == -1 && alarm[2] == -1)
 		alarm[1] = 3
 }
 else
@@ -64,12 +64,10 @@ if (mach2EffectTimer > 0)
 	}
 }
 
-var cutsceneStates = [PLAYER_TREASURE, PLAYER_GETKEY, PLAYER_ENTERDOOR, PLAYER_VICTORY, PLAYER_GAMEOVER]
-var cutsceneSprites = [spr_knightpep_start, spr_knightpep_thunder]
-cutscene = (state.is(cutsceneStates) || array_contains_bscotch(cutsceneSprites, sprite_index))
+cutscene = (state.is(cutsceneStates) || in_array(sprite_index, cutsceneSprites))
 
 mask_index = spr_player_mask
-if array_contains_bscotch(crouchMaskStates, state.state)
+if in_array(state.state, crouchMaskStates)
 	mask_index = spr_crouchmask
 
 if !state.is([PLAYER_MENU, PLAYER_GAMEOVER])

@@ -1,5 +1,5 @@
 scr_getinput()
-if (keyEscape && !instance_exists(obj_transition) && !array_contains_bscotch(disabled_rooms, room))
+if (keyEscape && !instance_exists(obj_transition) && !in_array(room, disabled_rooms))
 {
 	if (global.startRoom != "")
 		game_end()

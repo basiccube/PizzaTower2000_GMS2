@@ -35,8 +35,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Old Sprites",
-    "path":"folders/Player/Old Sprites.yy",
+    "name":"Hurt",
+    "path":"folders/Player/States/Hurt.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

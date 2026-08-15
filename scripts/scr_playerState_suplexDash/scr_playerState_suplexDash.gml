@@ -51,7 +51,7 @@ function scr_playerState_suplexDash()
 	{
 		if keyJump_pressed
 		{
-			sprite_index = spr_player_mach2jump
+			sprite_index = spr_player_machJump
 			instance_create(x, y, obj_jumpdust)
 			
 			state.change(PLAYER_MACH2)

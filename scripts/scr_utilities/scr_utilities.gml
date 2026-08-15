@@ -46,6 +46,13 @@ function array_contains_bscotch(arr, val)
 	return false;
 }
 
+function in_array(val, arr)
+{
+	if global.butterscotch
+		return array_contains_bscotch(arr, val);
+	return array_contains(arr, val);
+}
+
 function get_struct_value(struct, value, defaultvalue)
 {
 	if !variable_struct_exists(struct, value)

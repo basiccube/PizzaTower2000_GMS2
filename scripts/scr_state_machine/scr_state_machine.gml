@@ -93,7 +93,7 @@ function StateMachine(initialState) constructor
 	is = function(stateName)
 	{
 		if is_array(stateName)
-			return array_contains_bscotch(stateName, state);
+			return in_array(state, stateName);
 		
 		return (state == stateName);
 	}
@@ -102,7 +102,7 @@ function StateMachine(initialState) constructor
 	prev_is = function(stateName)
 	{
 		if is_array(stateName)
-			return array_contains_bscotch(stateName, prevstate);
+			return in_array(prevstate, stateName);
 		
 		return (prevstate == stateName);
 	}

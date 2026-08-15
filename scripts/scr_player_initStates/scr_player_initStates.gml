@@ -35,7 +35,6 @@
 
 #macro PLAYER_BUMP "bump"
 #macro PLAYER_CEILINGHIT "ceilingHit"
-#macro PLAYER_HURT "hurt"
 
 #macro PLAYER_ENTERDOOR "enterDoor"
 #macro PLAYER_EXITDOOR "exitDoor"
@@ -45,6 +44,7 @@
 #macro PLAYER_TREASURE "treasure"
 #macro PLAYER_GETKEY "getKey"
 
+#macro PLAYER_HURT "hurt"
 #macro PLAYER_TIMESUP "timesUp"
 #macro PLAYER_GAMEOVER "gameOver"
 
@@ -84,6 +84,9 @@ function scr_player_initStates()
 	stateMach1 = new State(scr_playerState_mach1, scr_playerState_mach1_enter)
 	state.add(PLAYER_MACH1, stateMach1)
 	
+	stateMach2 = new State(scr_playerState_mach2)
+	state.add(PLAYER_MACH2, stateMach2)
+	
 	stateMachSlide = new State(scr_playerState_machSlide)
 	state.add(PLAYER_MACHSLIDE, stateMachSlide)
 	
@@ -116,6 +119,9 @@ function scr_player_initStates()
 	
 	stateVictory = new State(scr_playerState_victory)
 	state.add(PLAYER_VICTORY, stateVictory)
+	
+	stateHurt = new State(scr_playerState_hurt)
+	state.add(PLAYER_HURT, stateHurt)
 	
 	stateTimesUp = new State(scr_playerState_timesUp)
 	state.add(PLAYER_TIMESUP, stateTimesUp)

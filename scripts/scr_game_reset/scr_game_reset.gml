@@ -41,12 +41,21 @@ function scr_game_reset()
 		idleTimer = 0
 		windingAnim = 0
 		freefallAnimTimer = 0
+		
 		momentum = false
+		cutscene = false
 		
 		input_buffer_jump = 0
 		
 		ladderBuffer = 0
 		suplexDash = false
+		freefallSlam = 0
+		
+		hurt = false
+		hurtTimer = 0
+		
+		mach2EffectTimer = 0
+		mach3EffectTimer = 0
 		
 		targetRoom = undefined
 		targetDoor = "B"
@@ -57,19 +66,13 @@ function scr_game_reset()
 /*	
 	with (obj_playerOLD)
 	{
-	    inv_frames = 0
 	    hurtbounce = 0
-	    hurted = 0
 	    key_particles = 0
 	    barrel = 0
 	    bounce = 0
 	    attacking = 0
 	    slamming = 0
-	    superslam = 0
 	    punch = 0
-	    toomuchalarm1 = 0
-	    toomuchalarm2 = 0
-	    cutscene = 0
 	    grabbing = 0
 	    bombpeptimer = 100
 	    suplexhavetomash = 0

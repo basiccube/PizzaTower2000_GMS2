@@ -69,6 +69,18 @@ mach3EffectTimerMax = 6
 animStopOnGround = false
 animSlowDown = false
 
+cutsceneStates = [
+	PLAYER_TREASURE,
+	PLAYER_GETKEY,
+	PLAYER_ENTERDOOR,
+	PLAYER_VICTORY,
+	PLAYER_GAMEOVER
+]
+cutsceneSprites = [
+	spr_knightpep_start,
+	spr_knightpep_thunder
+]
+
 crouchMaskStates = [
 	PLAYER_CROUCH,
 	PLAYER_CROUCHSLIDE,

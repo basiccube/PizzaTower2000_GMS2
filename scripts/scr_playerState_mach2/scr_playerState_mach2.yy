@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_player_mach2",
+  "%Name":"scr_playerState_mach2",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_player_mach2",
+  "name":"scr_playerState_mach2",
   "parent":{
-    "name":"States",
-    "path":"folders/Player/Old Scripts/States.yy",
+    "name":"Mach 2",
+    "path":"folders/Player/States/Mach 2.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

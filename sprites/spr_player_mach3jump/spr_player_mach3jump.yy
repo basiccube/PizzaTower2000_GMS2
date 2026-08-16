@@ -1,6 +1,6 @@
 {
   "$GMSprite":"v2",
-  "%Name":"spr_player_mach3jump",
+  "%Name":"spr_player_mach3Jump",
   "bboxMode":0,
   "bbox_bottom":96,
   "bbox_left":10,
@@ -24,19 +24,19 @@
   "layers":[
     {"$GMImageLayer":"","%Name":"af65aec7-db53-4fdd-9d2f-d1fdb04060c1","blendMode":0,"displayName":"default","isLocked":false,"name":"af65aec7-db53-4fdd-9d2f-d1fdb04060c1","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_player_mach3jump",
+  "name":"spr_player_mach3Jump",
   "nineSlice":null,
   "origin":4,
   "parent":{
     "name":"Mach 3",
-    "path":"folders/Player/Old Sprites/Mach 3.yy",
+    "path":"folders/Player/States/Mach 3.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"",
+    "%Name":"spr_player_mach3Jump",
     "autoRecord":true,
     "backdropHeight":1080,
     "backdropImageOpacity":0.5,
@@ -60,7 +60,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"",
+    "name":"spr_player_mach3Jump",
     "playback":1,
     "playbackSpeed":1.0,
     "playbackSpeedType":1,
@@ -72,16 +72,16 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"8598abf1-ad2d-4799-9ea8-e6f9984fbef0","path":"sprites/spr_player_mach3jump/spr_player_mach3jump.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"8598abf1-ad2d-4799-9ea8-e6f9984fbef0","path":"sprites/spr_player_mach3Jump/spr_player_mach3Jump.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"9871caa4-663d-4fd3-b4ba-631fb8e36558","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"2b58f9c3-8fe9-409b-8f44-351dd5ee5c6d","path":"sprites/spr_player_mach3jump/spr_player_mach3jump.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"2b58f9c3-8fe9-409b-8f44-351dd5ee5c6d","path":"sprites/spr_player_mach3Jump/spr_player_mach3Jump.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"7b7b401f-5ad3-48b3-88d2-32b63e460485","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5480f748-5f47-4f26-a9dd-48ade3a5206a","path":"sprites/spr_player_mach3jump/spr_player_mach3jump.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5480f748-5f47-4f26-a9dd-48ade3a5206a","path":"sprites/spr_player_mach3Jump/spr_player_mach3Jump.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"8d537717-9385-4de4-91bf-65cdd2495393","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ae54f8b9-9dd1-4a14-9888-fef72bdb67c8","path":"sprites/spr_player_mach3jump/spr_player_mach3jump.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ae54f8b9-9dd1-4a14-9888-fef72bdb67c8","path":"sprites/spr_player_mach3Jump/spr_player_mach3Jump.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"5d097bf4-c45e-40e5-ba1d-63e09d8975d0","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],

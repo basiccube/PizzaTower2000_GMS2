@@ -27,7 +27,7 @@ function scr_player_destroyDestructibles()
 		}
 	}
 	
-	if state.is([PLAYER_JUMP, PLAYER_MACH2, PLAYER_MACH3, PLAYER_CLIMBWALL, PLAYER_SUPERJUMP])
+	if state.is([PLAYER_JUMP, PLAYER_MACH2, PLAYER_MACH3, PLAYER_WALLCLIMB, PLAYER_SUPERJUMP])
 	{
 		if place_meeting(x, y - 1, obj_destructibles)
 			instance_destroy(instance_place(x, y - 1, obj_destructibles))
@@ -67,7 +67,10 @@ function scr_player_destroyDestructibles()
 				movespeed = -4
 				vsp = -4
 			}
+			
+			instance_destroy(inst.id)
 		}
+		ds_list_clear(tempMeetingList)
 	}
 	
 	with (obj_baddie)

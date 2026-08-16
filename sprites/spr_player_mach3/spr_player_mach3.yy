@@ -28,7 +28,7 @@
   "origin":4,
   "parent":{
     "name":"Mach 3",
-    "path":"folders/Player/Old Sprites/Mach 3.yy",
+    "path":"folders/Player/States/Mach 3.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

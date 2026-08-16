@@ -24,7 +24,7 @@ function scr_player_superslam() {
 	    }
 	    hsp = 0
 	    with (instance_create(x, (y + 35), obj_bangeffect))
-	        xscale = obj_playerOLD.xscale
+	        xscale = other.xscale
 	    instance_create(x, y, obj_landcloud)
 	    freefallstart = 0
 	    with (obj_baddie)

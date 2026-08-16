@@ -17,10 +17,6 @@ if (state == 61 || state == 85 || state == 35 || state == 6 || state == 4 || sta
     attacking = 1
 else
     attacking = 0
-if (state == 32 || state == 38 || state == 39 || state == 41 || state == 40)
-    grabbing = 1
-else
-    grabbing = 0
 
 if (state != 60 && state != 49 && state != 13 && state != 0 && state != 61 && state != 81 && state != 82 && state != 15 && state != 29 && state != 9)
     momemtum = 0

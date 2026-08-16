@@ -41,6 +41,8 @@ crouchSlideBuffer = 0
 suplexDash = false
 freefallSlam = 0
 
+grabbedID = noone
+
 hurt = false
 hurtTimer = 0
 
@@ -84,6 +86,7 @@ cutsceneSprites = [
 crouchMaskStates = [
 	PLAYER_CROUCH,
 	PLAYER_CROUCHSLIDE,
+	PLAYER_MACHROLL
 ]
 
 drawOverride = [

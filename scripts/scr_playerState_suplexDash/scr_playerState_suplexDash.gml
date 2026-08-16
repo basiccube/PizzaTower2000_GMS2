@@ -71,7 +71,7 @@ function scr_playerState_suplexDash()
 		}
 	}
 	
-	if (scr_solid(x + xscale,y ) && !place_meeting(x + sign(hsp), y, obj_slope))
+	if (scr_solid(x + xscale,y ) && !place_meeting(x + sign(hsp), y, [obj_destructibles, obj_slope]))
 		state.change(PLAYER_BUMP)
 	
 	image_speed = 0.35
@@ -88,7 +88,10 @@ function scr_playerState_suplexDash_enter()
 	image_index = 0
 	instance_create(x, y, obj_jumpdust)
 	
-	movespeed = 6
+	var machState = state.prev_is([PLAYER_MACH2, PLAYER_MACH3])
+	if ((machState && movespeed < 6) || !machState)
+		movespeed = 6
+	
 	if !grounded
 		vsp = -4
 	

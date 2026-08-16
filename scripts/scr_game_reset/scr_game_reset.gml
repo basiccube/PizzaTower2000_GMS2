@@ -11,7 +11,6 @@ function scr_game_reset()
 	global.leveltosave = undefined
 	global.escapesong = "mu_pizzatime"
 	
-	ds_list_clear(global.saveroom)
 	instanceManager.clearInstances()
 	stats_reset()
 	
@@ -51,6 +50,8 @@ function scr_game_reset()
 		suplexDash = false
 		freefallSlam = 0
 		
+		grabbedID = noone
+		
 		hurt = false
 		hurtTimer = 0
 		
@@ -62,20 +63,4 @@ function scr_game_reset()
 	}
 	
 	room_goto(obj_room.hub_1)
-	
-/*	
-	with (obj_playerOLD)
-	{
-	    hurtbounce = 0
-	    key_particles = 0
-	    barrel = 0
-	    bounce = 0
-	    attacking = 0
-	    slamming = 0
-	    punch = 0
-	    grabbing = 0
-	    bombpeptimer = 100
-	    suplexhavetomash = 0
-	}
-*/
 }

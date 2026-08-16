@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_playerState_treasure",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_playerState_treasure",
+  "parent":{
+    "name":"Treasure",
+    "path":"folders/Player/States/Treasure.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -69,6 +69,7 @@ function StateMachine(initialState) constructor
 		}
 		
 		var prevName = state
+		prevstate = prevName
 		state = stateName
 		
 		if doLeave
@@ -83,9 +84,8 @@ function StateMachine(initialState) constructor
 			newState.enter()
 		}
 		
-		prevstate = prevName
-		time = get_timer()
 		
+		time = get_timer()
 		return self;
 	}
 	

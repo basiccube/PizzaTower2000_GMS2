@@ -28,7 +28,7 @@
   "origin":4,
   "parent":{
     "name":"Mach Roll",
-    "path":"folders/Player/Old Sprites/Mach Roll.yy",
+    "path":"folders/Player/States/Mach Roll.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

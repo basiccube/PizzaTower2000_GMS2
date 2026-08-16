@@ -1,7 +1,8 @@
 // Read level name from level info file
-if (file_exists("levels\\" + level + ".pli") && name == "")
+var path = "levels/" + level + ".pli"
+if (file_exists(path) && name == "")
 {
-	tempini_open("levels\\" + level + ".pli")
+	ini_open(path)
 	name = ini_read_string("Level", "Name", "")
-	tempini_close()
+	ini_close()
 }

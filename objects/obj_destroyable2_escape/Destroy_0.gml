@@ -1,4 +1,4 @@
-if (ds_list_find_index(global.saveroom, id) == -1 && global.panic)
+if (global.panic)
 {
     if (!global.highperformance)
     {
@@ -18,5 +18,4 @@ if (ds_list_find_index(global.saveroom, id) == -1 && global.panic)
     if (global.breaksound == 9)
         snd_play(sfx_breakblock)
     global.breaksound = 0
-    ds_list_add(global.saveroom, id)
 }

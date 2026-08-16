@@ -1,7 +1,7 @@
 if (room == rank_room || room == timesuproom)
-    visible = false
-if (obj_playerOLD.state == 44)
-    visible = false
+	visible = false
+if obj_player.state.is(PLAYER_GAMEOVER)
+	visible = false
 if (global.shroomfollow == 1)
 {
     image_alpha = obj_playerOLD.image_alpha

@@ -15,4 +15,7 @@ function scr_playerState_gameOver()
 	
 	if (vsp < 30)
 		vsp += grav
+		
+	if (y > room_height + 400)
+		scr_game_reset()
 }

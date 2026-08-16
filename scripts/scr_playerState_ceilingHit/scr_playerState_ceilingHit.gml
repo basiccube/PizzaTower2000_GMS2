@@ -15,3 +15,12 @@ function scr_playerState_ceilingHit()
 		state.change(PLAYER_JUMP)
 	}
 }
+
+function scr_playerState_ceilingHit_enter()
+{
+	snd_play(sfx_groundpound)
+	camera_shake(10, 30)
+	
+	sprite_index = spr_player_ceilingHit
+	image_index = 0
+}

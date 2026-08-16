@@ -1,9 +1,10 @@
-if (room != rm_roomadd)
-	exit;
-	
+var custom_room = false
 var rm = room
-if (global.current_room != undefined)
+if (room == rm_roomadd && global.current_room != undefined)
+{
+	custom_room = true
 	rm = global.current_room.name
+}
 
 if !ds_map_exists(rooms, rm)
 {
@@ -12,10 +13,10 @@ if !ds_map_exists(rooms, rm)
 	{
 		if persistent
 			continue;
-		if !variable_instance_exists(id, "roomadd_instance_id")	
+		if (custom_room && !variable_instance_exists(id, "roomadd_instance_id"))
 			continue;
 		
-		ds_list_add(roomlist, id.roomadd_instance_id)
+		ds_list_add(roomlist, custom_room ? id.roomadd_instance_id : id)
 	}
 	ds_map_set(rooms, rm, roomlist)
 }
@@ -26,10 +27,10 @@ else
 	{
 		if persistent
 			continue;
-		if !variable_instance_exists(id, "roomadd_instance_id")	
+		if (custom_room && !variable_instance_exists(id, "roomadd_instance_id"))
 			continue;
 		
-		if (ds_list_find_index(roomlist, id.roomadd_instance_id) == -1)
+		if (ds_list_find_index(roomlist, custom_room ? id.roomadd_instance_id : id) == -1)
 			instance_destroy(id, false)
 	}
 }

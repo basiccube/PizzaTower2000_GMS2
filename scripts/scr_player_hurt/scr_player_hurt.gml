@@ -23,13 +23,13 @@ function scr_player_hurt()
 	        with (instance_create(x, y, obj_knightdebris))
 	            image_index = 5
 	        if (x != other.x)
-	            obj_playerOLD.hsp = (sign((x - other.x)) * 5)
+	            obj_player.hsp = (sign((x - other.x)) * 5)
 	        else
-	            obj_playerOLD.hsp = 5
+	            obj_player.hsp = 5
 	        vsp = -3
 	        image_index = 0
-	        obj_playerOLD.image_index = 0
-	        obj_playerOLD.flash = 1
+	        obj_player.image_index = 0
+	        obj_player.flash = 1
 	        state = 63
 			*/
 		}

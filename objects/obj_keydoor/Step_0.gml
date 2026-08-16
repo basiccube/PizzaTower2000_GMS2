@@ -1,6 +1,6 @@
 if (obj_playerOLD.state == 0 && obj_playerOLD.keyUp_held && global.key == 1 && place_meeting(x, y, obj_playerOLD))
 {
-    ds_list_add(global.saveroom, id)
+	instanceManager.addDoor(id)
     snd_play(sfx_bump)
     obj_playerOLD.state = 55
     obj_playerOLD.image_index = 0

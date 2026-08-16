@@ -12,7 +12,7 @@
 #macro PLAYER_MACH3 "mach3"
 #macro PLAYER_MACHSLIDE "machSlide"
 #macro PLAYER_MACHROLL "machRoll"
-#macro PLAYER_CLIMBWALL "climbWall"
+#macro PLAYER_WALLCLIMB "wallClimb"
 
 #macro PLAYER_SUPLEXDASH "suplexDash"
 #macro PLAYER_CROUCHSLIDE "crouchSlide"
@@ -26,12 +26,6 @@
 
 #macro PLAYER_TAUNT "taunt"
 #macro PLAYER_PARRY "parry"
-
-#macro PLAYER_KNIGHT "knight"
-#macro PLAYER_KNIGHTSLIDE "knightSlide"
-#macro PLAYER_KNIGHTATTACK "knightAttack"
-#macro PLAYER_BOMB "bomb"
-#macro PLAYER_TUMBLE "tumble"
 
 #macro PLAYER_BUMP "bump"
 #macro PLAYER_CEILINGHIT "ceilingHit"
@@ -52,6 +46,13 @@
 #macro PLAYER_MENU "menu"
 #macro PLAYER_SCOOTERSLIDE "scooterSlide"
 #macro PLAYER_ANIMATION "animation"
+
+// transformations
+#macro PLAYER_KNIGHT "knight"
+#macro PLAYER_KNIGHTSLIDE "knightSlide"
+#macro PLAYER_KNIGHTATTACK "knightAttack"
+#macro PLAYER_BOMB "bomb"
+#macro PLAYER_TUMBLE "tumble"
 
 function scr_player_initStates()
 {
@@ -87,14 +88,29 @@ function scr_player_initStates()
 	stateMach2 = new State(scr_playerState_mach2)
 	state.add(PLAYER_MACH2, stateMach2)
 	
+	stateMach3 = new State(scr_playerState_mach3, scr_playerState_mach3_enter)
+	state.add(PLAYER_MACH3, stateMach3)
+	
 	stateMachSlide = new State(scr_playerState_machSlide)
 	state.add(PLAYER_MACHSLIDE, stateMachSlide)
+	
+	stateMachRoll = new State(scr_playerState_machRoll)
+	state.add(PLAYER_MACHROLL, stateMachRoll)
+	
+	stateWallClimb = new State(scr_playerState_wallClimb)
+	state.add(PLAYER_WALLCLIMB, stateWallClimb)
 	
 	stateSuplexDash = new State(scr_playerState_suplexDash, scr_playerState_suplexDash_enter)
 	state.add(PLAYER_SUPLEXDASH, stateSuplexDash)
 	
 	stateCrouchSlide = new State(scr_playerState_crouchSlide, scr_playerState_crouchSlide_enter, scr_playerState_crouchSlide_leave)
 	state.add(PLAYER_CROUCHSLIDE, stateCrouchSlide)
+	
+	stateSuperJump = new State(scr_playerState_superJump, scr_playerState_superJump_enter)
+	state.add(PLAYER_SUPERJUMP, stateSuperJump)
+	
+	stateSuperJumpPrep = new State(scr_playerState_superJumpPrep, scr_playerState_superJumpPrep_enter)
+	state.add(PLAYER_SUPERJUMPPREP, stateSuperJumpPrep)
 	
 	stateTaunt = new State(scr_playerState_taunt)
 	state.add(PLAYER_TAUNT, stateTaunt)
@@ -105,7 +121,7 @@ function scr_player_initStates()
 	stateBump = new State(scr_playerState_bump, scr_playerState_bump_enter)
 	state.add(PLAYER_BUMP, stateBump)
 	
-	stateCeilingHit = new State(scr_playerState_ceilingHit)
+	stateCeilingHit = new State(scr_playerState_ceilingHit, scr_playerState_ceilingHit_enter)
 	state.add(PLAYER_CEILINGHIT, stateCeilingHit)
 	
 	stateEnterDoor = new State(scr_playerState_enterDoor, scr_playerState_enterDoor_enter)
@@ -119,6 +135,12 @@ function scr_player_initStates()
 	
 	stateVictory = new State(scr_playerState_victory)
 	state.add(PLAYER_VICTORY, stateVictory)
+	
+	stateTreasure = new State(scr_playerState_treasure, scr_playerState_treasure_enter)
+	state.add(PLAYER_TREASURE, stateTreasure)
+	
+	stateGetKey = new State(scr_playerState_getKey, scr_playerState_getKey_enter)
+	state.add(PLAYER_GETKEY, stateGetKey)
 	
 	stateHurt = new State(scr_playerState_hurt)
 	state.add(PLAYER_HURT, stateHurt)

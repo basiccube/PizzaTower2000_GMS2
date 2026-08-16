@@ -6,17 +6,8 @@ switch state
     case 85:
         scr_enemy_charge()
         break
-    case 87:
-        scr_enemy_turn()
-        break
     case 91:
         scr_enemy_walk()
-        break
-    case 93:
-        scr_enemy_land()
-        break
-    case 94:
-        scr_enemy_hit()
         break
     case 95:
         scr_enemy_stun()

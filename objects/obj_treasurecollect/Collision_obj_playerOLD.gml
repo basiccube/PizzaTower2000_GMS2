@@ -2,7 +2,6 @@ with (obj_playerOLD)
 {
     if grounded
     {
-        ds_list_add(global.saveroom, other.id)
         global.treasure = true
 		
         hsp = 0

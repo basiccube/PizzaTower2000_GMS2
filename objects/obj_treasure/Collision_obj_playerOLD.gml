@@ -2,7 +2,6 @@ with (obj_playerOLD)
 {
     if grounded
     {
-        ds_list_add(global.saveroom, other.id) 
         hsp = 0
         vsp = 0
         if (other.sprite_index == other.spridle)

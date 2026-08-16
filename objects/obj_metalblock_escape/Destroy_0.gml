@@ -1,4 +1,4 @@
-if (ds_list_find_index(global.saveroom, id) == -1 && global.panic)
+if global.panic
 {
     if (!global.highperformance)
     {
@@ -21,5 +21,4 @@ if (ds_list_find_index(global.saveroom, id) == -1 && global.panic)
         shake_mag_acc = (40 / room_speed)
     }
     snd_play(sfx_breakmetal)
-    ds_list_add(global.saveroom, id)
 }

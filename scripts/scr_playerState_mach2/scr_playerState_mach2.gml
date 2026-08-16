@@ -14,14 +14,6 @@ function scr_playerState_mach2()
 	}
 	if (grounded && vsp > 0)
 		jumpStop = false
-		
-	if (grounded && input_buffer_jump > 0 && move != -xscale && keyAttack_held)
-	{
-		snd_play(sfx_jump)
-		sprite_index = spr_player_mach2Jump1
-		image_index = 0
-		vsp = -9
-	}
 	
 	if grounded
 	{
@@ -45,6 +37,14 @@ function scr_playerState_mach2()
 			instance_create(x, y, obj_jumpdust)
 		}
 		
+		if (input_buffer_jump > 0 && move != -xscale && keyAttack_held)
+		{
+			snd_play(sfx_jump)
+			sprite_index = spr_player_mach2Jump1
+			image_index = 0
+			vsp = -9
+		}
+		
 		if !keyAttack_held
 		{
 			snd_play(sfx_machslide)
@@ -52,8 +52,7 @@ function scr_playerState_mach2()
 			image_index = 0
 			state.change(PLAYER_MACHSLIDE)
 		}
-		
-		if (move == -xscale)
+		else if (move == -xscale)
 		{
 			snd_play(sfx_machslideboost)
 			sprite_index = spr_player_machSlideBoost
@@ -72,12 +71,7 @@ function scr_playerState_mach2()
 		instance_create(x, y, obj_jumpdust)
 	}
 	
-	var canClimbWallAir = (!grounded && scr_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, [obj_slope, obj_destructibles]))
-	var canClimbWallGround = (grounded && scr_solid(x + sign(hsp), y - 16) && !place_meeting(x + sign(hsp), y, obj_destructibles) && place_meeting(x, y + 1, obj_slope))
-	if (canClimbWallAir || canClimbWallGround)
-		state.change(PLAYER_CLIMBWALL)
-	else if (scr_solid(x + xscale, y) && !place_meeting(x + xscale, y, obj_slope) && (grounded || place_meeting(x + sign(hsp), y, obj_railv)))
-		state.change(PLAYER_BUMP)
+	scr_player_doWallClimb()
 	
 	if (!grounded && sprite_index != spr_player_mach2Jump2 && sprite_index != spr_player_machJump)
 		sprite_index = spr_player_mach2Jump1

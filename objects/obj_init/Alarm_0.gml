@@ -109,8 +109,6 @@ global.smallfont = font_add_sprite_ext(spr_smallfont, "!.0123456789:?ABCDEFGHIJK
 global.pizzafont = font_add_sprite_ext(spr_pizzafont, "0123456789", true, 0)
 global.combofont = font_add_sprite_ext(spr_combofont, "0123456789", true, 0)
 
-// Create saveroom list
-global.saveroom = ds_list_create()
 global.leveltosave = -4
 stats_reset()
 

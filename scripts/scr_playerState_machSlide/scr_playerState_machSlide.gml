@@ -27,7 +27,6 @@ function scr_playerState_machSlide()
 		
 		if (sprite_index == spr_player_machSlideBoost3)
 		{
-			sprite_index = spr_player_mach3
 			movespeed = 12
 			state.change(PLAYER_MACH3)
 		}

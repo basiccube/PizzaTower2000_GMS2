@@ -3,7 +3,6 @@
   "%Name":"obj_metalblock_escape",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
@@ -14,8 +13,8 @@
     "path":"folders/Objects/Room structure/Destructibles.yy",
   },
   "parentObjectId":{
-    "name":"obj_wall",
-    "path":"objects/obj_wall/obj_wall.yy",
+    "name":"obj_metalblock",
+    "path":"objects/obj_metalblock/obj_metalblock.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

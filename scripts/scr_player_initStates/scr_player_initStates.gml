@@ -22,7 +22,7 @@
 
 #macro PLAYER_GRAB "grab"
 #macro PLAYER_CHARGE "charge"
-#macro PLAYER_SUPERSLAM "superSlam"
+#macro PLAYER_PILEDRIVER "pileDriver"
 
 #macro PLAYER_TAUNT "taunt"
 #macro PLAYER_PARRY "parry"
@@ -111,6 +111,9 @@ function scr_player_initStates()
 	
 	stateSuperJumpPrep = new State(scr_playerState_superJumpPrep, scr_playerState_superJumpPrep_enter)
 	state.add(PLAYER_SUPERJUMPPREP, stateSuperJumpPrep)
+	
+	stateGrab = new State(scr_playerState_grab, scr_playerState_grab_enter)
+	state.add(PLAYER_GRAB, stateGrab)
 	
 	stateTaunt = new State(scr_playerState_taunt)
 	state.add(PLAYER_TAUNT, stateTaunt)

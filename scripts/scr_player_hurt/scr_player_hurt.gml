@@ -51,7 +51,7 @@ function scr_player_hurt()
 			instance_create(x, y, obj_spikehurteffect)
 			
 			alarm[3] = 60
-			hurtTimer = 120
+			hurtTimer = 60
 			hurt = true
 			flash = true
 			

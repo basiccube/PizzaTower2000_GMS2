@@ -1,30 +1,10 @@
 scr_playerstates()
 scr_playersounds()
-scr_collide_destructibles()
-if (state == 46 && sprite_index == spr_player_deathend && y > (room_height + 400))
-{
-    scr_game_reset()
-    targetDoor = "B"
-    room_goto(obj_room.hub_1)
-}
-if ((!instance_exists(baddiegrabbedID)) && (state == 37 || state == 34 || state == 85))
-    state = 0
-if (!((state == 37 || state == 34)))
-    baddiegrabbedID = 0
-if (inv_frames == 0 && hurted == 0)
-    image_alpha = 1
+
 if (state == 61 || state == 85 || state == 35 || state == 6 || state == 4 || state == 9 || state == 16 || state == 18 || state == 25 || state == 31 || state == 25 || state == 28 || state == 81 || state == 65 || state == 54)
     attacking = 1
 else
     attacking = 0
-
-if (state != 60 && state != 49 && state != 13 && state != 0 && state != 61 && state != 81 && state != 82 && state != 15 && state != 29 && state != 9)
-    momemtum = 0
-if (state != 61)
-{
-    machpunchAnim = 0
-    machfreefall = 0
-}
 
 if (state != 63 && state != 57 && state != 6 && state != 30 && state != 56 && state != 24 && state != 28 && state != 29 && state != 64 && state != 59 && state != 58)
     mask_index = spr_player_mask

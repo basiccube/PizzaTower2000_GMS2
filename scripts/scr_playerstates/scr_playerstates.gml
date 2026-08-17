@@ -25,9 +25,6 @@ function scr_playerstates() {
 	    case 34:
 	        scr_player_superslam()
 	        break
-	    case 37:
-	        scr_player_grab()
-	        break
 	    case 48:
 	        scr_player_tackle()
 	        break

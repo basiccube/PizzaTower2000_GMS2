@@ -38,10 +38,10 @@ if (hp > 0 && !pizzaball)
 		movespeed = 0
 		
 		sprite_index = choose(
-			spr_player_suplexmash1,
-			spr_player_suplexmash2,
-			spr_player_suplexmash3,
-			spr_player_suplexmash4
+			spr_player_suplexMash1,
+			spr_player_suplexMash2,
+			spr_player_suplexMash3,
+			spr_player_suplexMash4
 		)
 		image_index = 0
 		
@@ -58,10 +58,6 @@ else if (hp <= 0 || pizzaball)
 	
 	with (obj_player)
 	{
-		hsp = 0
-		movespeed = 0
-		sprite_index = spr_player_haulingidle
-		
 		grabbedID = other.id
 		state.change(PLAYER_GRAB)
 	}

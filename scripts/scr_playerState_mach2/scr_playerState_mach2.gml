@@ -14,6 +14,9 @@ function scr_playerState_mach2()
 	}
 	if (grounded && vsp > 0)
 		jumpStop = false
+		
+	if (!grounded && sprite_index != spr_player_mach2Jump2 && sprite_index != spr_player_machJump)
+		sprite_index = spr_player_mach2Jump1
 	
 	if grounded
 	{
@@ -72,9 +75,6 @@ function scr_playerState_mach2()
 	}
 	
 	scr_player_doWallClimb()
-	
-	if (!grounded && sprite_index != spr_player_mach2Jump2 && sprite_index != spr_player_machJump)
-		sprite_index = spr_player_mach2Jump1
 	
 	if (sprite_index == spr_player_mach2Jump1 && LAST_FRAME)
 		sprite_index = spr_player_mach2Jump2

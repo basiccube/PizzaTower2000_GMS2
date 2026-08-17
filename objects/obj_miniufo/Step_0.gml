@@ -12,9 +12,6 @@ switch state
     case 86:
         scr_pizzagoblin_throw()
         break
-    case 98:
-        scr_enemy_grabbed()
-        break
 }
 
 if (state == 84)

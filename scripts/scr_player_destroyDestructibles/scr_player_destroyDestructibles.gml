@@ -33,7 +33,7 @@ function scr_player_destroyDestructibles()
 			instance_destroy(instance_place(x, y - 1, obj_destructibles))
 	}
 	
-	if state.is(PLAYER_SUPERSLAM)
+	if state.is(PLAYER_PILEDRIVER)
 	{
 		if place_meeting(x, y + 1, obj_destructibles)
 			instance_destroy(instance_place(x, y + 1, obj_destructibles))
@@ -54,10 +54,10 @@ function scr_player_destroyDestructibles()
 			if place_meeting(x + (hsp * 2), y, obj_bigdestructibles)
 			{
 				sprite_index = choose(
-					spr_player_suplexmash1,
-					spr_player_suplexmash2,
-					spr_player_suplexmash3,
-					spr_player_suplexmash4
+					spr_player_suplexMash1,
+					spr_player_suplexMash2,
+					spr_player_suplexMash3,
+					spr_player_suplexMash4
 				)
 				image_index = 0
 				

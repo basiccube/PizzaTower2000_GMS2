@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_playerState_grab",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_playerState_grab",
+  "parent":{
+    "name":"Grab",
+    "path":"folders/Player/States/Grab.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

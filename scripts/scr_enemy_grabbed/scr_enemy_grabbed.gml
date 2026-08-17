@@ -1,206 +1,174 @@
-function scr_enemy_grabbed() {
-	image_xscale = (-obj_playerOLD.xscale)
-	stunned = 200
-	obj_playerOLD.baddiegrabbedID = id
-	if (obj_playerOLD.state == 37 || obj_playerOLD.state == 48 || obj_playerOLD.state == 34 || obj_playerOLD.state == 85)
+function scr_enemy_grabbed()
+{
+	var player = obj_player
+	if !instance_exists(player)
 	{
-	    if (obj_playerOLD.state == 37)
-	    {
-	        x = obj_playerOLD.x
-	        y = obj_playerOLD.y - 50
-	    }
-	    else if (obj_playerOLD.state == 85)
-	    {
-	        x = obj_playerOLD.x + (obj_playerOLD.xscale * 15)
-	        y = obj_playerOLD.y - 30
-	    }
-	    else
-	    {
-	        x = obj_playerOLD.x + (obj_playerOLD.xscale * 15)
-	        y = obj_playerOLD.y
-	    }
-	    image_xscale = (-obj_playerOLD.xscale)
+		state = ENEMY_STUN
+		exit;
 	}
-	with (obj_playerOLD)
-	{
-	    if (!(state == 37 || state == 48 || obj_playerOLD.state == 34 || state == 85))
-	    {
-	        other.x = x
-	        other.y = y
-	        other.state = 95
-	        other.image_index = 0
-	    }
-	    if (keyDown_held && state == 37 && grounded)
-	    {
-	        image_index = 0
-	        state = 0
-	        other.state = 95
-	        other.hsp = ((-other.image_xscale) * 9)
-	        other.vsp = -2
-	    }
-	}
+	
+	player.grabbedID = id
+	image_xscale = -player.xscale
+	
 	hsp = 0
-	if ((obj_playerOLD.sprite_index == spr_player_punch && floor(obj_playerOLD.image_index) == 0) || obj_playerOLD.state == 43)
+	stunned = 200
+	
+	var validStates = [PLAYER_GRAB, PLAYER_PILEDRIVER, PLAYER_CHARGE, PLAYER_ANIMATION]
+	if player.state.is(PLAYER_GRAB)
 	{
-	    instance_create((x + (obj_playerOLD.xscale * 30)), y, obj_bumpeffect)
-	    alarm[1] = 5
-	    thrown = 1
-	    x = obj_playerOLD.x
-	    y = obj_playerOLD.y
-	    state = 95
-	    hsp = ((-image_xscale) * 25)
-	    grav = 0
-	    vsp = -1
-	    global.combotime = 60
-	    global.style += 5
-	    if (object_index == obj_pizzaball)
-	        global.golfhit += 1
+		x = player.x
+		y = player.y - 50
 		
-	    instance_create(x, y, obj_slapstar)
-	    instance_create(x, y, obj_baddiegibs)
-	    flash = 1
-	    with (obj_camera)
-	    {
-	        shake_mag = 3
-	        shake_mag_acc = (3 / room_speed)
-	    }
+		with (player)
+		{
+			if (grounded && keyDown_held)
+			{
+				state.change(PLAYER_NORMAL)
+				with (other)
+				{
+					vsp = -2
+					state = ENEMY_STUN
+				}
+			}
+		}
 	}
-
-	if (obj_playerOLD.sprite_index == spr_player_uppunch && floor(obj_playerOLD.image_index) == 0)
+	else if player.state.is(PLAYER_CHARGE)
 	{
-	    instance_create((x + ((-obj_playerOLD.xscale) * 15)), (y - 50), obj_bumpeffect)
-	    alarm[1] = 5
-	    thrown = 1
-	    x = obj_playerOLD.x
-	    y = obj_playerOLD.y
-	    hsp = ((-image_xscale) * 2)
-	    state = 95
-	    vsp = -20
-	    global.combotime = 60
-	    global.style += 5
-	    if (object_index == obj_pizzaball)
-	        global.golfhit += 1
-	    instance_create(x, y, obj_slapstar)
-	    instance_create(x, y, obj_baddiegibs)
-	    flash = 1
-	    with (obj_camera)
-	    {
-	        shake_mag = 3
-	        shake_mag_acc = (3 / room_speed)
-	    }
+		x = player.x + (20 * player.xscale)
+		y = player.y
 	}
-
-	if (obj_playerOLD.state == 85)
+	else
 	{
-	    x = (obj_playerOLD.x + (obj_playerOLD.xscale * 20))
-	    y = obj_playerOLD.y
-	    if (scr_solid(x + obj_playerOLD.xscale, y))
-	    {
-	        instance_create((x + ((-obj_playerOLD.xscale) * 15)), (y - 50), obj_bumpeffect)
-	        alarm[1] = 5
-	        thrown = 1
-	        x = obj_playerOLD.x
-	        y = obj_playerOLD.y
-	        hsp = ((-image_xscale) * 4)
-	        state = 95
-	        vsp = -4
-	        global.combotime = 60
-	        global.style += 5
-	        if (object_index == obj_pizzaball)
-	            global.golfhit += 1
-	        instance_create(x, y, obj_slapstar)
-	        instance_create(x, y, obj_baddiegibs)
-	        flash = 1
-	        with (obj_camera)
-	        {
-	            shake_mag = 3
-	            shake_mag_acc = (3 / room_speed)
-	        }
-	    }
+		x = player.x + (15 * player.xscale)
+		y = player.y
 	}
-
-	if (obj_playerOLD.state == 34)
+	
+	if !player.state.is(validStates)
 	{
-	    if (obj_playerOLD.piledriveranim)
-	    {
-	        if (floor(obj_playerOLD.image_index) == 0)
-	        {
-	            depth = 0
-	            x = (obj_playerOLD.x + (obj_playerOLD.xscale * 10))
-	            y = obj_playerOLD.y
-	        }
-	        if (floor(obj_playerOLD.image_index) == 1)
-	        {
-	            depth = 0
-	            x = (obj_playerOLD.x + (obj_playerOLD.xscale * 5))
-	            y = obj_playerOLD.y
-	        }
-	        if (floor(obj_playerOLD.image_index) == 2)
-	        {
-	            depth = 0
-	            x = obj_playerOLD.x
-	            y = obj_playerOLD.y
-	        }
-	        if (floor(obj_playerOLD.image_index) == 3)
-	        {
-	            depth = 0
-	            x = (obj_playerOLD.x + (obj_playerOLD.xscale * -5))
-	            y = obj_playerOLD.y
-	        }
-	        if (floor(obj_playerOLD.image_index) == 4)
-	        {
-	            depth = 0
-	            x = (obj_playerOLD.x + (obj_playerOLD.xscale * -10))
-	            y = obj_playerOLD.y
-	        }
-	        if (floor(obj_playerOLD.image_index) == 5)
-	        {
-	            depth = -7
-	            x = (obj_playerOLD.x + (obj_playerOLD.xscale * -5))
-	            y = obj_playerOLD.y
-	        }
-	        if (floor(obj_playerOLD.image_index) == 6)
-	        {
-	            depth = -7
-	            x = obj_playerOLD.x
-	            y = obj_playerOLD.y
-	        }
-	        if (floor(obj_playerOLD.image_index) == 7)
-	        {
-	            depth = -7
-	            x = (obj_playerOLD.x + (obj_playerOLD.xscale * 5))
-	            y = obj_playerOLD.y
-	        }
-	    }
-	    else
-	    {
-	        depth = 0
-	        x = obj_playerOLD.x - obj_playerOLD.piledriverx
-	        y = obj_playerOLD.y - obj_playerOLD.piledrivery
-	    }
-    
-	    if (obj_playerOLD.sprite_index == spr_player_piledriverland)
-	    {
-	        snd_play(sfx_punch)
-	        instance_create(x, y, obj_slapstar)
-	        instance_create(x, y, obj_baddiegibs)
-	        flash = 1
-	        global.combotime = 60
-	        global.style += 5
-	        alarm[1] = 5
-	        thrown = 1
-	        x = obj_playerOLD.x
-	        y = obj_playerOLD.y
-	        if (object_index == obj_pizzaball)
-	            global.golfhit += 1
-	        state = 95
-	        hsp = ((-image_xscale) * 10)
-	        vsp = -10
-	    }
+		x = player.x
+		y = player.y
+		state = ENEMY_STUN
+		image_index = 0
 	}
+	
+	if (player.state.is(PLAYER_ANIMATION) && (player.sprite_index == spr_player_punch || player.sprite_index == spr_player_punchUp))
+		scr_enemy_doThrow(player)
+	else if (player.state.is(PLAYER_CHARGE) && scr_solid(x + player.xscale, y))
+		scr_enemy_doThrow(player)
+	else if player.state.is(PLAYER_PILEDRIVER)
+	{
+		if player.piledriverAnim
+		{
+			var off = 0
+			switch floor(player.image_index)
+			{
+				case 0:
+					off = 10
+					depth = 0
+					break
+				case 1:
+					off = 5
+					depth = 0
+					break
+				case 2:
+					depth = 0
+					break
+				case 3:
+					off = -5
+					depth = 0
+					break
+				case 4:
+					off = -10
+					depth = 0
+					break
+				case 5:
+					off = -5
+					depth = -7
+					break
+				case 6:
+					depth = -7
+					break
+				case 7:
+					off = 5
+					depth = -7
+					break
+			}
+			
+			x = player.x + (off * player.xscale)
+			y = player.y
+		}
+		else
+		{
+			x = player.x - player.piledriverX
+			y = player.y - player.piledriverY
+			depth = 0
+		}
+		
+		if (player.sprite_index == spr_player_piledriverLand)
+		{
+			snd_play(sfx_punch)
+			scr_enemy_doThrow(player)
+		}
+	}
+	
 	sprite_index = grabbedspr
 	image_speed = 0.35
+}
 
-
-
+function scr_enemy_doThrow(player)
+{
+	var spr = player.sprite_index
+	if (spr != spr_player_piledriverLand)
+	{
+		var bx = x + (15 * -player.xscale)
+		var by = y - 50
+		if (spr == spr_player_punch)
+		{
+			bx = x + (30 * player.xscale)
+			by = y
+		}
+		instance_create(bx, by, obj_bumpeffect)
+	}
+	
+	instance_create(x, y, obj_slapstar)
+	instance_create(x, y, obj_baddiegibs)
+	
+	flash = true
+	alarm[1] = 5
+	if (spr != spr_player_piledriverLand)
+		camera_shake(3, 3)
+	
+	global.combotime = 60
+	global.style += 5
+	if (object_index == obj_pizzaball)
+		global.golfhit++
+	
+	thrown = true
+	state = ENEMY_STUN
+	
+	x = player.x
+	y = player.y
+	
+	switch spr
+	{
+		case spr_player_punchUp:
+			hsp = 2 * -image_xscale
+			vsp = -20
+			break
+			
+		case spr_player_charge:
+			hsp = 4 * -image_xscale
+			vsp = -4
+			break
+			
+		case spr_player_piledriverLand:
+			hsp = 10 * -image_xscale
+			vsp = -10
+			break
+			
+		default:
+			hsp = 25 * -image_xscale
+			vsp = -1
+			grav = 0
+	}
 }

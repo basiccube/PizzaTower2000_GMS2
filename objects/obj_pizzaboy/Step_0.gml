@@ -9,9 +9,6 @@ switch state
     case 95:
         scr_enemy_stun()
         break
-    case 98:
-        scr_enemy_grabbed()
-        break
 }
 
 stunned = 100

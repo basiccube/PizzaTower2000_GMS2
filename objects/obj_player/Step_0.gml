@@ -5,7 +5,13 @@ if keyJump_pressed
 state.update()
 scr_player_destroyDestructibles()
 
-if (hurtTimer > 0)
+if state.is(PLAYER_HURT)
+{
+	image_alpha = 1
+	alarm[1] = -1
+	alarm[2] = -1
+}
+else if (hurtTimer > 0)
 {
 	hurtTimer--
 	if (alarm[1] == -1 && alarm[2] == -1)

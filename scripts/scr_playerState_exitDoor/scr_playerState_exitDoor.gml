@@ -11,4 +11,7 @@ function scr_playerState_exitDoor()
 }
 
 function scr_playerState_exitDoor_enter()
-{ image_index = 0; }
+{
+	sprite_index = spr_player_exitDoor
+	image_index = 0
+}

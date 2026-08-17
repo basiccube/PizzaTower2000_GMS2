@@ -1,3 +1,6 @@
+if global.butterscotch
+	exit;
+
 if !visible
 	exit;
 

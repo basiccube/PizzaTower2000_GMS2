@@ -5,10 +5,10 @@ if (!jingle && !global.panic)
         currentlyplaying = ds_map_find_value(global.music, "mu_title")
 }
 
-if instance_exists(obj_playerOLD)
+with (obj_player)
 {
-    if (obj_playerOLD.state != 55 && room != rank_room && room != timesuproom && obj_playerOLD.state != 14)
-        jingle = false
+	if (!state.is([PLAYER_TREASURE, PLAYER_VICTORY]) && room != rank_room && room != timesuproom)
+		other.jingle = false
 }
 
 if (global.panic && alarm[0] <= 0)

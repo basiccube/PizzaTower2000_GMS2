@@ -30,8 +30,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Enemy Grab",
-    "path":"folders/Player/Old Sprites/Enemy Grab.yy",
+    "name":"Piledriver",
+    "path":"folders/Player/States/Piledriver.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

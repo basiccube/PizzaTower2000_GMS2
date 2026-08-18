@@ -53,7 +53,7 @@ function scr_enemy_grabbed()
 	
 	if (player.state.is(PLAYER_ANIMATION) && (player.sprite_index == spr_player_punch || player.sprite_index == spr_player_punchUp))
 		scr_enemy_doThrow(player)
-	else if (player.state.is(PLAYER_CHARGE) && scr_solid(x + player.xscale, y))
+	else if (player.state.is(PLAYER_CHARGE) && scr_solid(x + player.xscale, y) && !place_meeting(x + player.xscale, y, obj_destructibles))
 		scr_enemy_doThrow(player)
 	else if player.state.is(PLAYER_PILEDRIVER)
 	{
@@ -148,6 +148,7 @@ function scr_enemy_doThrow(player)
 	
 	x = player.x
 	y = player.y
+	player.grabbedID = noone
 	
 	switch spr
 	{

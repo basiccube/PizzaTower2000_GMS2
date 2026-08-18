@@ -1,11 +1,11 @@
 if (visible == false)
 {
-    reset -= 1
+    reset--
     mask_index = spr_masknull
 }
 else
     mask_index = spr_wall
-if (visible && place_meeting(x, (y - 1), obj_playerOLD))
+if (visible && place_meeting(x, y - 1, obj_player))
     image_speed = 0.35
 if (floor(image_index) == (image_number - 1) && sprite_index == spr_cheeseblock)
 {
@@ -18,7 +18,7 @@ if (floor(image_index) == (image_number - 1) && sprite_index == spr_cheeseblockr
     image_speed = 0
     image_index = 0
 }
-if (reset < 0 && !place_meeting(x, y, obj_playerOLD))
+if (reset < 0 && !place_meeting(x, y, obj_player))
 {
     reset = 100
     visible = true

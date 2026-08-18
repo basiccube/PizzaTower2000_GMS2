@@ -21,10 +21,11 @@ function scr_playerState_parry()
 		var threshold = 80
 		with (obj_baddie)
 		{
-			if (distance_to_object(other) < threshold && state != 98 && !(state == 95 && thrown))
+			if (distance_to_object(other) < threshold && !(state == ENEMY_STUN && thrown))
 			{
 				hp = 0
-				state = 98
+				stunned = 200
+				scr_enemy_doThrow(other)
 			}
 		}
 	}

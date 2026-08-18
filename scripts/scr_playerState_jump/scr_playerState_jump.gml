@@ -70,6 +70,8 @@ function scr_playerState_jump()
 	
 	if (vsp > 5)
 		freefallAnimTimer++
+	else
+		freefallAnimTimer = 0
 	
 	if (freefallAnimTimer >= 80)
 		sprite_index = spr_player_freefall
@@ -161,6 +163,7 @@ function scr_player_jump()
 	jumpAnim = true
 	jumpStop = false
 	
+	input_buffer_jump = 0
 	vsp = -11
 	state.change(PLAYER_JUMP)
 	

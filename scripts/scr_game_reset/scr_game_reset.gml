@@ -2,6 +2,7 @@ function scr_game_reset()
 {
 	instance_destroy(obj_timesup)
 	instance_destroy(obj_endlevelfade)
+	instance_destroy(obj_followerParent)
 	
 	global.minutes = 1
 	global.seconds = 59
@@ -54,6 +55,8 @@ function scr_game_reset()
 		
 		hurt = false
 		hurtTimer = 0
+		if (hurtCallbackHandle != undefined)
+			call_cancel(hurtCallbackHandle)
 		
 		mach2EffectTimer = 0
 		mach3EffectTimer = 0

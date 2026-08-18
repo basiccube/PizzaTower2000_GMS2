@@ -17,20 +17,21 @@ if (keyJump_pressed && global.startRoom == "")
         with (obj_room)
             other.targetRoom = variable_instance_get(id, ds_list_find_value(other.levelroom_list, other.selection))
             
-        with (obj_playerOLD)
+        with (obj_player)
         {
             targetDoor = "A"
             targetRoom = other.targetRoom
-            state = 0
+            state.change(PLAYER_NORMAL)
         }
         global.leveltosave = filename_change_ext(ds_list_find_value(level_list, selection), "")
         
         // Read level S rank score from level info file
-        if (file_exists("levels\\" + global.leveltosave + ".pli"))
+		var path = "levels/" + global.leveltosave + ".pli"
+        if file_exists(path)
         {
-            tempini_open("levels\\" + global.leveltosave + ".pli")
+            ini_open(path)
 			level_set_srank(ini_read_real("Level", "SRank", 0))
-            tempini_close()
+            ini_close()
         }
         
         instance_create(x, y, obj_transition)

@@ -36,8 +36,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Old Sprites",
-    "path":"folders/Player/Old Sprites.yy",
+    "name":"Old States",
+    "path":"folders/Player/Old States.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

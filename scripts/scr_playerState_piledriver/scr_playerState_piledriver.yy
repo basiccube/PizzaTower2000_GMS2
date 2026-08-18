@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_playerState_piledriver",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_playerState_piledriver",
+  "parent":{
+    "name":"Piledriver",
+    "path":"folders/Player/States/Piledriver.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

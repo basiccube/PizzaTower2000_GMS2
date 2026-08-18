@@ -10,8 +10,8 @@
   "name":"obj_parallaxBackground",
   "overriddenProperties":[],
   "parent":{
-    "name":"Game settings",
-    "path":"folders/Objects/Game settings.yy",
+    "name":"Backgrounds",
+    "path":"folders/Backgrounds.yy",
   },
   "parentObjectId":null,
   "persistent":true,

@@ -3,10 +3,6 @@
 #macro PLAYER_LADDER "ladder"
 #macro PLAYER_CROUCH "crouch"
 
-#macro PLAYER_FREEFALL "freefall"
-#macro PLAYER_FREEFALLLAND "freefallLand"
-#macro PLAYER_FREEFALLPREP "freefallPrep"
-
 #macro PLAYER_MACH1 "mach1"
 #macro PLAYER_MACH2 "mach2"
 #macro PLAYER_MACH3 "mach3"
@@ -16,6 +12,10 @@
 
 #macro PLAYER_SUPLEXDASH "suplexDash"
 #macro PLAYER_CROUCHSLIDE "crouchSlide"
+
+#macro PLAYER_FREEFALL "freefall"
+#macro PLAYER_FREEFALLLAND "freefallLand"
+#macro PLAYER_FREEFALLPREP "freefallPrep"
 
 #macro PLAYER_SUPERJUMP "superJump"
 #macro PLAYER_SUPERJUMPPREP "superJumpPrep"
@@ -56,112 +56,75 @@
 
 function scr_player_initStates()
 {
+	var add_state = function(name, update = func_empty, enter = func_empty, leave = func_empty)
+	{
+		var s = new State(update, enter, leave)
+		state.add(name, s)
+	}
+	
 	StateOverride(id)
 	
-	stateDummy = new State()
-	state.add(PLAYER_DUMMY, stateDummy)
+	add_state(PLAYER_DUMMY)
 	
-	stateNormal = new State(scr_playerState_normal, func_empty, scr_playerState_normal_leave)
-	state.add(PLAYER_NORMAL, stateNormal)
+	// basic movement
+	add_state(PLAYER_NORMAL, scr_playerState_normal, func_empty, scr_playerState_normal_leave)
+	add_state(PLAYER_JUMP, scr_playerState_jump, func_empty, scr_playerState_jump_leave)
+	add_state(PLAYER_LADDER, scr_playerState_ladder)
+	add_state(PLAYER_CROUCH, scr_playerState_crouch, scr_playerState_crouch_enter)
 	
-	stateJump = new State(scr_playerState_jump, func_empty, scr_playerState_jump_leave)
-	state.add(PLAYER_JUMP, stateJump)
+	// mach
+	add_state(PLAYER_MACH1, scr_playerState_mach1, scr_playerState_mach1_enter)
+	add_state(PLAYER_MACH2, scr_playerState_mach2)
+	add_state(PLAYER_MACH3, scr_playerState_mach3, scr_playerState_mach3_enter)
+	add_state(PLAYER_MACHSLIDE, scr_playerState_machSlide)
+	add_state(PLAYER_MACHROLL, scr_playerState_machRoll)
+	add_state(PLAYER_WALLCLIMB, scr_playerState_wallClimb)
 	
-	stateLadder = new State(scr_playerState_ladder)
-	state.add(PLAYER_LADDER, stateLadder)
+	// suplex grab
+	add_state(PLAYER_SUPLEXDASH, scr_playerState_suplexDash, scr_playerState_suplexDash_enter)
+	add_state(PLAYER_CROUCHSLIDE, scr_playerState_crouchSlide, scr_playerState_crouchSlide_enter, scr_playerState_crouchSlide_leave)
 	
-	stateCrouch = new State(scr_playerState_crouch, scr_playerState_crouch_enter)
-	state.add(PLAYER_CROUCH, stateCrouch)
+	// freefall
+	add_state(PLAYER_FREEFALL, scr_playerState_freefall, func_empty, scr_playerState_freefall_leave)
+	add_state(PLAYER_FREEFALLLAND, scr_playerState_freefallLand, scr_playerState_freefallLand_enter)
+	add_state(PLAYER_FREEFALLPREP, scr_playerState_freefallPrep, scr_playerState_freefallPrep_enter)
 	
-	stateFreefall = new State(scr_playerState_freefall, func_empty, scr_playerState_freefall_leave)
-	state.add(PLAYER_FREEFALL, stateFreefall)
+	// super jump
+	add_state(PLAYER_SUPERJUMP, scr_playerState_superJump, scr_playerState_superJump_enter)
+	add_state(PLAYER_SUPERJUMPPREP, scr_playerState_superJumpPrep, scr_playerState_superJumpPrep_enter)
 	
-	stateFreefallLand = new State(scr_playerState_freefallLand, scr_playerState_freefallLand_enter)
-	state.add(PLAYER_FREEFALLLAND, stateFreefallLand)
+	// enemy grab
+	add_state(PLAYER_GRAB, scr_playerState_grab, scr_playerState_grab_enter)
+	add_state(PLAYER_CHARGE, scr_playerState_charge)
+	add_state(PLAYER_PILEDRIVER, scr_playerState_piledriver, scr_playerState_piledriver_enter)
 	
-	stateFreefallPrep = new State(scr_playerState_freefallPrep, scr_playerState_freefallPrep_enter)
-	state.add(PLAYER_FREEFALLPREP, stateFreefallPrep)
+	// taunting
+	add_state(PLAYER_TAUNT, scr_playerState_taunt)
+	add_state(PLAYER_PARRY, scr_playerState_parry)
 	
-	stateMach1 = new State(scr_playerState_mach1, scr_playerState_mach1_enter)
-	state.add(PLAYER_MACH1, stateMach1)
+	// bump
+	add_state(PLAYER_BUMP, scr_playerState_bump, scr_playerState_bump_enter)
+	add_state(PLAYER_CEILINGHIT, scr_playerState_ceilingHit, scr_playerState_ceilingHit_enter)
 	
-	stateMach2 = new State(scr_playerState_mach2)
-	state.add(PLAYER_MACH2, stateMach2)
+	// doors
+	add_state(PLAYER_ENTERDOOR, scr_playerState_enterDoor, scr_playerState_enterDoor_enter)
+	add_state(PLAYER_EXITDOOR, scr_playerState_exitDoor, scr_playerState_exitDoor_enter)
+	add_state(PLAYER_GATESHUT, scr_playerState_gateShut, scr_playerState_gateShut_enter)
 	
-	stateMach3 = new State(scr_playerState_mach3, scr_playerState_mach3_enter)
-	state.add(PLAYER_MACH3, stateMach3)
+	// victory
+	add_state(PLAYER_VICTORY, scr_playerState_victory)
+	add_state(PLAYER_TREASURE, scr_playerState_treasure, scr_playerState_treasure_enter)
+	add_state(PLAYER_GETKEY, scr_playerState_getKey, scr_playerState_getKey_enter)
 	
-	stateMachSlide = new State(scr_playerState_machSlide)
-	state.add(PLAYER_MACHSLIDE, stateMachSlide)
+	// hurt
+	add_state(PLAYER_HURT, scr_playerState_hurt)
+	add_state(PLAYER_TIMESUP, scr_playerState_timesUp)
+	add_state(PLAYER_GAMEOVER, scr_playerState_gameOver)
 	
-	stateMachRoll = new State(scr_playerState_machRoll)
-	state.add(PLAYER_MACHROLL, stateMachRoll)
-	
-	stateWallClimb = new State(scr_playerState_wallClimb)
-	state.add(PLAYER_WALLCLIMB, stateWallClimb)
-	
-	stateSuplexDash = new State(scr_playerState_suplexDash, scr_playerState_suplexDash_enter)
-	state.add(PLAYER_SUPLEXDASH, stateSuplexDash)
-	
-	stateCrouchSlide = new State(scr_playerState_crouchSlide, scr_playerState_crouchSlide_enter, scr_playerState_crouchSlide_leave)
-	state.add(PLAYER_CROUCHSLIDE, stateCrouchSlide)
-	
-	stateSuperJump = new State(scr_playerState_superJump, scr_playerState_superJump_enter)
-	state.add(PLAYER_SUPERJUMP, stateSuperJump)
-	
-	stateSuperJumpPrep = new State(scr_playerState_superJumpPrep, scr_playerState_superJumpPrep_enter)
-	state.add(PLAYER_SUPERJUMPPREP, stateSuperJumpPrep)
-	
-	stateGrab = new State(scr_playerState_grab, scr_playerState_grab_enter)
-	state.add(PLAYER_GRAB, stateGrab)
-	
-	stateTaunt = new State(scr_playerState_taunt)
-	state.add(PLAYER_TAUNT, stateTaunt)
-	
-	stateParry = new State(scr_playerState_parry)
-	state.add(PLAYER_PARRY, stateParry)
-	
-	stateBump = new State(scr_playerState_bump, scr_playerState_bump_enter)
-	state.add(PLAYER_BUMP, stateBump)
-	
-	stateCeilingHit = new State(scr_playerState_ceilingHit, scr_playerState_ceilingHit_enter)
-	state.add(PLAYER_CEILINGHIT, stateCeilingHit)
-	
-	stateEnterDoor = new State(scr_playerState_enterDoor, scr_playerState_enterDoor_enter)
-	state.add(PLAYER_ENTERDOOR, stateEnterDoor)
-	
-	stateExitDoor = new State(scr_playerState_exitDoor, scr_playerState_exitDoor_enter)
-	state.add(PLAYER_EXITDOOR, stateExitDoor)
-	
-	stateGateShut = new State(scr_playerState_gateShut, scr_playerState_gateShut_enter)
-	state.add(PLAYER_GATESHUT, stateGateShut)
-	
-	stateVictory = new State(scr_playerState_victory)
-	state.add(PLAYER_VICTORY, stateVictory)
-	
-	stateTreasure = new State(scr_playerState_treasure, scr_playerState_treasure_enter)
-	state.add(PLAYER_TREASURE, stateTreasure)
-	
-	stateGetKey = new State(scr_playerState_getKey, scr_playerState_getKey_enter)
-	state.add(PLAYER_GETKEY, stateGetKey)
-	
-	stateHurt = new State(scr_playerState_hurt)
-	state.add(PLAYER_HURT, stateHurt)
-	
-	stateTimesUp = new State(scr_playerState_timesUp)
-	state.add(PLAYER_TIMESUP, stateTimesUp)
-	
-	stateGameOver = new State(scr_playerState_gameOver)
-	state.add(PLAYER_GAMEOVER, stateGameOver)
-	
-	stateMenu = new State(scr_playerState_menu)
-	state.add(PLAYER_MENU, stateMenu)
-	
-	stateAnimation = new State(scr_playerState_animation, func_empty, scr_playerState_animation_leave)
-	state.add(PLAYER_ANIMATION, stateAnimation)
-	
-	stateScooterSlide = new State(scr_playerState_scooterSlide)
-	state.add(PLAYER_SCOOTERSLIDE, stateScooterSlide)
+	// misc
+	add_state(PLAYER_MENU, scr_playerState_menu)
+	add_state(PLAYER_SCOOTERSLIDE, scr_playerState_scooterSlide)
+	add_state(PLAYER_ANIMATION, scr_playerState_animation, func_empty, scr_playerState_animation_leave)
 	
 	StateOverride(noone)
 }

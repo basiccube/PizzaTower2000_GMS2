@@ -50,10 +50,16 @@ function scr_player_hurt()
 			global.hurtcounter++
 			instance_create(x, y, obj_spikehurteffect)
 			
-			alarm[3] = 60
 			hurtTimer = 60
 			hurt = true
 			flash = true
+			
+			hurtCallbackHandle = call_later(60, time_source_units_frames, function()
+			{
+				state.change(PLAYER_NORMAL)
+				movespeed = 0
+				hurtCallbackHandle = undefined
+			})
 			
 			sprite_index = spr_player_hurt
 			image_index = 0

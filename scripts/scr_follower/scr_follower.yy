@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_follower",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_follower",
+  "parent":{
+    "name":"Followers",
+    "path":"folders/Followers.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

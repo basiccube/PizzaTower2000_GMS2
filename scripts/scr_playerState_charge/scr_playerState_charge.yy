@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_playerState_charge",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_playerState_charge",
+  "parent":{
+    "name":"Charge",
+    "path":"folders/Player/States/Charge.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

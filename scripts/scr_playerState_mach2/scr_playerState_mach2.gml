@@ -27,6 +27,16 @@ function scr_playerState_mach2()
 		}
 		else if (sprite_index != spr_player_mach && sprite_index != spr_player_machHit)
 			sprite_index = spr_player_mach
+			
+		if (input_buffer_jump > 0 && move != -xscale && keyAttack_held)
+		{
+			snd_play(sfx_jump)
+			sprite_index = spr_player_mach2Jump1
+			image_index = 0
+			
+			input_buffer_jump = 0
+			vsp = -9
+		}
 		
 		if (hsp != 0 && movespeed > 8)
 			scr_player_addslopemomentum(0.1)
@@ -38,14 +48,6 @@ function scr_playerState_mach2()
 			flash = true
 			state.change(PLAYER_MACH3)
 			instance_create(x, y, obj_jumpdust)
-		}
-		
-		if (input_buffer_jump > 0 && move != -xscale && keyAttack_held)
-		{
-			snd_play(sfx_jump)
-			sprite_index = spr_player_mach2Jump1
-			image_index = 0
-			vsp = -9
 		}
 		
 		if !keyAttack_held

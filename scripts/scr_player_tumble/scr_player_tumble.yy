@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_player_tumble",
   "parent":{
-    "name":"States",
-    "path":"folders/Player/Old Scripts/States.yy",
+    "name":"Old States",
+    "path":"folders/Player/Old States.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

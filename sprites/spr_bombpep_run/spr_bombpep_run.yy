@@ -28,7 +28,7 @@
   "origin":4,
   "parent":{
     "name":"Bomb",
-    "path":"folders/Player/Old Sprites/Bomb.yy",
+    "path":"folders/Player/Old States/Bomb.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -69,6 +69,8 @@ function scr_playerState_mach1()
 		
 		movespeed += 2
 		vsp = -11
+		
+		input_buffer_jump = 0
 		state.change(PLAYER_JUMP)
 	}
 	

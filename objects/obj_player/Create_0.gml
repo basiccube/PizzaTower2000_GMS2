@@ -18,6 +18,7 @@ scr_player_initStates()
 input_buffer_jump = 0
 
 flash = false
+flickerTimer = 0
 facehurt = false
 steppy = false
 jumpStop = false
@@ -45,6 +46,7 @@ grabbedID = noone
 
 hurt = false
 hurtTimer = 0
+hurtCallbackHandle = undefined
 
 targetRoom = undefined
 targetDoor = "A"
@@ -96,6 +98,8 @@ drawOverride = [
 	obj_taunteffect
 ]
 drawOverrideLength = array_length(drawOverride)
+
+scr_player_initSounds()
 
 ini_open("character.ini")
 

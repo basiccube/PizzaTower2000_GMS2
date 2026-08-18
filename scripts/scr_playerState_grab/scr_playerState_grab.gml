@@ -50,6 +50,8 @@ function scr_playerState_grab()
 		snd_play(sfx_jump)
 		sprite_index = spr_player_grabJump
 		image_index = 0
+		
+		input_buffer_jump = 0
 		vsp = -11
 	}
 	
@@ -81,14 +83,7 @@ function scr_playerState_grab()
 	}
 	
 	if (!grounded && keyDown_held)
-	{
-		snd_play(sfx_jump)
-		sprite_index = spr_player_piledriver
-		image_index = 0
-		
-		vsp = -7
 		state.change(PLAYER_PILEDRIVER)
-	}
 
 	if (sprite_index == spr_player_grabJump && LAST_FRAME)
 		sprite_index = spr_player_grabFall

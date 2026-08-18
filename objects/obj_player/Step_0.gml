@@ -1,25 +1,29 @@
 scr_getinput()
 if keyJump_pressed
-	input_buffer_jump = 10
+	input_buffer_jump = 8
 
 state.update()
+scr_player_updateSounds()
 scr_player_destroyDestructibles()
 
 if state.is(PLAYER_HURT)
 {
+	flickerTimer = 0
 	image_alpha = 1
-	alarm[1] = -1
-	alarm[2] = -1
 }
 else if (hurtTimer > 0)
 {
 	hurtTimer--
-	if (alarm[1] == -1 && alarm[2] == -1)
-		alarm[1] = 3
+	if (--flickerTimer <= 0)
+	{
+		image_alpha = (image_alpha <= 0 ? 1 : 0)
+		flickerTimer = 3
+	}
 }
 else
 {
 	hurt = false
+	flickerTimer = 0
 	image_alpha = 1
 }
 

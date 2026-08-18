@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_player_bombpep",
   "parent":{
-    "name":"States",
-    "path":"folders/Player/Old Scripts/States.yy",
+    "name":"Bomb",
+    "path":"folders/Player/Old States/Bomb.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

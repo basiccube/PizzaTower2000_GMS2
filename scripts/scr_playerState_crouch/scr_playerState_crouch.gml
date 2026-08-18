@@ -19,6 +19,7 @@ function scr_playerState_crouch()
 	if (grounded && keyJump_pressed && canStand)
 	{
 		snd_play(sfx_jump)
+		input_buffer_jump = 0
 		vsp = -8
 		
 		jumpAnim = true

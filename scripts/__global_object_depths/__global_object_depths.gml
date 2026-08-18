@@ -43,7 +43,7 @@ function __global_object_depths() {
 	global.__objectDepths[35] = 2000; // obj_parallax
 	global.__objectDepths[36] = -99; // obj_particlesystem
 	global.__objectDepths[37] = -9990; // obj_pause
-	global.__objectDepths[38] = -15; // obj_playerOLD
+	global.__objectDepths[38] = -15; // obj_player
 	global.__objectDepths[39] = 0; // obj_room
 	global.__objectDepths[40] = -1000; // obj_tv
 	global.__objectDepths[41] = 5; // obj_bombexplosion
@@ -196,7 +196,7 @@ function __global_object_depths() {
 	global.__objectNames[35] = "obj_parallax";
 	global.__objectNames[36] = "obj_particlesystem";
 	global.__objectNames[37] = "obj_pause";
-	global.__objectNames[38] = "obj_playerOLD";
+	global.__objectNames[38] = "obj_player";
 	global.__objectNames[39] = "obj_room";
 	global.__objectNames[40] = "obj_tv";
 	global.__objectNames[41] = "obj_bombexplosion";

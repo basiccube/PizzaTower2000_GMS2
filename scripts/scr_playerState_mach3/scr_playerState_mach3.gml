@@ -33,6 +33,8 @@ function scr_playerState_mach3()
 			snd_play(sfx_jump)
 			sprite_index = spr_player_mach3Jump
 			image_index = 0
+			
+			input_buffer_jump = 0
 			vsp = -9
 		}
 		

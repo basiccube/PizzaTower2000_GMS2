@@ -1,9 +1,12 @@
-with (obj_playerOLD)
+with (obj_player)
 {
-    if (place_meeting(x, (y + 1), obj_tomatoblock) && state != 46)
-    {
-        vsp = -11
-        other.image_index = 0
-        other.image_speed = 0.35
-    }
+	if (place_meeting(x, y + 1, other) && !state.is(PLAYER_GAMEOVER))
+	{
+		with (other)
+		{
+			image_speed = 0.35
+			image_index = 0
+		}
+		vsp = -11
+	}
 }

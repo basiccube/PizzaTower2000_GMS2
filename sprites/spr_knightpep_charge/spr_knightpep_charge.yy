@@ -28,7 +28,7 @@
   "origin":4,
   "parent":{
     "name":"Knight",
-    "path":"folders/Player/Old Sprites/Knight.yy",
+    "path":"folders/Player/Old States/Knight.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

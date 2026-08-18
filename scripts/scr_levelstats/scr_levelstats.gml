@@ -25,3 +25,22 @@ function level_set_srank(num)
 	global.brank = num - ((num / 4) * 2)
 	global.crank = num - ((num / 4) * 3)
 }
+
+function level_collect_pizzakin()
+{
+	global.toppintotal++
+	var msg = "YOU HAVE ALL TOPPINS!"
+	if (global.toppintotal < 5)
+		msg = "YOU NEED " + string(5 - global.toppintotal) + " MORE TOPPINS!"
+		
+	with (obj_tv)
+	{
+		message = msg
+		showtext = true
+		alarm[0] = 150
+	}
+	
+	global.style += 10
+	global.combotime = 60
+	snd_play(sfx_collecttoppin)
+}

@@ -32,8 +32,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Enemy Grab",
-    "path":"folders/Player/Old Sprites/Enemy Grab.yy",
+    "name":"Charge",
+    "path":"folders/Player/States/Charge.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_playerState_bomb",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_playerState_bomb",
+  "parent":{
+    "name":"Bomb",
+    "path":"folders/Player/States/Bomb.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

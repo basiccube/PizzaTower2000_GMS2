@@ -20,15 +20,15 @@ addDoor = function(door)
 {
 	var custom_room = false
 	var rm = room
-	if (room == rm_roomadd && global.current_room != undefined)
+	if (room == rm_custom_room && global.current_room != undefined)
 	{
 		custom_room = true
 		rm = global.current_room.name
 	}
 	
 	var str = string(door.id)
-	if (custom_room && variable_instance_exists(door, "roomadd_instance_id"))
-		str = rm + door.roomadd_instance_id
+	if (custom_room && variable_instance_exists(door, "custom_instance_id"))
+		str = rm + door.custom_instance_id
 	
 	ds_list_add(visitedDoors, str)
 }
@@ -37,15 +37,15 @@ doorVisited = function(door)
 {
 	var custom_room = false
 	var rm = room
-	if (room == rm_roomadd && global.current_room != undefined)
+	if (room == rm_custom_room && global.current_room != undefined)
 	{
 		custom_room = true
 		rm = global.current_room.name
 	}
 	
 	var str = string(door.id)
-	if (custom_room && variable_instance_exists(door, "roomadd_instance_id"))
-		str = rm + door.roomadd_instance_id
+	if (custom_room && variable_instance_exists(door, "custom_instance_id"))
+		str = rm + door.custom_instance_id
 	
 	return (ds_list_find_index(visitedDoors, str) != -1);
 }

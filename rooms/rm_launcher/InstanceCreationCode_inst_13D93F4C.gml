@@ -1,4 +1,4 @@
-text = "Pizza Builder\n(BROKEN)"
+text = "Pizza Builder"
 func = function()
 {
 	with (obj_launcher)

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_playerState_tumble",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_playerState_tumble",
+  "parent":{
+    "name":"Tumble",
+    "path":"folders/Player/States/Tumble.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

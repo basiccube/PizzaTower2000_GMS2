@@ -1,4 +1,4 @@
-// Culling system
+///@desc Culling system
 
 var rx1 = cam_x - 200
 var rx2 = SCREEN_WIDTH + 400

@@ -1,5 +1,5 @@
 // Draw some stuff behind the player in Butterscotch
-if global.butterscotch
+if (global.butterscotch && global.bscotch_player_drawoverride)
 {
 	global.player_drawoverride = true
 	for (var i = 0; i < drawOverrideLength; i++)

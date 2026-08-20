@@ -3,8 +3,8 @@ global.state_machine_use_map = false
 global.state_machine_id_override = noone
 function StateOverride(inst)
 {
-	// Not needed in Butterscotch
-	if !global.butterscotch
+	// Not needed in the GMS2 runner
+	if !(global.butterscotch && global.bscotch_state_override)
 		exit;
 	
 	global.state_machine_id_override = inst
@@ -28,7 +28,7 @@ function State(updatefunc = func_empty, enterfunc = func_empty, leavefunc = func
 function StateMachine(initialState) constructor
 {
 	// Structs in Butterscotch are currently very finicky and don't really work well
-	if (global.butterscotch && !global.state_machine_use_map)
+	if (global.butterscotch && global.bscotch_state_use_map && !global.state_machine_use_map)
 	{
 		print("Forcing state machines to use maps instead of structs")
 		global.state_machine_use_map = true

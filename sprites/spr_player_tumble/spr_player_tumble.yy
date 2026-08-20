@@ -36,8 +36,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Old States",
-    "path":"folders/Player/Old States.yy",
+    "name":"Tumble",
+    "path":"folders/Player/States/Tumble.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

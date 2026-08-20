@@ -3,24 +3,6 @@ tempMeetingList = ds_list_create()
 
 #macro LAST_FRAME floor(image_index) == image_number - 1
 
-function print()
-{
-	var _string = ""
-	for (var i = 0; i < argument_count; i++)
-		_string += string(argument[i])
-	
-	show_debug_message(_string)
-}
-
-function concat()
-{
-	var _string = ""
-	for (var i = 0; i < argument_count; i++)
-		_string += string(argument[i])
-	
-	return _string;
-}
-
 ///@param x
 ///@param y
 ///@param obj
@@ -60,15 +42,6 @@ function file_text_read_all(file)
         filestring += file_text_readln(file)
 	
     return filestring;
-}
-
-function camera_shake(shake, shake_acc)
-{
-	with (obj_camera)
-	{
-		shake_mag = shake
-		shake_mag_acc = shake_acc / room_speed
-	}
 }
 
 function get_targetdoor(_x = x, _y = y)

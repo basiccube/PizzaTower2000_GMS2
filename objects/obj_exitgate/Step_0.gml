@@ -3,7 +3,7 @@ if (global.panic && !uparrow)
 	uparrowID = scr_create_uparrowhitbox()
 	uparrow = true
 }
-else if uparrow
+else if (!global.panic && uparrow)
 {
 	instance_destroy(uparrowID)
 	uparrow = false

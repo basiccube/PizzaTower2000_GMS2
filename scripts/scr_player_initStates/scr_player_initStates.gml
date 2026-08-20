@@ -43,9 +43,11 @@
 #macro PLAYER_GAMEOVER "gameOver"
 
 #macro PLAYER_DUMMY "dummy"
+#macro PLAYER_NOCLIP "noclip"
+#macro PLAYER_ANIMATION "animation"
+
 #macro PLAYER_MENU "menu"
 #macro PLAYER_SCOOTERSLIDE "scooterSlide"
-#macro PLAYER_ANIMATION "animation"
 
 // transformations
 #macro PLAYER_KNIGHT "knight"
@@ -122,9 +124,19 @@ function scr_player_initStates()
 	add_state(PLAYER_GAMEOVER, scr_playerState_gameOver)
 	
 	// misc
+	add_state(PLAYER_NOCLIP, scr_playerState_noclip)
+	add_state(PLAYER_ANIMATION, scr_playerState_animation, func_empty, scr_playerState_animation_leave)
+	
+	// menu
 	add_state(PLAYER_MENU, scr_playerState_menu)
 	add_state(PLAYER_SCOOTERSLIDE, scr_playerState_scooterSlide)
-	add_state(PLAYER_ANIMATION, scr_playerState_animation, func_empty, scr_playerState_animation_leave)
+	
+	// transformations
+	add_state(PLAYER_KNIGHT, scr_playerState_knight)
+	add_state(PLAYER_KNIGHTSLIDE, scr_playerState_knightSlide, scr_playerState_knightSlide_enter)
+	add_state(PLAYER_KNIGHTATTACK, scr_playerState_knightAttack, scr_playerState_knightAttack_enter, scr_playerState_knightAttack_leave)
+	add_state(PLAYER_BOMB, scr_playerState_bomb, scr_playerState_bomb_enter)
+	add_state(PLAYER_TUMBLE, scr_playerState_tumble)
 	
 	StateOverride(noone)
 }

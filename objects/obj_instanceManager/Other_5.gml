@@ -1,6 +1,6 @@
 var custom_room = false
 var rm = room
-if (room == rm_roomadd && global.prev_room != undefined)
+if (room == rm_custom_room && global.prev_room != undefined)
 {
 	custom_room = true
 	rm = global.prev_room.name
@@ -20,10 +20,10 @@ if ds_map_exists(rooms, rm)
 			{
 				if persistent
 					continue;
-				if !variable_instance_exists(id, "roomadd_instance_id")	
+				if !variable_instance_exists(id, "custom_instance_id")	
 					continue;
 			
-				if (roomadd_instance_id == inst)
+				if (custom_instance_id == inst)
 				{
 					found = true
 					break;

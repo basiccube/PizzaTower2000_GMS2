@@ -1,2 +1,7 @@
 image_speed = 0
 
+knightStates = [
+	PLAYER_KNIGHT,
+	PLAYER_KNIGHTSLIDE,
+	PLAYER_KNIGHTATTACK
+]

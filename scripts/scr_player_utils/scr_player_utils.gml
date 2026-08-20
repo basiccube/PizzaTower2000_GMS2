@@ -42,7 +42,7 @@ function scr_player_addslopemomentum(spd)
 }
 
 global.player_drawoverride = false
-#macro PLAYER_DRAWOVERRIDE !(global.butterscotch && !global.player_drawoverride)
+#macro PLAYER_DRAWOVERRIDE !(global.butterscotch && global.bscotch_player_drawoverride && !global.player_drawoverride)
 
 function player_drawoverride_draw(obj)
 { with (obj) event_perform(ev_draw, ev_draw_normal); }

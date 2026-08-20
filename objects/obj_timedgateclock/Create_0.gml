@@ -1,2 +1,3 @@
 image_speed = 0.35
-var minutes, seconds;
+minutes = 0
+seconds = 5

@@ -64,6 +64,9 @@ parryMax = 8
 parryCount = 0
 parryInstance = noone
 
+bombTimer = 0
+knightBounce = false
+
 mach2EffectTimer = 0
 mach2EffectTimerMax = 5
 
@@ -81,14 +84,15 @@ cutsceneStates = [
 	PLAYER_GAMEOVER
 ]
 cutsceneSprites = [
-	spr_knightpep_start,
-	spr_knightpep_thunder
+	spr_player_knightIntro,
+	spr_player_knightThunder
 ]
 
 crouchMaskStates = [
 	PLAYER_CROUCH,
 	PLAYER_CROUCHSLIDE,
-	PLAYER_MACHROLL
+	PLAYER_MACHROLL,
+	PLAYER_TUMBLE
 ]
 
 drawOverride = [

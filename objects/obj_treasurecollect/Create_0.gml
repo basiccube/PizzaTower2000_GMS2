@@ -1,3 +1,3 @@
 image_speed = 0.35
-sprgot = spr_treasure2pick
-spridle = spr_treasure2
+spr_idle = spr_treasure2
+spr_got = spr_treasure2pick

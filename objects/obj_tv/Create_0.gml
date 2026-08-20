@@ -21,8 +21,8 @@ idleanim = 240
 noisemax = 6
 noisebuffer = noisemax
 
-tv_x = (__view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) - 98)
-tv_y = (__view_get( e__VW.YView, 0 ) + 70)
+tv_x = SCREEN_WIDTH - 98
+tv_y = 70
 player_yoffset = 0
 comboalpha = 0
 savedcombo = 0

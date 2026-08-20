@@ -1,4 +1,16 @@
 properties_map = ds_map_create()
+resize_list = [
+	Realtitlescreen,
+	levelselect,
+	rank_room,
+	timesuproom
+]
+
+if (instance_number(object_index) > 1)
+{
+	instance_destroy()
+	exit;
+}
 
 var file = file_find_first("levels/*.prm", fa_none)
 while (file != "")

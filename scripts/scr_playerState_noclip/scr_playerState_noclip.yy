@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_playerState_noclip",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_playerState_noclip",
+  "parent":{
+    "name":"Noclip",
+    "path":"folders/Player/States/Noclip.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

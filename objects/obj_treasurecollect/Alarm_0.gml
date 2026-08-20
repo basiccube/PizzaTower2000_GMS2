@@ -1,8 +1,11 @@
-obj_playerOLD.state = 0
-obj_playerOLD.image_index = 0
-obj_playerOLD.sprite_index = spr_player_idle
+with (obj_player)
+{
+	sprite_index = spr_player_idle
+	image_index = 0
+	state.change(PLAYER_NORMAL)
+}
 
-with (instance_create(x, y, obj_smallnumber))
-    number = 1000
-global.collect += 1000
 global.style += 25
+global.collect += 1000
+with (instance_create(x, y, obj_smallnumber))
+	number = 1000

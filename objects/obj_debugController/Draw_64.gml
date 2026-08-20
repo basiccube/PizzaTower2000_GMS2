@@ -8,8 +8,8 @@ if debugInfo
 
 	if instance_exists(obj_player)
 	{
-		draw_text_alt(8, SCREEN_HEIGHT / 2 + 48, "state: " + obj_player.state.state)
-		draw_text_alt(8, SCREEN_HEIGHT / 2 + 64, "previous state: " + obj_player.state.prevstate)
+		draw_text_alt(8, SCREEN_HEIGHT - 64, "state: " + obj_player.state.state)
+		draw_text_alt(8, SCREEN_HEIGHT - 48, "previous state: " + obj_player.state.prevstate)
 	}
 	
 	draw_set_halign(fa_right)
@@ -88,4 +88,7 @@ if (console_open || console_offset > -console_size)
 			ty += console_suggestions_spacing
 		}
 	}
+	
+	draw_set_halign(fa_right)
+	draw_text_alt(cw - 6, cy + 6, "version " + GM_version, c_yellow)
 }

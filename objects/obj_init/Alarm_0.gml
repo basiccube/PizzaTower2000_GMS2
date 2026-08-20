@@ -67,38 +67,7 @@ if SPRITE_LOADER_ENABLED
 		sprloader_load(i)
 }
 
-// Set non-external room views
-for (var i = 0; room_exists(i); i++)
-{	
-	var cam = camera_create_view(0, 0, global.screenw, global.screenh)
-	
-	var oldcam = room_get_camera(i, 0)
-	if (oldcam != -1)
-		camera_destroy(oldcam)
-	
-	room_set_camera(i, 0, cam)
-	room_set_viewport(i, 0, true, 0, 0, global.screenw, global.screenh)
-	room_set_view_enabled(i, true)
-}
-
-var arr = [
-	Realtitlescreen,
-	levelselect,
-	rank_room,
-	timesuproom
-]
-
-for (var i = 0, n = array_length(arr); i < n; i++)
-{
-	var rm = arr[i]
-	room_set_width(rm, global.screenw)
-	room_set_height(rm, global.screenh)
-}
-
 global.leveltosave = -4
 stats_reset()
-
-// Create room handler. Has to be created at this point due to screen variables
-instance_create(x, y, obj_room)
 
 room_goto(rm_initializer)

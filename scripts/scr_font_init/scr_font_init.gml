@@ -11,4 +11,4 @@ globalvar fnt_combo;
 fnt_combo = font_add_sprite_ext(spr_combofont, "0123456789", true, 0)
 
 globalvar fnt_debug;
-fnt_debug = font_add_sprite_ext(spr_debugfont, "►!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_abcdefghijklmnopqrstuvwxyz{|}~◄", true, 0)
+fnt_debug = font_add_sprite_ext(spr_debugfont, "►!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_abcdefghijklmnopqrstuvwxyz{|}~◄ ", true, 0)

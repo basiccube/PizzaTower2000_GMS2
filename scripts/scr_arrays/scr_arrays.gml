@@ -3,7 +3,7 @@
 
 function array_contains_hook(arr, val)
 {
-	if !global.butterscotch
+	if !(global.butterscotch && global.bscotch_array_contains)
 		return array_contains_original(arr, val);
 	
 	for (var i = 0, n = array_length(arr); i < n; i++)

@@ -21,15 +21,22 @@ for (var i = 0, n = array_length(arr); i < n; i++)
 	}
 }
 
-function bscotch_check(scr)
-{ return (global.butterscotch && asset_get_index(scr) == -1); }
+// fixes/workarounds
+global.bscotch_string_split_ext = true
+global.bscotch_place_meeting = true
+global.bscotch_array_contains = true
+global.bscotch_state_override = true
+global.bscotch_state_use_map = true
+global.bscotch_audio = true
+global.bscotch_backgrounds = true
+global.bscotch_player_drawoverride = true
 
 #macro place_meeting_original place_meeting
 #macro place_meeting place_meeting_hook
 
 function place_meeting_hook(x, y, obj)
 {
-	if !global.butterscotch
+	if !(global.butterscotch && global.bscotch_place_meeting)
 		return place_meeting_original(x, y, obj);
 	
 	if is_array(obj)
@@ -44,4 +51,51 @@ function place_meeting_hook(x, y, obj)
 	}
 	else
 		return place_meeting_original(x, y, obj);
+}
+
+#macro string_split_ext_original string_split_ext
+#macro string_split_ext string_split_ext_hook
+
+function string_split_ext_hook(str, delim_arr, remove_empty = false)
+{
+	if !(global.butterscotch && global.bscotch_string_split_ext)
+		return string_split_ext_original(str, delim_arr, remove_empty);
+	
+	// This function is slow
+	var arr = []
+	
+	var splitstr = ""
+	for (var i = 1, n = string_length(str); i <= n; i++)
+	{
+		var char = string_char_at(str, i)
+		splitstr += char
+		
+		var pos = 0
+		var found_delim = ""
+		for (var j = 0, m = array_length(delim_arr); j < m; j++)
+		{
+			var delim = delim_arr[j]
+			pos = string_pos(delim, splitstr)
+			
+			if (pos != 0)
+			{
+				found_delim = delim
+				break;
+			}
+		}
+		
+		if (pos != 0)
+		{
+			var s = string_delete(splitstr, pos, string_length(found_delim))
+			if (s != "" || !remove_empty)
+				array_push(arr, s)
+			
+			splitstr = ""
+		}
+	}
+	
+	if (splitstr != "" || !remove_empty)
+		array_push(arr, splitstr)
+	
+	return arr;
 }

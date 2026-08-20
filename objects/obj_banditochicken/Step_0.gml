@@ -22,7 +22,7 @@ if (state != 95)
     thrown = 0
 if (sprite_index == idlespr)
     state = 84
-if (state == 84 && obj_playerOLD.x > (x - 400) && obj_playerOLD.x < (x + 400) && y <= (obj_playerOLD.y + 250) && y >= (obj_playerOLD.y - 250))
+if (state == 84 && obj_player.x > (x - 400) && obj_player.x < (x + 400) && y <= (obj_player.y + 250) && y >= (obj_player.y - 250))
 {
     vsp = -6
     sprite_index = walkspr

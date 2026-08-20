@@ -1,4 +1,4 @@
-if global.butterscotch
+if (global.butterscotch && global.bscotch_backgrounds)
 	exit;
 
 if !visible

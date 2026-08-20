@@ -1,5 +1,5 @@
-if (sprite_index == sprgot && obj_playerOLD.state != 14)
-    instance_destroy()
+if (sprite_index == spr_got && !obj_player.state.is(PLAYER_TREASURE))
+	instance_destroy()
 
-if (sprite_index != sprgot)
-    sprite_index = spridle
+if (sprite_index != spr_got)
+	sprite_index = spr_idle

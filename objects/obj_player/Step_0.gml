@@ -80,5 +80,5 @@ mask_index = spr_player_mask
 if in_array(state.state, crouchMaskStates)
 	mask_index = spr_crouchmask
 
-if !state.is([PLAYER_MENU, PLAYER_GAMEOVER, PLAYER_GETKEY, PLAYER_TREASURE])
+if !state.is([PLAYER_MENU, PLAYER_ENTERDOOR, PLAYER_GAMEOVER, PLAYER_GETKEY, PLAYER_TREASURE, PLAYER_NOCLIP])
 	scr_collide()

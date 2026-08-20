@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_playerState_knight",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_playerState_knight",
+  "parent":{
+    "name":"Knight",
+    "path":"folders/Player/States/Knight.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

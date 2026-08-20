@@ -11,6 +11,9 @@ function con_debuginfo(args)
 	save_config()
 }
 
+function con_printex(args)
+{ global.print_extra = console_bool(args, global.print_extra); }
+
 function con_panic(args)
 {
 	var mins = 3
@@ -34,4 +37,15 @@ function con_panic(args)
 	global.panic = !global.panic
 	global.minutes = mins
 	global.seconds = secs
+}
+
+function con_noclip(args)
+{
+	with (obj_player)
+	{
+		if state.is(PLAYER_NOCLIP)
+			state.change(PLAYER_NORMAL)
+		else
+			state.change(PLAYER_NOCLIP)
+	}
 }

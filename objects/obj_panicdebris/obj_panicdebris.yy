@@ -1,17 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_panicdebris",
+  "%Name":"obj_panicDebris",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_panicdebris",
+  "name":"obj_panicDebris",
   "overriddenProperties":[],
   "parent":{
-    "name":"Debris",
-    "path":"folders/Objects/Visuals/Debris.yy",
+    "name":"Visuals",
+    "path":"folders/Objects/Visuals.yy",
   },
   "parentObjectId":null,
   "persistent":true,

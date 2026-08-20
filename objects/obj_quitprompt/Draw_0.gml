@@ -2,7 +2,7 @@ draw_set_alpha(0.5)
 draw_rectangle_color(0, 0, global.screenw, global.screenh, c_black, c_black, c_black, c_black, 0)
 draw_set_alpha(1)
 
-draw_set_font(global.font)
+draw_set_font(fnt_big)
 draw_set_halign(fa_center)
 draw_set_color(c_white)
 

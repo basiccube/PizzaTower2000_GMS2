@@ -5,6 +5,7 @@
 #macro SCREEN_HEIGHT global.screenh
 
 image_speed = 0.35
+depth = -400
 alarm[1] = 60
 
 global.minutes = 1

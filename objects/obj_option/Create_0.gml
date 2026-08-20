@@ -1,5 +1,5 @@
 optionselected = 0
-optionsaved_debug = global.debug
+optionsaved_debug = obj_debugController.debugInfo
 optionsaved_highperformance = global.highperformance
-optionsaved_showcollisions = obj_debugcontroller.showcollisions
+optionsaved_showcollisions = obj_debugController.showCollisions
 depth = -999

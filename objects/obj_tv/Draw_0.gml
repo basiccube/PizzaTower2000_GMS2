@@ -1,7 +1,7 @@
 tv_x = (__view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) - 98)
 tv_y = (__view_get( e__VW.YView, 0 ) + 70)
 
-draw_set_font(global.font)
+draw_set_font(fnt_big)
 draw_set_halign(fa_center)
 draw_set_valign(fa_top)
 draw_set_color(c_white)
@@ -17,7 +17,7 @@ if (global.hud)
         draw_sprite_ext(spr_newtv_combo, 0, tv_x - 17, tv_y + 12 + player_yoffset, 1, 1, 0, c_white, comboalpha)
         draw_set_halign(fa_left)
         draw_set_valign(fa_top)
-        draw_set_font(global.combofont)
+        draw_set_font(fnt_combo)
         draw_set_alpha(comboalpha)
         
         var combostr, num, w, xx, yy;
@@ -59,7 +59,7 @@ else
     
         if (global.combo != 0 && global.combotime > 0)
         {
-            draw_set_font(global.smallfont)
+            draw_set_font(fnt_small)
             draw_text(tv_x - 4, tv_y + player_yoffset + 18, string_hash_to_newline("X" + string(global.combo)))
             draw_sprite_ext(spr_barpop_old, 0, tv_x - 32, tv_y + 36 + player_yoffset, 1, 1, 0, c_white, 1)
     
@@ -72,7 +72,7 @@ else
     }
 }
 
-draw_set_font(global.font)
+draw_set_font(fnt_big)
 draw_set_halign(fa_center)
 draw_set_valign(fa_top)
 

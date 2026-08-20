@@ -3,10 +3,7 @@
 // Load settings
 ini_open("saveData.ini")
 
-global.debug = ini_read_real("Option", "DebugMode", 0)
 global.highperformance = ini_read_real("Option", "HighPerformance", 0)
-with (obj_debugcontroller)
-    showcollisions = ini_read_real("Option", "ShowCollisions", 1)
 playerdir = ini_read_string("Option", "PlayerDir", "peppino")
 sounddir = ini_read_string("Option", "SoundDir", "default")
 global.hud = ini_read_real("Option", "HUD", 0)
@@ -17,11 +14,6 @@ ini_close()
 restart = false
 if (sprite_get_width(spr_pepcooter) > 32)
     restart = true
-
-// Create important objects
-instance_create(x, y, obj_debugcontroller)
-instance_create(x, y, obj_music)
-instance_create(x, y, obj_panicdebris)
     
 global.startRoom = ""
 global.startDoor = ""
@@ -102,12 +94,6 @@ for (var i = 0, n = array_length(arr); i < n; i++)
 	room_set_width(rm, global.screenw)
 	room_set_height(rm, global.screenh)
 }
-
-// Add fonts
-global.font = font_add_sprite_ext(spr_font, "!.0123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZ", true, 0)
-global.smallfont = font_add_sprite_ext(spr_smallfont, "!.0123456789:?ABCDEFGHIJKLMNOPQRSTUVWXYZ", true, 0)
-global.pizzafont = font_add_sprite_ext(spr_pizzafont, "0123456789", true, 0)
-global.combofont = font_add_sprite_ext(spr_combofont, "0123456789", true, 0)
 
 global.leveltosave = -4
 stats_reset()

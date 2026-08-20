@@ -2,7 +2,7 @@ draw_menu_background(25, 45, 65)
 
 for (i = 0; i < ds_list_size(level_list); i += 1)
 {
-    draw_set_font(global.font)
+    draw_set_font(fnt_big)
     draw_set_color(c_white)
     draw_set_halign(fa_left)
     draw_set_valign(fa_top)

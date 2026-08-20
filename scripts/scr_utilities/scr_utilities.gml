@@ -25,33 +25,9 @@ function concat()
 ///@param y
 ///@param obj
 function instance_create(ix, iy, iobj)
-{
-	var myDepth = object_get_depth(iobj)
-	return instance_create_depth(ix, iy, myDepth, iobj);
-}
+{ return instance_create_depth(ix, iy, 0, iobj); }
 
 function func_empty() { }
-
-function array_contains_bscotch(arr, val)
-{
-	if !global.butterscotch
-		return array_contains(arr, val);
-	
-	for (var i = 0, n = array_length(arr); i < n; i++)
-	{
-		if (arr[i] == val)
-			return true;
-	}
-	
-	return false;
-}
-
-function in_array(val, arr)
-{
-	if global.butterscotch
-		return array_contains_bscotch(arr, val);
-	return array_contains(arr, val);
-}
 
 function get_struct_value(struct, value, defaultvalue)
 {

@@ -1,5 +1,40 @@
+function scr_initinput()
+{
+	keyUp_held = false
+	keyUp_pressed = false
+	
+	keyDown_held = false
+	keyDown_pressed = false
+	
+	keyLeft_held = false
+	keyLeft_pressed = false
+	
+	keyRight_held = false
+	keyRight_pressed = false
+	
+	keyJump_held = false
+	keyJump_pressed = false
+	
+	keySlap_held = false
+	keySlap_pressed = false
+	
+	keyAttack_held = false
+	keyAttack_pressed = false
+	
+	keyTaunt_held = false
+	keyTaunt_pressed = false
+	
+	keyEscape = false
+}
+
 function scr_getinput()
 {
+	if (instance_exists(obj_debugController) && obj_debugController.console_open)
+	{
+		scr_initinput()
+		exit;
+	}
+	
 	var up = vk_up
 	keyUp_held = keyboard_check(up)
 	keyUp_pressed = keyboard_check_pressed(up)

@@ -1,5 +1,5 @@
 draw_set_alpha(1)
-draw_set_font(global.font)
+draw_set_font(fnt_big)
 draw_set_halign(fa_center)
 draw_set_color(c_white)
 if (optionselect == 0)

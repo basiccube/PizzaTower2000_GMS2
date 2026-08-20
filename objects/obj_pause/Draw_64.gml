@@ -11,7 +11,7 @@ if pause
 draw_menu_background(20, 20, 20, 1, alpha - 0.25)
 
 draw_set_align(fa_center, fa_top)
-draw_set_font(global.font)
+draw_set_font(fnt_big)
 
 draw_text_alt(pausedX, pausedY, "PAUSED")
 

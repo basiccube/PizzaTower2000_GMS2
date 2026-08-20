@@ -35,18 +35,16 @@ if (optionselected == 2)
 if (keySlap_pressed || keyEscape)
 {
     snd_play(sfx_enemyprojectile)
-    with (obj_debugcontroller)
+    with (obj_debugController)
     {
-        debugenabled = other.optionsaved_debug
-        showcollisions = other.optionsaved_showcollisions
+        debugInfo = other.optionsaved_debug
+        showCollisions = other.optionsaved_showcollisions
+		save_config()
     }
-    global.debug = optionsaved_debug
     global.highperformance = optionsaved_highperformance
     
     ini_open("saveData.ini")
-    ini_write_real("Option", "DebugMode", optionsaved_debug)
     ini_write_real("Option", "HighPerformance", optionsaved_highperformance)
-    ini_write_real("Option", "ShowCollisions", optionsaved_showcollisions)
     ini_close()
     
     instance_destroy()

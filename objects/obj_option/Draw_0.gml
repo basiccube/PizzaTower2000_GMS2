@@ -1,5 +1,5 @@
 draw_menu_background(10, 20, 20)
-draw_set_font(global.font)
+draw_set_font(fnt_big)
 draw_set_halign(fa_center)
 draw_set_color(c_white)
 

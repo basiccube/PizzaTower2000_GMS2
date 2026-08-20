@@ -1,6 +1,7 @@
 image_speed = 0.1
 chose = 0
 message = ""
+depth = -400
 showtext = 0
 tvsprite = spr_tvdefault
 

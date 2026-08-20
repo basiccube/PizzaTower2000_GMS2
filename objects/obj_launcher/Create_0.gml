@@ -36,7 +36,6 @@ load_room = function(rm)
 	{
 		mw = -1
 		mh = -1
-		__global_object_depths_editor()
 	}
 	
 	window_set_min_width(mw)

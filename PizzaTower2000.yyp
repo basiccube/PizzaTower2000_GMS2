@@ -770,8 +770,6 @@
     {"id":{"name":"scr_sprite_loader","path":"scripts/scr_sprite_loader/scr_sprite_loader.yy",},},
     {"id":{"name":"scr_state_machine","path":"scripts/scr_state_machine/scr_state_machine.yy",},},
     {"id":{"name":"scr_utilities","path":"scripts/scr_utilities/scr_utilities.yy",},},
-    {"id":{"name":"tempini_close","path":"scripts/tempini_close/tempini_close.yy",},},
-    {"id":{"name":"tempini_open","path":"scripts/tempini_open/tempini_open.yy",},},
     {"id":{"name":"tile_add","path":"scripts/tile_add/tile_add.yy",},},
     {"id":{"name":"tile_exists","path":"scripts/tile_exists/tile_exists.yy",},},
     {"id":{"name":"tile_get_background","path":"scripts/tile_get_background/tile_get_background.yy",},},

@@ -7,10 +7,10 @@ while (plifile != "")
 {
     ds_list_add(level_list, plifile)
     
-    tempini_open("levels\\" + plifile)
+    ini_open("levels\\" + plifile)
     ds_list_add(levelname_list, ini_read_string("Level", "Name", ""))
     ds_list_add(levelroom_list, ini_read_string("Level", "Room", ""))
-    tempini_close()
+    ini_close()
     
     plifile = file_find_next()
 }

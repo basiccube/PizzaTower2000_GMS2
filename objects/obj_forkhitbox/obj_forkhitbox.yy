@@ -10,8 +10,8 @@
   "name":"obj_forkhitbox",
   "overriddenProperties":[],
   "parent":{
-    "name":"Collision",
-    "path":"folders/Objects/Collision.yy",
+    "name":"Baddie objects",
+    "path":"folders/Objects/Baddie/Baddie objects.yy",
   },
   "parentObjectId":{
     "name":"obj_hurtbox",

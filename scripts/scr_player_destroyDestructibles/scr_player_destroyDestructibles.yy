@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_player_destroyDestructibles",
   "parent":{
-    "name":"Player",
-    "path":"folders/Player.yy",
+    "name":"Scripts",
+    "path":"folders/Player/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

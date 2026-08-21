@@ -1,6 +1,6 @@
 with (obj_player)
 {
-	if (room == rank_room)
+	if (room == rm_rank_room)
 	{
 		x = SCREEN_WIDTH / 2
 		y = SCREEN_HEIGHT / 2
@@ -13,8 +13,8 @@ with (obj_camera)
 if (fadealpha > 1)
 {
 	fadein = true
-	if (room != rank_room)
-		room = rank_room
+	if (room != rm_rank_room)
+		room = rm_rank_room
 	
 	snd_stop_all()
 	global.panic = false

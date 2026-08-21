@@ -3,7 +3,7 @@ function scr_playerState_timesUp()
 	sprite_index = spr_player_timesUp
 	xscale = 1
 	
-	if (room == timesuproom)
+	if (room == rm_timesup_room)
 	{
 		x = SCREEN_WIDTH / 2
 		y = SCREEN_HEIGHT / 2

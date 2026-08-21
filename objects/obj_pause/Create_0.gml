@@ -13,10 +13,10 @@ alpha = 0
 screensprite = undefined
 
 disabled_rooms = [
-	rank_room,
-	timesuproom,
-	levelselect,
-	Realtitlescreen,
+	rm_rank_room,
+	rm_timesup_room,
+	rm_level_select,
+	rm_main_menu,
 	rm_initializer
 ]
 
@@ -64,5 +64,5 @@ ds_map_set(menu_map, "main_menu", function()
 	unpauseGame()
 	scr_game_reset()
 	scr_delete_pause_image()
-	room_goto(Realtitlescreen)
+	room_goto(rm_main_menu)
 })

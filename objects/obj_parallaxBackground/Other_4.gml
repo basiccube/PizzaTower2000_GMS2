@@ -1,7 +1,7 @@
-visible = !(room == rank_room ||
-			room == timesuproom ||
-			room == Titlescreen ||
-			room == Realtitlescreen ||
+visible = !(room == rm_rank_room ||
+			room == rm_timesup_room ||
+			room == rm_tower_outside ||
+			room == rm_main_menu ||
 			room == rm_initializer)
 
 backgroundLayer = layer_get_id("Background")

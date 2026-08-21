@@ -1,4 +1,4 @@
-if (room == rank_room)
+if (room == rm_rank_room)
 {
     currentlyplaying = ds_map_find_value(global.music, "mu_title")
     jingle = true

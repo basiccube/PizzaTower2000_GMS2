@@ -6,7 +6,7 @@ if (global.startRoom != "")
 		
 	if (rm == undefined)
 	{
-		room_goto(Realtitlescreen)
+		room_goto(rm_main_menu)
 		exit;
 	}
 	
@@ -20,4 +20,4 @@ if (global.startRoom != "")
 	room_goto(rm)
 }
 else
-	room_goto(Realtitlescreen)
+	room_goto(rm_main_menu)

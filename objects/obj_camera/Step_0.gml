@@ -1,10 +1,10 @@
-visible = !(room == rank_room || room == timesuproom || room == levelselect || room == Realtitlescreen)
+visible = !(room == rm_rank_room || room == rm_timesup_room || room == rm_level_select || room == rm_main_menu)
 
-timestop = !(global.panic || global.timedgate || room == timesuproom)
+timestop = !(global.panic || global.timedgate || room == rm_timesup_room)
 if (global.panic && !timestop && alarm[1] <= 0)
     alarm[1] = 60
 
-if (global.seconds <= 0 && global.minutes <= 0 && global.panic && room != timesuproom && !instance_exists(obj_endlevelfade))
+if (global.seconds <= 0 && global.minutes <= 0 && global.panic && room != rm_timesup_room && !instance_exists(obj_endlevelfade))
 {
 	with (obj_player)
 	{
@@ -12,7 +12,7 @@ if (global.seconds <= 0 && global.minutes <= 0 && global.panic && room != timesu
 		targetDoor = "A"
 		state.change(PLAYER_TIMESUP)
 	}
-    room = timesuproom
+    room = rm_timesup_room
 }
 
 if (global.seconds == 0 && global.minutes == 0 && global.timedgate)

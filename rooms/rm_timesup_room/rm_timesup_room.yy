@@ -1,14 +1,14 @@
 {
   "$GMRoom":"v1",
-  "%Name":"timesuproom",
-  "creationCodeFile":"rooms/timesuproom/RoomCreationCode.gml",
+  "%Name":"rm_timesup_room",
+  "creationCodeFile":"rooms/rm_timesup_room/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
-    {"name":"inst_A8B8D915","path":"rooms/timesuproom/timesuproom.yy",},
-    {"name":"inst_12561C37","path":"rooms/timesuproom/timesuproom.yy",},
-    {"name":"inst_A662817E","path":"rooms/timesuproom/timesuproom.yy",},
+    {"name":"inst_A8B8D915","path":"rooms/rm_timesup_room/rm_timesup_room.yy",},
+    {"name":"inst_12561C37","path":"rooms/rm_timesup_room/rm_timesup_room.yy",},
+    {"name":"inst_A662817E","path":"rooms/rm_timesup_room/rm_timesup_room.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -19,7 +19,7 @@
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":true,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":2147483600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":true,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
-  "name":"timesuproom",
+  "name":"rm_timesup_room",
   "parent":{
     "name":"Level Result",
     "path":"folders/Rooms/Level Result.yy",

@@ -11,7 +11,7 @@ if (keyEscape && !instance_exists(obj_transition) && !in_array(room, disabled_ro
 		menu = ["resume", "main_menu"]
 		selection = 0
 		
-		if (!pause && room_name() != "hub_1" && room != Titlescreen)
+		if (!pause && room_name() != "hub_1" && room != rm_tower_outside)
 			array_insert(menu, 1, "exit_level")
 		
 		scr_delete_pause_image()

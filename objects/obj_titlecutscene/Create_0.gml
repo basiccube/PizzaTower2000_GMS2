@@ -9,4 +9,4 @@ drop = false
 move = false
 
 global.panic = false
-targetRoom = Titlescreen
+targetRoom = rm_tower_outside

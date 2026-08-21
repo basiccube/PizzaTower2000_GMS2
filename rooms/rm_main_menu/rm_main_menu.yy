@@ -1,16 +1,16 @@
 {
   "$GMRoom":"v1",
-  "%Name":"Realtitlescreen",
-  "creationCodeFile":"rooms/Realtitlescreen/RoomCreationCode.gml",
+  "%Name":"rm_main_menu",
+  "creationCodeFile":"rooms/rm_main_menu/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
-    {"name":"inst_32B11221","path":"rooms/Realtitlescreen/Realtitlescreen.yy",},
-    {"name":"inst_61989163","path":"rooms/Realtitlescreen/Realtitlescreen.yy",},
-    {"name":"inst_C01D0F75","path":"rooms/Realtitlescreen/Realtitlescreen.yy",},
-    {"name":"inst_5A4AB353","path":"rooms/Realtitlescreen/Realtitlescreen.yy",},
-    {"name":"inst_69B7EB27","path":"rooms/Realtitlescreen/Realtitlescreen.yy",},
+    {"name":"inst_32B11221","path":"rooms/rm_main_menu/rm_main_menu.yy",},
+    {"name":"inst_61989163","path":"rooms/rm_main_menu/rm_main_menu.yy",},
+    {"name":"inst_C01D0F75","path":"rooms/rm_main_menu/rm_main_menu.yy",},
+    {"name":"inst_5A4AB353","path":"rooms/rm_main_menu/rm_main_menu.yy",},
+    {"name":"inst_69B7EB27","path":"rooms/rm_main_menu/rm_main_menu.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -26,7 +26,7 @@
     {"$GMRBackgroundLayer":"","%Name":"Background_Moon","animationFPS":1.0,"animationSpeedType":1,"colour":4294967295,"depth":2147483500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background_Moon","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":{"name":"bg_titlesky","path":"sprites/bg_titlesky/bg_titlesky.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":true,"visible":true,"vspeed":0.0,"vtiled":false,"x":100,"y":100,},
     {"$GMRBackgroundLayer":"","%Name":"Background_Sky","animationFPS":1.0,"animationSpeedType":1,"colour":4294967295,"depth":2147483600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background_Sky","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":{"name":"bg_sky2","path":"sprites/bg_sky2/bg_sky2.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":true,"x":0,"y":0,},
   ],
-  "name":"Realtitlescreen",
+  "name":"rm_main_menu",
   "parent":{
     "name":"Rooms",
     "path":"folders/Rooms.yy",

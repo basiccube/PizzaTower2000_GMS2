@@ -29,7 +29,7 @@ if !instance_exists(obj_quitprompt)
             case 1:
                 obj_titlecutscene.move = true
                 if (optionselect == 1)
-                    obj_titlecutscene.targetRoom = levelselect
+                    obj_titlecutscene.targetRoom = rm_level_select
                 snd_play(sfx_collecttoppin)
                 instance_destroy()
                 with (obj_title)

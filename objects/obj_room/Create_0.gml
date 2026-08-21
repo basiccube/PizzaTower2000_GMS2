@@ -1,9 +1,9 @@
 properties_map = ds_map_create()
 resize_list = [
-	Realtitlescreen,
-	levelselect,
-	rank_room,
-	timesuproom
+	rm_main_menu,
+	rm_level_select,
+	rm_rank_room,
+	rm_timesup_room
 ]
 
 if (instance_number(object_index) > 1)

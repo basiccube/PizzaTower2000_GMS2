@@ -13,7 +13,7 @@ function scr_playerState_crouchSlide()
 		crouchSlideBuffer--
 	
 	var canStand = (!scr_solid(x, y - 16) && !scr_solid(x, y - 32) && !scr_solid(x + 27, y - 32) && !scr_solid(x - 27, y - 32))
-	if (crouchSlideBuffer <= 0 && canStand && !keyDown_held && keyAttack_held && state.prev_is([PLAYER_MACH2, PLAYER_MACH3, PLAYER_SUPLEXDASH]))
+	if (crouchSlideBuffer <= 0 && canStand && !keyDown_held && keyAttack_held && state.prev_is([PLAYER_MACH2, PLAYER_MACH3, PLAYER_SUPLEXDASH, PLAYER_FREEFALL]))
 	{
 		machhitAnim = true
 		movespeed = 10

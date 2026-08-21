@@ -54,6 +54,10 @@ targetDoor = "A"
 hallway = false
 hallwayDirection = 0
 
+roomStartX = x
+roomStartY = y
+resetThreshold = 256
+
 tauntStoredMovespeed = 8
 tauntStoredSprite = spr_player_idle
 tauntStoredState = PLAYER_DUMMY
@@ -104,16 +108,4 @@ drawOverride = [
 drawOverrideLength = array_length(drawOverride)
 
 scr_player_initSounds()
-
-ini_open("character.ini")
-
-name = string_upper(ini_read_string("Character", "Name", "Peppino"))
-useMachFreefallAnim = ini_read_real("Character", "UseMachFreefall", 1)
-grabTurnBoost = ini_read_real("Character", "GrabTurnBoost", 0)
-knightAttackType = ini_read_real("Character", "KnightAttackType", 0)
-
-piledriverAnim = ini_read_real("Piledriver", "PiledriverAnim", 1)
-piledriverX = ini_read_real("Piledriver", "PiledriverXOffset", 0)
-piledriverY = ini_read_real("Piledriver", "PiledriverYOffset", 0)
-
-ini_close()
+scr_player_initCharacter()

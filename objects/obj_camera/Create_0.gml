@@ -8,10 +8,6 @@ image_speed = 0.35
 depth = -400
 alarm[1] = 60
 
-global.minutes = 1
-global.seconds = 59
-global.timedgate = false
-
 shake_mag = 0
 shake_mag_acc = 0
 

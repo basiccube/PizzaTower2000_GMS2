@@ -1,4 +1,4 @@
-if (!instance_exists(obj_option) && !instance_exists(obj_quitprompt))
+if !instance_exists(obj_quitprompt)
 {
     scr_getinput()
     if (keyUp_pressed && optionselect > 0)
@@ -40,7 +40,6 @@ if (!instance_exists(obj_option) && !instance_exists(obj_quitprompt))
             
             case 2:
                 snd_play(sfx_enemyprojectile)
-                instance_create(x, y, obj_option)
                 break
             
             case 3:

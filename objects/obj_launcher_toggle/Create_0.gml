@@ -2,7 +2,7 @@ text = "Toggle"
 toggled = false
 hover = false
 
-ini_file = "saveData.ini"
+ini_file = SETTINGS_FILE
 ini_section = ""
 ini_key = ""
 

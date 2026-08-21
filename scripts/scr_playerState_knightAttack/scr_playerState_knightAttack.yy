@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_playerState_knightAttack",
   "parent":{
-    "name":"Knight Attack",
-    "path":"folders/Player/States/Knight Attack.yy",
+    "name":"Knight",
+    "path":"folders/Player/States/Knight.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

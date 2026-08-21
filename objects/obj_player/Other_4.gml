@@ -12,3 +12,6 @@ if (doorObject != noone && instance_exists(doorObject))
 	x = dx
 	y = dy
 }
+
+roomStartX = x
+roomStartY = y

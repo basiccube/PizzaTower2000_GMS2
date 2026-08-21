@@ -6,6 +6,7 @@ if (instance_number(object_index) > 1)
 
 depth = 9000
 backgrounds = []
+backgroundLayer = undefined
 
 add = function(spr, offset)
 { array_push(backgrounds, [spr, offset]); }

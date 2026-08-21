@@ -69,7 +69,7 @@ function room_parse_file(file)
 				case "room_tile_add":
 					printex("> Adding tile to room")
 					
-					var spr = ds_map_find_value(global.tilesets, string_replace_all(splitarr[4], "'", ""))
+					var spr = ds_map_find_value(global.tileset_map, string_replace_all(splitarr[4], "'", ""))
 					custom_room_add_tile(roomID, spr, real(splitarr[5]), real(splitarr[6]), real(splitarr[7]), real(splitarr[8]), real(splitarr[9]), real(splitarr[10]), real(splitarr[11]))
 					break
 			}
@@ -156,11 +156,18 @@ function room_parse_properties(file)
 			}
 			else if (string_letters(instval) == "")
 				instval = real(instval)
+			else if (string_starts_with(setarr[2], "'") && string_ends_with(setarr[2], "'"))
+			{
+				instval = string_delete(setarr[2], 1, 1)
+				instval = string_delete(instval, string_length(instval), 1)
+			}
 			else
 			{
 				var sinst = asset_get_index(setarr[2])
 				if (sinst != -1)
 					instval = variable_instance_get(sinst.id, setarr[3])
+				else
+					print("Unknown object: ", setarr[2])
 			}
 			
 			variable_instance_set(inst, instvar, instval)

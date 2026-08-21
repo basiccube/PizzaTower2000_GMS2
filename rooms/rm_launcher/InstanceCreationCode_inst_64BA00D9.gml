@@ -1,3 +1,3 @@
 text = "Enable New HUD"
-ini_section = "Option"
+ini_section = "Game"
 ini_key = "HUD"

@@ -1,5 +1,4 @@
 global.music = ds_map_create()
-global.panic = false
 global.escapesong = "mu_pizzatime"
 
 if directory_exists("music")

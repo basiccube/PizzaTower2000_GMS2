@@ -11,6 +11,9 @@ function con_debuginfo(args)
 	save_config()
 }
 
+function con_debugoverlay(args)
+{ show_debug_overlay(!is_debug_overlay_open()); }
+
 function con_printex(args)
 { global.print_extra = console_bool(args, global.print_extra); }
 

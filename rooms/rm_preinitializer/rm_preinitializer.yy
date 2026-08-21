@@ -18,7 +18,7 @@
   "name":"rm_preinitializer",
   "parent":{
     "name":"Initialization",
-    "path":"folders/Rooms/Initialization.yy",
+    "path":"folders/Initialization.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

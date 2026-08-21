@@ -32,8 +32,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Super Jump Prep",
-    "path":"folders/Player/States/Super Jump Prep.yy",
+    "name":"Super Jump",
+    "path":"folders/Player/States/Super Jump.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

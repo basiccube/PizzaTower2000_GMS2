@@ -1,3 +1,8 @@
+global.print_extra = false
+global.print_logfile = false
+
+#macro PRINT_LOGPATH "game.log"
+
 function print()
 {
 	var _string = ""
@@ -5,9 +10,13 @@ function print()
 		_string += string(argument[i])
 	
 	show_debug_message(_string)
+	if global.print_logfile
+	{
+		var file = file_text_open_append(PRINT_LOGPATH)
+		file_text_write_string(file, _string)
+		file_text_close(file)
+	}
 }
-
-global.print_extra = false
 
 #macro printex if global.print_extra print
 

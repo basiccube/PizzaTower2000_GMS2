@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_playerState_knightSlide",
   "parent":{
-    "name":"Knight Slide",
-    "path":"folders/Player/States/Knight Slide.yy",
+    "name":"Knight",
+    "path":"folders/Player/States/Knight.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

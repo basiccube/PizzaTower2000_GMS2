@@ -3,7 +3,7 @@ global.room_code_map = ds_map_create()
 function custom_room_set_code(rm, code)
 {
 	if is_struct(rm)
-		rm = ds_list_find_index(global.rooms, rm)
+		rm = rm.name
 	ds_map_set(global.room_code_map, rm, code)
 }
 
@@ -12,13 +12,13 @@ function custom_room_run_code()
 	if (global.current_room == undefined)
 		exit;
 	
-	var rm = ds_list_find_index(global.rooms, global.current_room)
+	var rm = global.current_room.name
 	if !ds_map_exists(global.room_code_map, rm)
 		exit;
 	
 	var code = ds_map_find_value(global.room_code_map, rm)
-	show_debug_message("Parsing code for room " + string(rm))
 	code = string_replace_all(code, "\r\n", "\n")
+	print("Parsing code for room " + string(rm))
 	
 	var arr = string_split(code, "\n", true)
 	for (var i = 0, n = array_length(arr); i < n; i++)
@@ -32,7 +32,7 @@ function custom_room_run_code()
 			str = string_delete(str, string_length(str), 1)
 			str = string_replace_all(str, "\"", "")
 			
-			var val = ds_map_find_value(global.bg, str)
+			var val = ds_map_find_value(global.background_map, str)
 			if (val == undefined)
 			{
 				var ind = asset_get_index(val)

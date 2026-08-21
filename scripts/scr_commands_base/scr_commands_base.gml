@@ -44,3 +44,27 @@ function con_echo(args)
 
 function con_quit(args)
 { game_end(); }
+
+function con_room(args)
+{
+	var len = array_length(args)
+	if (len <= 1)
+		return "room <name> <door>";
+	
+	var rm = asset_get_index(args[1])
+	if (rm == -1)
+		rm = variable_instance_get(obj_room.id, args[1])
+	if (rm == undefined)
+		return "room " + args[1] + " doesn't exist";
+	
+	if (len > 2 && instance_exists(obj_player))
+		obj_player.targetDoor = args[2]
+	
+	with (obj_player)
+	{
+		if state.is(PLAYER_MENU)
+			state.change(PLAYER_NORMAL)
+	}
+	
+	room_goto(rm)
+}

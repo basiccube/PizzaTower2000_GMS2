@@ -1,14 +1,11 @@
 if (global.panic)
 {
-    if (!global.highperformance)
-    { 
-        with (instance_create((x + 32), (y + 32), obj_debris))
-            sprite_index = spr_bigdebrisescape
-        with (instance_create((x + 32), (y + 32), obj_debris))
-            sprite_index = spr_bigdebrisescape
-        with (instance_create((x + 32), (y + 32), obj_debris))
-            sprite_index = spr_bigdebrisescape
-    }
+    with (instance_create((x + 32), (y + 32), obj_debris))
+        sprite_index = spr_bigdebrisescape
+    with (instance_create((x + 32), (y + 32), obj_debris))
+        sprite_index = spr_bigdebrisescape
+    with (instance_create((x + 32), (y + 32), obj_debris))
+        sprite_index = spr_bigdebrisescape
     with (instance_create((x + 32), (y + 32), obj_debris))
         sprite_index = spr_bigdebrisescape
     with (instance_create((x + 32), (y + 32), obj_debris))

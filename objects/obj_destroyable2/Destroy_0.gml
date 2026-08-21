@@ -1,9 +1,6 @@
-if (!global.highperformance)
-{
-    instance_create((x + 16), y, obj_debris)
-    instance_create((x + 16), y, obj_debris)
-    instance_create((x + 16), y, obj_debris)
-}
+instance_create((x + 16), y, obj_debris)
+instance_create((x + 16), y, obj_debris)
+instance_create((x + 16), y, obj_debris)
 instance_create((x + 16), y, obj_debris)
 instance_create((x + 16), y, obj_debris)
 instance_create(x, y, obj_collect)

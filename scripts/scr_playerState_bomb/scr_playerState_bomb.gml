@@ -74,6 +74,9 @@ function scr_player_bombExplode()
 {
 	snd_play(sfx_explode)
 	instance_create(x, y, obj_bombexplosion)
+	
+	hurt = true
+	hurtTimer = 60
 	bombTimer = 0
 	
 	sprite_index = spr_player_bombEnd

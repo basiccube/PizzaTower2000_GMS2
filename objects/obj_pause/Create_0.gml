@@ -61,10 +61,8 @@ ds_map_set(menu_map, "exit_level", function()
 ds_map_set(menu_string_map, "main_menu", "EXIT TO MAIN MENU")
 ds_map_set(menu_map, "main_menu", function()
 {
-	// TODO: Replace with something that isn't game_restart
-	ds_map_destroy(global.bg)
-	ds_map_destroy(global.tilesets)
-	ds_map_destroy(global.music)
+	unpauseGame()
+	scr_game_reset()
 	scr_delete_pause_image()
-	game_restart()
+	room_goto(Realtitlescreen)
 })

@@ -6,7 +6,14 @@ state.update()
 scr_player_updateSounds()
 scr_player_destroyDestructibles()
 
-if state.is(PLAYER_HURT)
+if (y > room_height + resetThreshold || y < -resetThreshold)
+{
+	x = roomStartX
+	y = roomStartY
+	scr_player_doFreefallLand()
+}
+
+if (state.is(PLAYER_HURT) || sprite_index == spr_player_bombEnd)
 {
 	flickerTimer = 0
 	image_alpha = 1
@@ -36,43 +43,8 @@ if (suplexDash && grounded)
 if (flash && alarm[0] <= 0)
 	alarm[0] = 0.15 * room_speed
 
-// mach3 effect
-var mach3EffectStates = [PLAYER_MACH3, PLAYER_MACHROLL, PLAYER_SUPLEXDASH, PLAYER_CHARGE]
-var mach3EffectMachSlide = (state.is(PLAYER_MACHSLIDE) && state.prev_is(PLAYER_MACH3))
-
-var inMach3EffectState = (state.is(mach3EffectStates) || mach3EffectMachSlide)
-if (inMach3EffectState && !instance_exists(obj_mach3effect))
-{
-	mach3EffectTimer = mach3EffectTimerMax
-	instance_create(x, y, obj_mach3effect)
-}
-
-if (mach3EffectTimer > 0)
-{
-	mach3EffectTimer--
-	if (mach3EffectTimer <= 0 && inMach3EffectState)
-	{
-		mach3EffectTimer = mach3EffectTimerMax
-		instance_create(x, y, obj_mach3effect)
-	}
-}
-
-// mach2 effect
-if (state.is(PLAYER_MACH2) && !instance_exists(obj_mach2effect))
-{
-	mach2EffectTimer = mach2EffectTimerMax
-	instance_create(x, y, obj_mach2effect)
-}
-
-if (mach2EffectTimer > 0)
-{
-	mach2EffectTimer--
-	if (mach2EffectTimer <= 0 && state.is(PLAYER_MACH2))
-	{
-		mach2EffectTimer = mach2EffectTimerMax
-		instance_create(x, y, obj_mach2effect)
-	}
-}
+scr_player_updateMach3Effect()
+scr_player_updateMach2Effect()
 
 cutscene = (state.is(cutsceneStates) || in_array(sprite_index, cutsceneSprites))
 

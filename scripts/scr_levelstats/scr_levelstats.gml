@@ -14,8 +14,21 @@ function stats_reset()
 	global.combo = 0
 	global.combotime = 0
 	
+	global.minutes = 1
+	global.seconds = 59
+	
+	global.panic = false
+	global.timedgate = false
+	
+	global.multiplier = 1
+	global.style = 0
+	global.stylethreshold = 0
+	
 	global.pizzacoin = 0
 	global.golfhit = 0
+	
+	global.hurtcounter = 0
+	global.hurtmilestone = 3
 }
 
 function level_set_srank(num)

@@ -9,8 +9,6 @@ xi = 320
 yi = 540
 imageindexstore = 0
 once = 0
-global.hurtcounter = 0
-global.hurtmilestone = 3
 
 sprite_index = spr_newtv_off
 idlespr = spr_newtv_idle
@@ -35,7 +33,3 @@ global.srank = 0
 global.arank = 0
 global.brank = 0
 global.crank = 0
-
-global.multiplier = 1
-global.style = 0
-global.stylethreshold = 0

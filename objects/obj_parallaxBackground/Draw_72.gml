@@ -17,3 +17,5 @@ for (var i = 0, n = array_length(backgrounds); i < n; i++)
 
 if drawDefaultBackground
 	draw_sprite_tiled(bg_sky2, 0, 0, 0)
+else if layer_get_visible(backgroundLayer)
+	layer_set_visible(backgroundLayer, false)

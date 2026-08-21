@@ -1,14 +1,11 @@
 if global.panic
 {
-    if (!global.highperformance)
-    { 
-        with (instance_create((x + (image_xscale * 16)), (y + 32), obj_debris))
-            sprite_index = spr_bigdebrisescape
-        with (instance_create((x + (image_xscale * 16)), (y + 32), obj_debris))
-            sprite_index = spr_bigdebrisescape
-        with (instance_create((x + (image_xscale * 16)), (y + 32), obj_debris))
-            sprite_index = spr_bigdebrisescape
-    }
+    with (instance_create((x + (image_xscale * 16)), (y + 32), obj_debris))
+        sprite_index = spr_bigdebrisescape
+    with (instance_create((x + (image_xscale * 16)), (y + 32), obj_debris))
+        sprite_index = spr_bigdebrisescape
+    with (instance_create((x + (image_xscale * 16)), (y + 32), obj_debris))
+        sprite_index = spr_bigdebrisescape
     with (instance_create((x + (image_xscale * 16)), (y + 32), obj_debris))
         sprite_index = spr_bigdebrisescape
     with (instance_create((x + (image_xscale * 16)), (y + 32), obj_debris))

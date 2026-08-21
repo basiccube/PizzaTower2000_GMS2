@@ -1,12 +1,9 @@
-if (!global.highperformance)
-{
-    with (instance_create((x + 32), (y + 32), obj_debris))
-        sprite_index = spr_bigdebris
-    with (instance_create((x + 32), (y + 32), obj_debris))
-        sprite_index = spr_bigdebris
-    with (instance_create((x + 32), (y + 32), obj_debris))
-        sprite_index = spr_bigdebris
-}
+with (instance_create((x + 32), (y + 32), obj_debris))
+    sprite_index = spr_bigdebris
+with (instance_create((x + 32), (y + 32), obj_debris))
+    sprite_index = spr_bigdebris
+with (instance_create((x + 32), (y + 32), obj_debris))
+    sprite_index = spr_bigdebris
 with (instance_create((x + 32), (y + 32), obj_debris))
     sprite_index = spr_bigdebris
 with (instance_create((x + 32), (y + 32), obj_debris))

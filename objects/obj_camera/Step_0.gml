@@ -1,4 +1,4 @@
-visible = !(room == rank_room || room == timesuproom || room == levelselect)
+visible = !(room == rank_room || room == timesuproom || room == levelselect || room == Realtitlescreen)
 
 timestop = !(global.panic || global.timedgate || room == timesuproom)
 if (global.panic && !timestop && alarm[1] <= 0)
@@ -17,7 +17,7 @@ if (global.seconds <= 0 && global.minutes <= 0 && global.panic && room != timesu
 
 if (global.seconds == 0 && global.minutes == 0 && global.timedgate)
 {
-    global.timedgate = 0
+    global.timedgate = false
     global.seconds = 30
 }
 if (global.seconds < 0)

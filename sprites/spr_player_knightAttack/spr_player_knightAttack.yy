@@ -30,8 +30,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Knight Attack",
-    "path":"folders/Player/States/Knight Attack.yy",
+    "name":"Knight",
+    "path":"folders/Player/States/Knight.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -11,9 +11,9 @@ if (optionselect == 1)
 else
     draw_text_color(global.screenw / 2, (global.screenh / 2) + 10, string_hash_to_newline("LEVEL SELECT"), c_white, c_white, c_white, c_white, 0.5)
 if (optionselect == 2)
-    draw_text_color(global.screenw / 2, (global.screenh / 2) + 50, string_hash_to_newline("OPTIONS"), c_white, c_white, c_white, c_white, 1)
+    draw_text_color(global.screenw / 2, (global.screenh / 2) + 50, string_hash_to_newline("OPTIONS"), c_gray, c_gray, c_gray, c_gray, 1)
 else
-    draw_text_color(global.screenw / 2, (global.screenh / 2) + 50, string_hash_to_newline("OPTIONS"), c_white, c_white, c_white, c_white, 0.5)
+    draw_text_color(global.screenw / 2, (global.screenh / 2) + 50, string_hash_to_newline("OPTIONS"), c_gray, c_gray, c_gray, c_gray, 0.5)
 if (optionselect == 3)
     draw_text_color(global.screenw / 2, (global.screenh / 2) + 90, string_hash_to_newline("QUIT"), c_white, c_white, c_white, c_white, 1)
 else

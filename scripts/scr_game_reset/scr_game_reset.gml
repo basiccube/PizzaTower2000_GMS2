@@ -4,11 +4,6 @@ function scr_game_reset()
 	instance_destroy(obj_endlevelfade)
 	instance_destroy(obj_followerParent)
 	
-	global.minutes = 1
-	global.seconds = 59
-	global.panic = false
-	
-	global.timedgate = false
 	global.leveltosave = undefined
 	global.escapesong = "mu_pizzatime"
 	

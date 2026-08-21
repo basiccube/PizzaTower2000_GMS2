@@ -27,8 +27,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Knight Slide",
-    "path":"folders/Player/States/Knight Slide.yy",
+    "name":"Knight",
+    "path":"folders/Player/States/Knight.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

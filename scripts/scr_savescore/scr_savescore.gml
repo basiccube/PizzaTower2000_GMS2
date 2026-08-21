@@ -1,3 +1,5 @@
+#macro SAVE_FILE "save.ini"
+
 function scr_savescore(level)
 {
 	global.rank = "d"
@@ -10,7 +12,7 @@ function scr_savescore(level)
 	else if (global.collect > global.crank)
 		global.rank = "c"
 		
-	ini_open("saveData.ini")
+	ini_open(SAVE_FILE)
 	
 	if (ini_read_real("Highscore", level, 0) < global.collect)
 		ini_write_real("Highscore", level, global.collect)

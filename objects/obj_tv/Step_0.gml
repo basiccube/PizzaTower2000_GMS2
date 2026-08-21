@@ -1,4 +1,4 @@
-if (room == rank_room || room == timesuproom || room == levelselect)
+if (room == rank_room || room == timesuproom || room == levelselect || room == Realtitlescreen)
 {
     visible = false
     sprite_index = spr_newtv_off

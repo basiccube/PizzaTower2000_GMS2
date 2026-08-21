@@ -10,7 +10,7 @@ else if (keyDown_pressed && selection < ds_list_size(level_list) - 1)
     snd_play(sfx_step)
 }
 
-if (keyJump_pressed && global.startRoom == "")
+if keyJump_pressed
 {
     if (!instance_exists(obj_transition))
     {

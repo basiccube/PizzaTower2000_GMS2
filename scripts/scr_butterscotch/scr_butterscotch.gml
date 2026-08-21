@@ -15,7 +15,7 @@ for (var i = 0, n = array_length(arr); i < n; i++)
 {
 	if (asset_get_index(arr[i]) == -1)
 	{
-		show_debug_message("Butterscotch runner possibly detected")
+		print("Butterscotch runner possibly detected")
 		global.butterscotch = true
 		break;
 	}

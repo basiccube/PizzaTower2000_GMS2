@@ -140,7 +140,8 @@ function scr_playerState_normal()
 		var in_frame = (floor(image_index) == 3 || floor(image_index) == 8)
 		if (in_frame && !steppy)
 		{
-			snd_play(sfx_step)
+			if !snd_playing(sfx_step)
+				snd_play(sfx_step)
 			instance_create(x, y + 43, obj_cloudeffect)
 			steppy = true
 		}

@@ -1,10 +1,11 @@
-instance_create((x + 16), y, obj_debris)
-instance_create((x + 16), y, obj_debris)
-instance_create((x + 16), y, obj_debris)
-instance_create((x + 16), y, obj_debris)
-instance_create((x + 16), y, obj_debris)
+snd_play(sfx_breakblock)
+tile_delete(x, y)
+
 instance_create(x, y, obj_collect)
-tile_layer_delete_at(1, x, y)
-if (global.breaksound == 9)
-    snd_play(sfx_breakblock)
-global.breaksound = 0
+repeat (5)
+{
+	var spr = spr_debris
+	if (object_index == obj_destroyable2_escape)
+		spr = spr_debrisescape
+	create_debris(x + 16, y + 16, spr)
+}

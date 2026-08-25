@@ -24,9 +24,9 @@ if !important
 
 instance_create(x, y + 30, obj_bangeffect)
 repeat (3)
-	instance_create(x, y, obj_baddiegibs)
+	create_debris(x, y, spr_baddiegibs)
 repeat (3)
-	instance_create(x, y, obj_slapstar)
+	create_debris(x, y, spr_slapstar)
 
 camera_shake(5, 20)
 with (obj_tv)

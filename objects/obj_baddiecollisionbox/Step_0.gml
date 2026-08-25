@@ -92,8 +92,8 @@ if (baddieID.state != ENEMY_CHARGE && baddieID.state != ENEMY_GRABBED && place_m
 			snd_play(sfx_punch)
 			instance_create(baddieID.x + (player.xscale * 40), baddieID.y, obj_punchdust)
 			
-			instance_create(baddieID.x, baddieID.y, obj_slapstar)
-			instance_create(baddieID.x, baddieID.y, obj_baddiegibs)
+			create_debris(baddieID.x, baddieID.y, spr_slapstar)
+			create_debris(baddieID.x, baddieID.y, spr_baddiegibs)
 			
 			instance_destroy(baddieID)
 		}

@@ -10,8 +10,14 @@ function scr_player_hurt()
 			snd_play(sfx_losetransformation)
 			for (var i = 0; i <= 5; i++)
 			{
-				with (instance_create(x, y, obj_knightdebris))
-					image_index = i
+				with (create_debris(x, y, spr_knightdebris))
+				{
+					index = i
+					xscale = other.xscale
+					
+					hsp = irandom_range(-8, 8)
+					vsp = random_range(-2, -10)
+				}
 			}
 			
 			state.change(PLAYER_BUMP)
@@ -56,7 +62,14 @@ function scr_player_hurt()
 			{
 				global.collect -= 100
 				repeat (12)
-					instance_create(x, y, obj_pizzaloss)
+				{
+					with (create_debris(x, y, choose(spr_cheesecollect, spr_pineapplecollect, spr_sausagecollect, spr_shroomcollect, spr_tomatocollect)))
+					{
+						hsp = random_range(-10, 10)
+						vsp = random(-5)
+						grav = 0.5
+					}
+				}
 			}
 			else
 				global.collect = 0

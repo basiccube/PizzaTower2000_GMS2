@@ -41,6 +41,13 @@ unpauseGame = function()
 {
 	pause = false
 	instance_activate_all()
+	
+	with (obj_player)
+	{
+		keyJump_pressed = false
+		keyJump_held = false
+		input_buffer_jump = 0
+	}
 }
 
 menu_map = ds_map_create()

@@ -1,18 +1,16 @@
+snd_play(sfx_breakmetal)
+camera_shake(20, 40)
+tile_delete_area(x, y, 32)
+
 repeat (4)
 {
+	var spr = spr_metalblockdebris
 	if (object_index == obj_metalblock_escape)
+		spr = spr_metalblockdebrisescape
+	
+	with (create_debris(x + 32, y + 32, spr))
 	{
-		with (instance_create(x + 32, y + 32, obj_metaldebris))
-			sprite_index = spr_metalblockdebrisescape
+		hsp = random_range(-4, 4)
+		vsp = random_range(-4, 0)
 	}
-	else
-		instance_create(x + 32, y + 32, obj_metaldebris)
 }
-
-tile_layer_delete_at(1, x, y)
-tile_layer_delete_at(1, x + 32, y)
-tile_layer_delete_at(1, x + 32, y + 32)
-tile_layer_delete_at(1, x, y + 32)
-
-camera_shake(20, 40)
-snd_play(sfx_breakmetal)

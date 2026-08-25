@@ -4,11 +4,17 @@
 #macro BACKGROUND_PATH IMGBUF_PATH + IMG_BG_PATH
 #macro TILESET_PATH "tilesets/"
 
+#macro AUDIO_PATH "audio/"
+#macro MUSIC_PATH AUDIO_PATH + "music/"
+#macro SOUNDS_PATH AUDIO_PATH + "sfx/"
+#macro SOUNDS_DEFAULT_PATH SOUNDS_PATH + "default/"
+
 global.startRoom = ""
 global.startDoor = ""
 
 global.background_map = ds_map_create()
 global.tileset_map = ds_map_create()
+global.sound_map = ds_map_create()
 
 function init_game()
 {
@@ -128,4 +134,53 @@ function init_load_sprites()
 		for (var i = 0; sprite_exists(i); i++)
 			sprloader_load(i)
 	}
+}
+
+function init_load_sounds()
+{
+	if !directory_exists(SOUNDS_PATH)
+		exit;
+	
+	var count = 0
+	var dir = ""
+	
+	if (dir != "" && directory_exists(SOUNDS_PATH + dir))
+	{
+		var path = SOUNDS_PATH + dir
+		var file = file_find_first(path + "*.ogg", fa_none)
+		while (file != "")
+		{
+			var name = filename_change_ext(file, "")
+			var stream = audio_create_stream(path + file)
+			
+			printex("Loading sound ", name)
+			ds_map_set(global.sound_map, name, stream)
+			count++
+			
+			file = file_find_next()
+		}
+		file_find_close()
+	}
+	
+	if directory_exists(SOUNDS_DEFAULT_PATH)
+	{
+		var file = file_find_first(SOUNDS_DEFAULT_PATH + "*.ogg", fa_none)
+		while (file != "")
+		{
+			var name = filename_change_ext(file, "")
+			if !ds_map_exists(global.sound_map, name)
+			{
+				var stream = audio_create_stream(SOUNDS_DEFAULT_PATH + file)
+				
+				printex("Loading sound (default) ", name)
+				ds_map_set(global.sound_map, name, stream)
+				count++
+			}
+			
+			file = file_find_next()
+		}
+		file_find_close()
+	}
+	
+	print("Loaded ", count, " sounds")
 }

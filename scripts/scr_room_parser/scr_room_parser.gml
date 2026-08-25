@@ -170,7 +170,8 @@ function room_parse_properties(file)
 					print("Unknown object: ", setarr[2])
 			}
 			
-			variable_instance_set(inst, instvar, instval)
+			if (inst != undefined)
+				variable_instance_set(inst, instvar, instval)
 		}
 	}
 }

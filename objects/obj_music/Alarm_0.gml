@@ -3,7 +3,7 @@ if (currentlyplaying == undefined)
 
 if is_string(currentlyplaying)
 {
-	var path = "music/" + currentlyplaying + ".ogg"
+	var path = MUSIC_PATH + currentlyplaying + ".ogg"
 	if file_exists(path)
 	{
 		var stream = audio_create_stream(path)

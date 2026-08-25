@@ -130,8 +130,8 @@ function scr_enemy_doThrow(player)
 		instance_create(bx, by, obj_bumpeffect)
 	}
 	
-	instance_create(x, y, obj_slapstar)
-	instance_create(x, y, obj_baddiegibs)
+	create_debris(x, y, spr_slapstar)
+	create_debris(x, y, spr_baddiegibs)
 	
 	flash = true
 	alarm[1] = 5

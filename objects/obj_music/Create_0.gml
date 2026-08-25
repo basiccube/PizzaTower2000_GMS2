@@ -1,9 +1,9 @@
 global.music = ds_map_create()
 global.escapesong = "mu_pizzatime"
 
-if directory_exists("music")
+if directory_exists(MUSIC_PATH)
 {
-	var file = file_find_first("music/*.ogg", fa_none)
+	var file = file_find_first(MUSIC_PATH + "*.ogg", fa_none)
 	while (file != "")
 	{
 		var name = filename_change_ext(file, "")

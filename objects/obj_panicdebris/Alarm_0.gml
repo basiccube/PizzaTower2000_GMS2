@@ -1,2 +1,2 @@
-instance_create(random(room_width), 10, obj_debris)
+create_debris(random(room_width), 10, spr_debris)
 alarm[0] = 15

@@ -39,8 +39,8 @@ for (i = 0; i < obj_editor.roomw; i += 32)
 {
     for (ii = 0; ii < obj_editor.roomh; ii += 32)
     {
-        tile = tile_layer_find(-5, i, ii)
-        if (tile_exists(tile))
+		tile = tile_get_at(i, ii)
+        if (tile_exists_at(i, ii))
         {
             ini_write_string("Tile" + string(tilefile), "Tileset", ds_list_find_value(global.tilesetnames, tile_get_background(tile) - ds_list_size(global.backgrounds)))
             ini_write_real("Tile" + string(tilefile), "Left", tile_get_left(tile))

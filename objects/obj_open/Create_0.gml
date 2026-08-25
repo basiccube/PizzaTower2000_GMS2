@@ -3,12 +3,11 @@ if (file_exists(openroom + ".ini") && openroom != "objects" && openroom != "conf
 {
     with (obj_object)
         instance_destroy()
-    tile_layer_delete(-5)
+	tile_delete_all()
     ini_open(openroom + ".ini")
     maxsections = 1
     maxtilesections = 1
-    __view_set( e__VW.XView, 0, 0 )
-    __view_set( e__VW.YView, 0, 0 )
+	camera_set_view_pos(view_camera[0], 0, 0)
     with (obj_editor)
     {
         tilevisible = true
@@ -59,7 +58,7 @@ if (file_exists(openroom + ".ini") && openroom != "objects" && openroom != "conf
         {
             if (ini_key_exists("Tile" + string(i), "Tileset"))
             {
-                tile_add(ds_list_find_value(global.tilesets, ds_list_find_index(global.tilesetnames, ini_read_string("Tile" + string(i), "Tileset", "tile_tower"))), ini_read_real("Tile" + string(i), "Left", 0), ini_read_real("Tile" + string(i), "Top", 0), ini_read_real("Tile" + string(i), "Width", 32), ini_read_real("Tile" + string(i), "Height", 32), ini_read_real("Tile" + string(i), "X", 0), ini_read_real("Tile" + string(i), "Y", 0), -5)
+                //(ds_list_find_value(global.tilesets, ds_list_find_index(global.tilesetnames, ini_read_string("Tile" + string(i), "Tileset", "tile_tower"))), ini_read_real("Tile" + string(i), "Left", 0), ini_read_real("Tile" + string(i), "Top", 0), ini_read_real("Tile" + string(i), "Width", 32), ini_read_real("Tile" + string(i), "Height", 32), ini_read_real("Tile" + string(i), "X", 0), ini_read_real("Tile" + string(i), "Y", 0), -5)
             }
         }
         if (ini_section_exists("Tile" + string(i + 1)))

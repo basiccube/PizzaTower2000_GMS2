@@ -12,4 +12,4 @@ with (obj_editor)
     roomw = 800
     roomh = 544
 }
-tile_layer_delete(-5)
+tile_delete_all()

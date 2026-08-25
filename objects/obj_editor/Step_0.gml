@@ -84,10 +84,10 @@ if (!obj_uibar.active && !instance_exists(obj_objmenu))
         }
         
         // Tile mode
-        if (mode == 4 && mouse_check_button(mb_left) && tile_layer_find(-5, x, y) == -1 && !position_meeting(mouse_x, mouse_y, obj_tileui_tilearea))
-            tile_add(selectedtileset, obj_tileui_tilearea.tilex, obj_tileui_tilearea.tiley, 32, 32, x, y, -5)
+        //if (mode == 4 && mouse_check_button(mb_left) && tile_get_at(x, y) == -1 && !position_meeting(mouse_x, mouse_y, obj_tileui_tilearea))
+        //   (selectedtileset, obj_tileui_tilearea.tilex, obj_tileui_tilearea.tiley, 32, 32, x, y, -5)
         if (mode == 4 && mouse_check_button(mb_right) && !position_meeting(mouse_x, mouse_y, obj_tileui_tilearea))
-            tile_layer_delete_at(-5, x, y)
+            tile_delete(x, y)
         
         // Object placement mode
         if (mode == 1 && mouse_check_button_pressed(mb_left))

@@ -1,11 +1,11 @@
 if (obj_editor.tilevisible)
 {
-    tile_layer_hide(-5)
+	tile_hide()
     obj_editor.tilevisible = false
 }
 else if (!obj_editor.tilevisible)
 {
-    tile_layer_show(-5)
+	tile_show()
     obj_editor.tilevisible = true
 }
 

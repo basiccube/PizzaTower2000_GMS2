@@ -66,8 +66,8 @@ with (obj_editor)
     {
         for (ii = 0; ii < roomh; ii += 32)
         {
-            tile = tile_layer_find(-5, i, ii)
-            if (tile_exists(tile))
+            tile = tile_get_at(i, ii)
+            if (tile_exists_at(i, ii))
             {
                 file_text_write_string(saveroom, "room_tile_add(" + roomname + ", ds_map_find_value(global.tilesets, '" + ds_list_find_value(global.tilesetnames, tile_get_background(tile) - ds_list_size(global.backgrounds)) + "'), " + string(tile_get_left(tile)) + ", " + string(tile_get_top(tile)) + ", " + string(tile_get_width(tile)) + ", " + string(tile_get_height(tile)) + ", " + string(tile_get_x(tile)) + ", " + string(tile_get_y(tile)) + ", 5)")
                 file_text_writeln(saveroom)

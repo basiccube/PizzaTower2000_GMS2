@@ -11,7 +11,7 @@ if (room == rm_rank_room)
     else if (global.rank == "b" || global.rank == "c")
         rankmusic = "mu_rankb"
     
-	var path = "music/" + rankmusic + ".ogg"
+	var path = MUSIC_PATH + rankmusic + ".ogg"
     if (is_string(ds_map_find_value(global.music, rankmusic)) && file_exists(path))
     {
 		var stream = audio_create_stream(path)

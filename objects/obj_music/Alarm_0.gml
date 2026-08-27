@@ -1,3 +1,5 @@
+if (global.audio_musicvolume <= 0)
+	exit;
 if (currentlyplaying == undefined)
 	exit;
 

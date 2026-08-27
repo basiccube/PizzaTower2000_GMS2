@@ -41,7 +41,6 @@ function scr_playerState_superJumpPrep()
 function scr_playerState_superJumpPrep_enter()
 {
 	snd_play(sfx_superjumpprep)
-	snd_loop(sfx_superjumphold)
 	
 	sprite_index = spr_player_superJumpPrepStart
 	image_index = 0

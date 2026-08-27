@@ -1,4 +1,4 @@
-snd_play(sfx_breakblock)
+snd_stop_play(sfx_breakblock)
 tile_delete_area(x, y, 32)
 
 instance_create(x + 32, y + 32, obj_bigcollect)

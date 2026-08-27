@@ -3,6 +3,6 @@ if use_global
 else
 {
 	ini_open(ini_file)
-	toggled = ini_read_real(ini_section, ini_key, false)
+	toggled = (ini_read_real(ini_section, ini_key, false) > 0)
 	ini_close()
 }

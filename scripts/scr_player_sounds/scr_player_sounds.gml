@@ -3,6 +3,7 @@ function scr_player_initSounds()
 	snd_mach1 = false
 	snd_mach2 = false
 	snd_mach3 = false
+	snd_superjumphold = false
 }
 
 function scr_player_updateSounds()
@@ -45,7 +46,16 @@ function scr_player_updateSounds()
 		
 	if !state.is([PLAYER_SUPLEXDASH, PLAYER_CHARGE])
 		snd_stop(sfx_dash)
-		
-	if !state.is(PLAYER_SUPERJUMPPREP)
+	
+	var superjumpprep = (state.is(PLAYER_SUPERJUMPPREP) && !snd_playing(sfx_superjumpprep))
+	if (superjumpprep && !snd_superjumphold)
+	{
+		snd_loop(sfx_superjumphold)
+		snd_superjumphold = true
+	}
+	else if (!superjumpprep && snd_superjumphold)
+	{
 		snd_stop(sfx_superjumphold)
+		snd_superjumphold = false
+	}
 }

@@ -1,4 +1,4 @@
-snd_play(sfx_breakblock)
+snd_stop_play(sfx_breakblock)
 tile_delete(x, y)
 
 instance_create(x, y, obj_collect)

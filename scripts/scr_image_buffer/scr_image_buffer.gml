@@ -1,5 +1,6 @@
 #macro IMGBUF_PATH "img/"
 #macro IMGBUF_EXT ".buf"
+#macro IMGBUF_BG_COLOR #FF00FF
 
 // imgbuf format:
 // u16 - width
@@ -19,6 +20,7 @@ function imgbuf_save(sprite, name)
 	var surf = surface_create(w, h)
 	surface_set_target(surf)
 	
+	draw_clear_alpha(IMGBUF_BG_COLOR, 1)
 	draw_sprite_ext(sprite, 0, 0, 0, 1, 1, 0, c_white, 1)
 	
 	var px = 0
@@ -66,6 +68,8 @@ function imgbuf_load(name)
 	var surf = surface_create(w, h)
 	surface_set_target(surf)
 	
+	draw_clear_alpha(IMGBUF_BG_COLOR, 1)
+	
 	var px = 0
 	var py = 0
 	repeat (w * h)
@@ -84,7 +88,12 @@ function imgbuf_load(name)
 	
 	surface_reset_target()
 	
-	var sprite = sprite_create_from_surface(surf, 0, 0, w, h, false, false, 0, 0)
+	var removeback = false
+	var blpixel = surface_getpixel(surf, 0, h - 1)
+	if (blpixel == IMGBUF_BG_COLOR)
+		removeback = true
+	
+	var sprite = sprite_create_from_surface(surf, 0, 0, w, h, removeback, false, 0, 0)
 	
 	surface_free(surf)
 	buffer_delete(buf)

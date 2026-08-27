@@ -1,5 +1,5 @@
 instance_destroy(oneway)
-snd_play(sfx_breakblock)
+snd_stop_play(sfx_breakblock)
 tile_delete_area(x, y, 32)
 
 repeat (6)

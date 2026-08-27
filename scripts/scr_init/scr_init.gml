@@ -1,8 +1,9 @@
 #macro SETTINGS_FILE "config/settings.ini"
 
 #macro IMG_BG_PATH "bg/"
+#macro IMG_TILE_PATH "tile/"
 #macro BACKGROUND_PATH IMGBUF_PATH + IMG_BG_PATH
-#macro TILESET_PATH "tilesets/"
+#macro TILESET_PATH IMGBUF_PATH + IMG_TILE_PATH
 
 #macro AUDIO_PATH "audio/"
 #macro MUSIC_PATH AUDIO_PATH + "music/"
@@ -71,6 +72,7 @@ function init_game()
 function init_load_settings()
 {
 	ini_open(SETTINGS_FILE)
+	global.audio_musicvolume = ini_read_real("Audio", "MusicVolume", 0.6)
 	global.hud = ini_read_real("Game", "HUD", 0)
 	ini_close()
 }
@@ -108,12 +110,14 @@ function init_load_tilesets()
 		exit;
 	
 	var count = 0
-	var file = file_find_first(TILESET_PATH + "*.png", fa_none)
+	var file = file_find_first(TILESET_PATH + "*" + IMGBUF_EXT, fa_none)
 	while (file != "")
 	{
 		var name = filename_change_ext(file, "")
-		var sprite = sprite_add(TILESET_PATH + file, 0, true, false, 0, 0)
-		if (sprite != -1)
+		var path = IMG_TILE_PATH + name
+		
+		var sprite = imgbuf_load(path)
+		if (sprite != undefined)
 		{
 			printex("Loading tileset ", name, ", asset name: ", sprite)
 			ds_map_set(global.tileset_map, name, sprite)

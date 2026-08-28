@@ -1,4 +1,4 @@
-visible = !(room == rm_rank_room || room == rm_timesup_room || room == rm_level_select || room == rm_main_menu)
+visible = !(room == rm_rank_room || room == rm_timesup_room || room == rm_main_menu)
 
 timestop = !(global.panic || global.timedgate || room == rm_timesup_room)
 if (global.panic && !timestop && alarm[1] <= 0)

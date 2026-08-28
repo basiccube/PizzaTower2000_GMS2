@@ -6,7 +6,7 @@ with (obj_player)
 		image_index = 0
 		state.change(PLAYER_SCOOTERSLIDE)
 		
-		movespeed = 19
+		movespeed = 10
 		vsp = -4
 		facehurt = true
 	}

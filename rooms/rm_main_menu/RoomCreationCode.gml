@@ -13,8 +13,5 @@ with (obj_titlecutscene)
 	y = global.screenh - 138
 }
 
-with (obj_controls)
-	x = global.screenw - 128
-
 with (obj_player)
 	state.change(PLAYER_MENU)

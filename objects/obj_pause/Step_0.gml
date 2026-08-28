@@ -33,7 +33,12 @@ if pause
 	if (move != 0)
 		selection += move
 	
-	selection = clamp(selection, 0, array_length(menu) - 1)
+	var len = array_length(menu)
+	if (selection >= len)
+		selection = 0
+	else if (selection < 0)
+		selection = len - 1
+	
 	if (prevselection != selection)
 		snd_play(sfx_step)
 	

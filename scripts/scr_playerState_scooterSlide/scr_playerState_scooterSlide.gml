@@ -1,8 +1,11 @@
 function scr_playerState_scooterSlide()
 {
 	hsp = xscale * movespeed
-	if (movespeed > 0)
-		movespeed -= 0.4
+	if !grounded
+		hsp = xscale * 18
+	
+	if (grounded && movespeed > 0)
+		movespeed -= 0.5
 		
 	if (movespeed <= 0)
 	{

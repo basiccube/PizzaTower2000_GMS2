@@ -6,8 +6,8 @@
   "name":"obj_rockcutscene",
   "overriddenProperties":[],
   "parent":{
-    "name":"Title screen",
-    "path":"folders/Objects/Title screen.yy",
+    "name":"Main Menu",
+    "path":"folders/Main Menu.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -1,4 +1,4 @@
-if (room == rm_rank_room || room == rm_timesup_room || room == rm_level_select || room == rm_main_menu)
+if (room == rm_rank_room || room == rm_timesup_room || room == rm_main_menu)
 {
     visible = false
     sprite_index = spr_newtv_off

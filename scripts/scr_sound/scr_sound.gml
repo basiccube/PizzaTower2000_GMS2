@@ -1,5 +1,6 @@
 global.bscotch_audio_map = ds_map_create()
 
+// This should be redone
 function snd_get_from_sound_map(snd)
 {
 	if ds_map_exists(global.sound_map, snd)

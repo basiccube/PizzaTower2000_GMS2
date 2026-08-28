@@ -28,7 +28,6 @@ global.bscotch_array_contains = true
 global.bscotch_state_override = true
 global.bscotch_state_use_map = true
 global.bscotch_audio = true
-global.bscotch_backgrounds = true
 global.bscotch_player_drawoverride = true
 
 #macro place_meeting_original place_meeting

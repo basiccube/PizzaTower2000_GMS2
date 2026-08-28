@@ -41,8 +41,13 @@ function scr_player_destroyDestructibles()
 	
 	if state.is([PLAYER_FREEFALL, PLAYER_FREEFALLLAND])
 	{
-		if place_meeting(x, y + vsp + 2, obj_destructibles)
-			instance_destroy(instance_place(x, y + vsp + 2, obj_destructibles))
+		var num = instance_place_list(x, y + vsp + 2, obj_destructibles, tempMeetingList, false)
+		for (var i = 0; i < num; i++)
+		{
+			var inst = ds_list_find_value(tempMeetingList, i)
+			instance_destroy(inst.id)
+		}
+		ds_list_clear(tempMeetingList)
 	}
 	
 	if state.is(PLAYER_SUPLEXDASH)

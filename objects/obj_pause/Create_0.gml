@@ -15,7 +15,6 @@ screensprite = undefined
 disabled_rooms = [
 	rm_rank_room,
 	rm_timesup_room,
-	rm_level_select,
 	rm_main_menu,
 	rm_initializer
 ]

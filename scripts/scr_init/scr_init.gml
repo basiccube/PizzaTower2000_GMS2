@@ -150,7 +150,7 @@ function init_load_sounds()
 	
 	if (dir != "" && directory_exists(SOUNDS_PATH + dir))
 	{
-		var path = SOUNDS_PATH + dir
+		var path = SOUNDS_PATH + dir + "/"
 		var file = file_find_first(path + "*.ogg", fa_none)
 		while (file != "")
 		{

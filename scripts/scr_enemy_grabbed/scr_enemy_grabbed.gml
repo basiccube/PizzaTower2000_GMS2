@@ -127,6 +127,12 @@ function scr_enemy_doThrow(player)
 			bx = x + (30 * player.xscale)
 			by = y
 		}
+		else if (spr == spr_player_parry1 || spr == spr_player_parry2)
+		{
+			bx = player.x + (20 * player.xscale)
+			by = player.y
+		}
+		
 		instance_create(bx, by, obj_bumpeffect)
 	}
 	

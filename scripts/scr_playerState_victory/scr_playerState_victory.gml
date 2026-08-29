@@ -9,3 +9,6 @@ function scr_playerState_victory()
 		sprite_index = spr_player_enterGate
 	image_speed = (LAST_FRAME ? 0 : 0.35)
 }
+
+function scr_playerState_victory_enter()
+{ image_index = 0; }

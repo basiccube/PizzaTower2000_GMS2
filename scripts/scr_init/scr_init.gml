@@ -17,6 +17,9 @@ global.background_map = ds_map_create()
 global.tileset_map = ds_map_create()
 global.sound_map = ds_map_create()
 
+global.background_preload = false
+global.tileset_preload = false
+
 function init_game()
 {
 	for (var i = 0, n = parameter_count(); i < n; i++)
@@ -79,6 +82,8 @@ function init_load_settings()
 
 function init_load_backgrounds()
 {
+	if !global.background_preload
+		exit;
 	if !directory_exists(BACKGROUND_PATH)
 		exit;
 	
@@ -106,6 +111,8 @@ function init_load_backgrounds()
 
 function init_load_tilesets()
 {
+	if !global.tileset_preload
+		exit;
 	if !directory_exists(TILESET_PATH)
 		exit;
 	

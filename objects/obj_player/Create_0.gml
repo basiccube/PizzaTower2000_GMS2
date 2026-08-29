@@ -99,6 +99,15 @@ crouchMaskStates = [
 	PLAYER_TUMBLE
 ]
 
+noCollideStates = [
+	PLAYER_MENU,
+	PLAYER_ENTERDOOR,
+	PLAYER_GAMEOVER,
+	PLAYER_GETKEY,
+	PLAYER_TREASURE,
+	PLAYER_NOCLIP
+]
+
 drawOverride = [
 	obj_mach2effect,
 	obj_mach3effect,

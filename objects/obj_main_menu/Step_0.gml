@@ -1,4 +1,4 @@
-scr_getinput()
+scr_menu_getinput()
 cursor_index += 0.35
 logo_y = lerp(logo_y, logo_target_y, 0.15)
 
@@ -11,7 +11,7 @@ switch state
 		selection = 0
 		start_y = lerp(start_y, start_target_y, 0.15)
 		
-		if keyJump_pressed
+		if keyConfirm_pressed
 		{
 			logo_target_y = main_menu_logo_target
 			state = main_menu_state.main
@@ -35,7 +35,7 @@ switch state
 		if (prev_selection != selection)
 			snd_play(sfx_step)
 		
-		if keyJump_pressed
+		if keyConfirm_pressed
 		{
 			main_menu_offset = 0
 			main_menu[selection][1]()
@@ -53,7 +53,7 @@ switch state
 		if (prev != selection)
 			snd_play(sfx_step)
 		
-		if keyJump_pressed
+		if keyConfirm_pressed
 		{
 			if (selection > 0)
 				back_to_main()
@@ -78,7 +78,7 @@ switch state
 		if (prev != selection)
 			snd_play(sfx_step)
 		
-		if keyJump_pressed
+		if keyConfirm_pressed
 		{
 			var level = level_select_arr[selection]
 			var rm = undefined
@@ -106,7 +106,7 @@ switch state
 			instance_create(x, y, obj_transition)
 			instance_destroy()
 		}
-		else if keySlap_pressed
+		else if keyBack_pressed
 			back_to_main()
 		break
 }

@@ -1,6 +1,6 @@
 with (obj_player)
 {
-	var states = [PLAYER_NOCLIP, PLAYER_MACH1, PLAYER_MACH2, PLAYER_MACH3]
+	var states = [PLAYER_NORMAL, PLAYER_MACH1, PLAYER_MACH2, PLAYER_MACH3]
 	if (place_meeting(x, y, other) && keyUp_held && grounded && state.is(states) && !instance_exists(obj_transition))
 	{
 		if (other.sprite_index == spr_doorvisited)

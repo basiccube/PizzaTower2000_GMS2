@@ -32,7 +32,7 @@ function custom_room_run_code()
 			str = string_delete(str, string_length(str), 1)
 			str = string_replace_all(str, "\"", "")
 			
-			var val = ds_map_find_value(global.background_map, str)
+			var val = parallaxBackground.get(str)
 			if (val == undefined)
 			{
 				var ind = asset_get_index(val)

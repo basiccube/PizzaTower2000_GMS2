@@ -1,4 +1,4 @@
-scr_getinput()
+scr_menu_getinput()
 if (keyEscape && !instance_exists(obj_transition) && !in_array(room, disabled_rooms))
 {
 	if (global.startRoom != "")
@@ -42,7 +42,7 @@ if pause
 	if (prevselection != selection)
 		snd_play(sfx_step)
 	
-	if keyJump_pressed
+	if keyConfirm_pressed
 	{
 		var func = ds_map_find_value(menu_map, menu[selection])
 		if (func != undefined)

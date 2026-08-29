@@ -12,9 +12,7 @@ with (other)
 	{
 		with (obj_camera)
 			chargecamera = 0
-			
 		state.change(PLAYER_VICTORY)
-		image_index = 0
 	}
 	
 	if (state.is(PLAYER_VICTORY) && LAST_FRAME)

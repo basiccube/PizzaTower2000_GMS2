@@ -11,6 +11,9 @@ if global.hud
 	draw_sprite_ext(spr_newtv_bg, 0, tx, ty, 1, 1, 0, c_white, 1)
 	draw_sprite_ext(sprite_index, image_index, tx, ty, 1, 1, 0, c_white, 1)
 	
+	if (sprite_index != spr_newtv_open)
+		draw_sprite_ext(spr_newtv_empty, 0, tx, ty, 1, 1, 0, c_white, 1)
+	
 	if (comboalpha > 0)
 	{
 		draw_sprite_ext(spr_newtv_darkened, 0, tx, ty, 1, 1, 0, c_white, 0.45 * comboalpha)
@@ -50,17 +53,23 @@ if global.hud
 }
 else
 {
-	draw_sprite_ext(tvsprite, -1, tv_x, tv_y + player_yoffset, 1, 1, 0, c_white, 1)
+	var tx = tv_x
+	var ty = tv_y + player_yoffset
+	
+	if (tvsprite != spr_tvdefault)
+		draw_sprite_ext(spr_tvdefault, 0, tx, ty, 1, 1, 0, c_white, 1)
+	
+	draw_sprite_ext(tvsprite, -1, tx, ty, 1, 1, 0, c_white, 1)
 	if (tvsprite == spr_tvdefault)
 	{
-		draw_text(tv_x - 4, tv_y + player_yoffset - 14, string(global.collect))
+		draw_text(tx - 4, ty - 14, string(global.collect))
 		if (global.combo != 0 && global.combotime > 0)
 		{
 			draw_set_font(fnt_small)
-			draw_text(tv_x - 4, tv_y + player_yoffset + 18, "X" + string(global.combo))
+			draw_text(tx - 4, ty + 18, "X" + string(global.combo))
 			
-			var cx = tv_x - 32
-			var cy = tv_y + player_yoffset + 36
+			var cx = tx - 32
+			var cy = ty + 36
 			
 			draw_sprite_ext(spr_barpop_old, 0, cx, cy, 1, 1, 0, c_white, 1)
 			

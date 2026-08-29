@@ -114,7 +114,7 @@ function scr_player_initStates()
 	add_state(PLAYER_GATESHUT, scr_playerState_gateShut, scr_playerState_gateShut_enter)
 	
 	// victory
-	add_state(PLAYER_VICTORY, scr_playerState_victory)
+	add_state(PLAYER_VICTORY, scr_playerState_victory, scr_playerState_victory_enter)
 	add_state(PLAYER_TREASURE, scr_playerState_treasure, scr_playerState_treasure_enter)
 	add_state(PLAYER_GETKEY, scr_playerState_getKey, scr_playerState_getKey_enter)
 	

@@ -1,9 +1,5 @@
-visible = !(room == rm_rank_room ||
-			room == rm_timesup_room ||
-			room == rm_tower_outside ||
-			room == rm_main_menu ||
-			room == rm_initializer)
-
+visible = !in_array(room, disabledRooms)
 backgroundLayer = layer_get_id("Background")
+
 if !visible
 	reset()
